@@ -1,0 +1,99 @@
+
+/* Class = "UILabel"; text = "Asr"; ObjectID = "22A-Sk-P4a"; */
+"22A-Sk-P4a.text" = "Asr";
+
+/* Class = "UINavigationItem"; title = "My Profile"; ObjectID = "3Rw-Rs-iVz"; */
+"3Rw-Rs-iVz.title" = "My Profile";
+
+/* Class = "UILabel"; text = "Car Registration"; ObjectID = "52s-jd-u3A"; */
+"52s-jd-u3A.text" = "Car Registration";
+
+/* Class = "UILabel"; text = "Appointments"; ObjectID = "7Sa-Vh-oLt"; */
+"7Sa-Vh-oLt.text" = "Appointments";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "8FM-Kb-Xso"; */
+"8FM-Kb-Xso.text" = "0";
+
+/* Class = "UILabel"; text = "Car Registration"; ObjectID = "Ae9-O3-Esd"; */
+"Ae9-O3-Esd.text" = "Car Registration";
+
+/* Class = "UILabel"; text = "AED"; ObjectID = "Eb2-sc-TpA"; */
+"Eb2-sc-TpA.text" = "AED";
+
+/* Class = "UILabel"; text = "0 Bills"; ObjectID = "H6N-zU-nMS"; */
+"H6N-zU-nMS.text" = "0 Bills";
+
+/* Class = "UILabel"; text = "NOL"; ObjectID = "HV1-Jw-MPh"; */
+"HV1-Jw-MPh.text" = "NOL";
+
+/* Class = "UILabel"; text = "Expiring Soon"; ObjectID = "K1l-aJ-Dkx"; */
+"K1l-aJ-Dkx.text" = "Expiring Soon";
+
+/* Class = "UILabel"; text = "Your Notifications(e.g Bills) will appear here"; ObjectID = "K86-J6-2dw"; */
+"K86-J6-2dw.text" = "Your notifications will appear here";
+
+/* Class = "UITabBarItem"; title = "Dashboard"; ObjectID = "OR9-hd-vPb"; */
+"OR9-hd-vPb.title" = "Dashboard";
+
+/* Class = "UILabel"; text = "Payment History"; ObjectID = "RNG-TW-mKg"; */
+"RNG-TW-mKg.text" = "Payment History";
+
+/* Class = "UILabel"; text = "Prayer Times"; ObjectID = "XqN-0G-FL0"; */
+"XqN-0G-FL0.text" = "Prayer Times";
+
+/* Class = "UILabel"; text = "Duhar"; ObjectID = "eDU-Jh-xcO"; */
+"eDU-Jh-xcO.text" = "Dhuhr";
+
+/* Class = "UILabel"; text = "AED"; ObjectID = "iWu-rE-gOs"; */
+"iWu-rE-gOs.text" = "AED";
+
+/* Class = "UILabel"; text = "0 Bills"; ObjectID = "jUZ-09-k9O"; */
+"jUZ-09-k9O.text" = "0 Bills";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "l6A-g1-bUm"; */
+"l6A-g1-bUm.text" = "0";
+
+/* Class = "UILabel"; text = "Watchlist"; ObjectID = "lAR-BM-EK2"; */
+"lAR-BM-EK2.text" = "Watchlist";
+
+/* Class = "UILabel"; text = "Expired Items"; ObjectID = "mAM-9c-Q7g"; */
+"mAM-9c-Q7g.text" = "Expired Items";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "oLj-fp-sY0"; */
+"oLj-fp-sY0.text" = "Notifications";
+
+/* Class = "UIViewController"; title = "Dashboard"; ObjectID = "osd-72-nlb"; */
+"osd-72-nlb.title" = "Dashboard";
+
+/* Class = "UILabel"; text = "Isha"; ObjectID = "qTu-TH-Hz3"; */
+"qTu-TH-Hz3.text" = "Isha";
+
+/* Class = "UILabel"; text = "Maghrib"; ObjectID = "r5P-gR-hoK"; */
+"r5P-gR-hoK.text" = "Maghrib";
+
+/* Class = "UILabel"; text = "Payment Due"; ObjectID = "rQS-8c-aam"; */
+"rQS-8c-aam.text" = "Payment Due";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "raY-gK-qi5"; */
+"raY-gK-qi5.text" = "0.00";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "t2C-M5-gF5"; */
+"t2C-M5-gF5.text" = "0.00";
+
+/* Class = "UILabel"; text = "Fajr"; ObjectID = "tB9-wa-XIq"; */
+"tB9-wa-XIq.text" = "Fajr";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "tKs-dH-5P6"; */
+"tKs-dH-5P6.text" = "0.00";
+
+/* Class = "UILabel"; text = "AED"; ObjectID = "tYF-9W-d3c"; */
+"tYF-9W-d3c.text" = "AED";
+
+/* Class = "UILabel"; text = "Salik"; ObjectID = "y6j-BW-dWL"; */
+"y6j-BW-dWL.text" = "Salik";
+
+/* Class = "UILabel"; text = "0 Bills"; ObjectID = "yGV-OA-6Cl"; */
+"yGV-OA-6Cl.text" = "0 Bills";
+
+/* Class = "UILabel"; text = "Fajr"; ObjectID = "tB9-wa-XIq"; */
+"tB9-wa-XIq.text" = "Fajr";

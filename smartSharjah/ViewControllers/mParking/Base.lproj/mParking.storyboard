@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAx-sX-a17">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Parking-->
+        <scene sceneID="ZjF-xR-iDd">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="dAx-sX-a17" customClass="mParking" customModule="smartSharjah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qt4-Dp-wt8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rc9-pp-ASP" customClass="NavBar" customModule="smartSharjah" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="bJM-NX-4YQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THV-gZ-Lvx" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
+                                <rect key="frame" x="0.0" y="96" width="374" height="682"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay your parking by filling information below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5v-7b-fcU">
+                                        <rect key="frame" x="28" y="15" width="319" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uqm-XE-pLo" customClass="TextField" customModule="smartSharjah" customModuleProvider="target">
+                                        <rect key="frame" x="21" y="52" width="333" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="BRG-JJ-YZR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="type" value="dropdown"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="options" value="SHJ,AUD,DXB,AJM,UAQ,FUJ,RAK"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTX-XS-cJi" customClass="TextField" customModule="smartSharjah" customModuleProvider="target">
+                                        <rect key="frame" x="20.666666666666657" y="112" width="333.66666666666674" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyK-KP-iZE" customClass="TextField" customModule="smartSharjah" customModuleProvider="target">
+                                        <rect key="frame" x="20.666666666666657" y="172" width="333.66666666666674" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="type" value="dropdown"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="options" value="1,2,3,4"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-1Y-zor">
+                                        <rect key="frame" x="80.666666666666686" y="252" width="214" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.73725490199999999" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="214" id="3v1-IA-U9G"/>
+                                            <constraint firstAttribute="height" constant="40" id="IIK-uk-BcA"/>
+                                        </constraints>
+                                        <state key="normal" title="Pay for Parking">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sendSmsButtonPressed:" destination="dAx-sX-a17" eventType="touchUpInside" id="gP8-Kf-yzC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cNa-1Y-zor" firstAttribute="centerX" secondItem="QyK-KP-iZE" secondAttribute="centerX" id="3vC-FF-6dL"/>
+                                    <constraint firstItem="QyK-KP-iZE" firstAttribute="height" secondItem="QTX-XS-cJi" secondAttribute="height" id="4BA-Ni-35e"/>
+                                    <constraint firstItem="QTX-XS-cJi" firstAttribute="height" secondItem="Uqm-XE-pLo" secondAttribute="height" id="9wl-QX-rvV"/>
+                                    <constraint firstItem="QyK-KP-iZE" firstAttribute="centerX" secondItem="QTX-XS-cJi" secondAttribute="centerX" id="C4V-Jk-suM"/>
+                                    <constraint firstItem="QTX-XS-cJi" firstAttribute="centerX" secondItem="Uqm-XE-pLo" secondAttribute="centerX" id="DUn-PF-zzQ"/>
+                                    <constraint firstItem="QTX-XS-cJi" firstAttribute="top" secondItem="Uqm-XE-pLo" secondAttribute="bottom" constant="10" id="MhL-SA-O8E"/>
+                                    <constraint firstItem="cNa-1Y-zor" firstAttribute="top" secondItem="QyK-KP-iZE" secondAttribute="bottom" constant="30" id="Rxz-0b-mep"/>
+                                    <constraint firstItem="QyK-KP-iZE" firstAttribute="top" secondItem="QTX-XS-cJi" secondAttribute="bottom" constant="10" id="UVM-4r-glJ"/>
+                                    <constraint firstItem="E5v-7b-fcU" firstAttribute="top" secondItem="THV-gZ-Lvx" secondAttribute="top" constant="15" id="YTF-Xp-rvZ"/>
+                                    <constraint firstItem="QTX-XS-cJi" firstAttribute="width" secondItem="Uqm-XE-pLo" secondAttribute="width" multiplier="1.003" id="a4i-KH-yUr"/>
+                                    <constraint firstItem="QyK-KP-iZE" firstAttribute="width" secondItem="QTX-XS-cJi" secondAttribute="width" id="ghg-19-0VV"/>
+                                    <constraint firstItem="Uqm-XE-pLo" firstAttribute="width" secondItem="THV-gZ-Lvx" secondAttribute="width" multiplier="0.89" id="gvu-zK-eww"/>
+                                    <constraint firstItem="Uqm-XE-pLo" firstAttribute="top" secondItem="E5v-7b-fcU" secondAttribute="bottom" constant="20" id="x3K-Hh-c5r"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rc9-pp-ASP" firstAttribute="top" secondItem="qt4-Dp-wt8" secondAttribute="top" id="Ekn-n5-5Ms"/>
+                            <constraint firstItem="THV-gZ-Lvx" firstAttribute="leading" secondItem="Rc9-pp-ASP" secondAttribute="leading" id="NG6-lp-yWD"/>
+                            <constraint firstItem="THV-gZ-Lvx" firstAttribute="leading" secondItem="W1q-EF-Dad" secondAttribute="leading" id="NIP-sJ-dhp"/>
+                            <constraint firstItem="Rc9-pp-ASP" firstAttribute="leading" secondItem="qt4-Dp-wt8" secondAttribute="leading" id="ZwZ-i1-X26"/>
+                            <constraint firstItem="THV-gZ-Lvx" firstAttribute="trailing" secondItem="Rc9-pp-ASP" secondAttribute="trailing" id="aEb-c8-CEE"/>
+                            <constraint firstItem="W1q-EF-Dad" firstAttribute="trailing" secondItem="THV-gZ-Lvx" secondAttribute="trailing" constant="1" id="cW7-lK-R11"/>
+                            <constraint firstItem="E5v-7b-fcU" firstAttribute="centerX" secondItem="W1q-EF-Dad" secondAttribute="centerX" id="eMJ-mK-wYo"/>
+                            <constraint firstItem="Uqm-XE-pLo" firstAttribute="centerX" secondItem="W1q-EF-Dad" secondAttribute="centerX" id="h9g-9D-5IK"/>
+                            <constraint firstItem="E5v-7b-fcU" firstAttribute="width" secondItem="W1q-EF-Dad" secondAttribute="width" multiplier="0.85" id="kdy-C7-eGJ"/>
+                            <constraint firstItem="THV-gZ-Lvx" firstAttribute="top" secondItem="Rc9-pp-ASP" secondAttribute="bottom" constant="8" symbolic="YES" id="y5U-Kr-mpz"/>
+                            <constraint firstItem="THV-gZ-Lvx" firstAttribute="bottom" secondItem="W1q-EF-Dad" secondAttribute="bottom" id="zDn-0r-P6r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W1q-EF-Dad"/>
+                    </view>
+                    <connections>
+                        <outlet property="NavBar" destination="Rc9-pp-ASP" id="QQD-NH-akK"/>
+                        <outlet property="durationHrs" destination="QyK-KP-iZE" id="PAy-6y-Ymt"/>
+                        <outlet property="infoLbl" destination="E5v-7b-fcU" id="5de-Om-rUJ"/>
+                        <outlet property="plateNumber" destination="QTX-XS-cJi" id="Hcw-bX-y23"/>
+                        <outlet property="plateSource" destination="Uqm-XE-pLo" id="2vV-Bv-HyZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILK-58-LYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="116.49175412293854"/>
+        </scene>
+    </scenes>
+</document>

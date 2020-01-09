@@ -1,0 +1,120 @@
+
+/* Class = "UILabel"; text = "City"; ObjectID = "0z8-R7-oLg"; */
+"0z8-R7-oLg.text" = "المدينة";
+
+/* Class = "UIButton"; normalTitle = "Choose Picture"; ObjectID = "3eu-rv-YYC"; */
+"3eu-rv-YYC.normalTitle" = "اختر صورة";
+
+/* Class = "UILabel"; text = "Copy of Emirati ID (back page)*"; ObjectID = "88F-Il-U3K"; */
+"88F-Il-U3K.text" = "صورة الهوية الإماراتية (الصفحة الخلفية)";
+
+/* Class = "UILabel"; text = "License to practise from Ministry of Health(Medical Staff)"; ObjectID = "BNF-v1-mxk"; */
+"BNF-v1-mxk.text" = "رخصة مزاولة المهنة من وزارة الصحة (لأفراد الطاقم الطبي)";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "F2g-5a-P20"; */
+"F2g-5a-P20.text" = "تاريخ الميلاد";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "GC1-ZT-7bS"; */
+"GC1-ZT-7bS.normalTitle" = "إرسال";
+
+/* Class = "UILabel"; text = "Date of Expiry"; ObjectID = "HM2-Qb-ytl"; */
+"HM2-Qb-ytl.text" = "تاريخ الانتهاء";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Ifg-4B-TMy"; */
+"Ifg-4B-TMy.normalTitle" = "تقديم";
+
+/* Class = "UILabel"; text = "The preffered branch to provide the service*"; ObjectID = "JJ4-39-R8Y"; */
+"JJ4-39-R8Y.text" = "الفرع المفضل لتقديم الخدمة";
+
+/* Class = "UILabel"; text = "Copy of Residency Card"; ObjectID = "Jdp-Yw-MOy"; */
+"Jdp-Yw-MOy.text" = "نسخة من بطاقة الإقامة";
+
+/* Class = "UILabel"; text = "Date of Issue"; ObjectID = "LNB-Z0-Mcy"; */
+"LNB-Z0-Mcy.text" = "تاريخ الإصدار";
+
+/* Class = "UILabel"; text = "Period "; ObjectID = "LoS-w8-BxF"; */
+"LoS-w8-BxF.text" = "الفترة";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "Me4-s1-GoF"; */
+"Me4-s1-GoF.normalTitle" = "إرسال";
+
+/* Class = "UILabel"; text = "Copy of Emirati ID (back page)*"; ObjectID = "P5d-yo-yuA"; */
+"P5d-yo-yuA.text" = "صورة الهوية الإماراتية (الصفحة الخلفية)";
+
+/* Class = "UILabel"; text = "Copy of Passport*"; ObjectID = "Qq2-kS-fkx"; */
+"Qq2-kS-fkx.text" = "صورة من جواز السفر";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "Qse-wc-Val"; */
+"Qse-wc-Val.normalTitle" = "التالي";
+
+/* Class = "UILabel"; text = "Identification Documents"; ObjectID = "SJW-vA-lb2"; */
+"SJW-vA-lb2.text" = "مستندات الهوية";
+
+/* Class = "UILabel"; text = "CV*"; ObjectID = "Sfk-UV-xlc"; */
+"Sfk-UV-xlc.text" = "السيرة الذاتية";
+
+/* Class = "UILabel"; text = "Volunteer Field"; ObjectID = "UBo-2z-4in"; */
+"UBo-2z-4in.text" = "مجال التطوع";
+
+/* Class = "UILabel"; text = "Gender*"; ObjectID = "VM0-GR-Q19"; */
+"VM0-GR-Q19.text" = "الجنس";
+
+/* Class = "UILabel"; text = "Languages"; ObjectID = "Wta-JP-tuy"; */
+"Wta-JP-tuy.text" = "اللغات";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "ZgX-aM-TnB"; */
+"ZgX-aM-TnB.normalTitle" = "التالي";
+
+/* Class = "UILabel"; text = "Please fill in the status data"; ObjectID = "Zmm-t4-xOw"; */
+"Zmm-t4-xOw.text" = "يرجى ملء بيانات الحالة";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "dZ6-3A-PKK"; */
+"dZ6-3A-PKK.text" = "رقم الهاتف";
+
+/* Class = "UILabel"; text = "Copy of Emirati ID (front page)*"; ObjectID = "eEd-oK-V2V"; */
+"eEd-oK-V2V.text" = "صورة الهوية الإماراتية (الصفحة الأمامية)";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "evC-nT-hpu"; */
+"evC-nT-hpu.normalTitle" = "التالي";
+
+/* Class = "UILabel"; text = "Update your personal data"; ObjectID = "gKv-aA-buE"; */
+"gKv-aA-buE.text" = "تحديث البيانات الشخصية الخاصة بك";
+
+/* Class = "UILabel"; text = "Copy of Emirati ID (front page)*"; ObjectID = "jCl-Ts-G4C"; */
+"jCl-Ts-G4C.text" = "صورة الهوية الإماراتية (الصفحة الأمامية)";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "kCh-Jc-nV0"; */
+"kCh-Jc-nV0.text" = "الفئة";
+
+/* Class = "UILabel"; text = "Copy of Medical Report*"; ObjectID = "kdI-ef-cpe"; */
+"kdI-ef-cpe.text" = "صورة من التقرير الطبي ";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "lUK-Pb-4fv"; */
+"lUK-Pb-4fv.text" = "تاريخ الميلاد";
+
+/* Class = "UILabel"; text = "Copy of Passport*"; ObjectID = "mOk-Ew-P0W"; */
+"mOk-Ew-P0W.text" = "صورة من جواز السفر";
+
+/* Class = "UILabel"; text = "Emirate"; ObjectID = "ois-Nn-ASW"; */
+"ois-Nn-ASW.text" = "الإمارة";
+
+/* Class = "UILabel"; text = "Please fill in the status data."; ObjectID = "r0E-R1-wgk"; */
+"r0E-R1-wgk.text" = "يرجى ملء بيانات الحالة.";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "rgD-So-R2u"; */
+"rgD-So-R2u.text" = "الجنس";
+
+/* Class = "UILabel"; text = "Employment Status"; ObjectID = "tLt-Ee-14H"; */
+"tLt-Ee-14H.text" = "الحالة الوظيفية";
+
+/* Class = "UILabel"; text = "Date of Issue"; ObjectID = "tgo-Lf-zVQ"; */
+"tgo-Lf-zVQ.text" = "تاريخ الإصدار";
+
+/* Class = "UILabel"; text = "Nationality"; ObjectID = "ujr-Iu-Ut1"; */
+"ujr-Iu-Ut1.text" = "الجنسية";
+
+/* Class = "UILabel"; text = "Marital Status"; ObjectID = "vTY-E1-b8u"; */
+"vTY-E1-b8u.text" = "الحالة الاجتماعية";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "xhX-Ao-5Zv"; */
+"xhX-Ao-5Zv.normalTitle" = "التالي";

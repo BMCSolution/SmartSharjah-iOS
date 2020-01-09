@@ -1,0 +1,88 @@
+/* 
+  Localizable.strings
+  smartSharjah
+
+  Created by OzzY on 8/28/19.
+  Copyright © 2019 DEG. All rights reserved.
+*/
+"Smart Sharjah" = "الشارقة الذكية";
+
+"OK" = "موافق";
+
+"Alert" = "إنذار";
+
+"Please enter a valid email" = "يرجى ادخال البريد الكتروني الصحيح";
+
+"Please enter matching Password" = "الرجاء إدخال كلمة المرور المطابقة";
+
+"Password & Confirm Password do not match" = " كلمة المرور و تأكيد كلمة المرور غير متطابقة";
+
+"Please enter a valid name" = "يرجى ادخال اسم صحيح";
+
+"Please enter a valid Password"  = "يرجى ادخال كلمة المرور الصحيحة";
+
+"Coming soon..." = "الخدمة غير متوفرة";
+
+"No Internet Connection" = "لا يوجد اتصال إنترنت";
+
+"Make sure your device is connected to the internet." = "تأكد من أن جهازك متصل بالإنترنت.";
+
+"You have successfully logged out" = "لقد خرجت بنجاح";
+
+"Password should have 8 characters or more" = "يجب أن تحتوي كلمة المرور على 8 أحرف أو أكثر";
+
+"Password should have at least one lower case letter" = "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل";
+
+"Password should have at least one upper case letter" = "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل";
+
+"Password should contain at least one digit" = "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل";
+
+"Password should contain at least one special character" = "يجب أن تحتوي كلمة المرور على شخصية خاصة واحدة على الأقل";
+
+"Login to use this feature" = "تسجيل الدخول لاستخدام هذه الميزة";
+
+"Select a Language or swipe up for Login" = "اختر لغة أو اسحب لأعلى لتسجيل الدخول";
+
+"Successfully Updated Profile Image" = "تم تحديث صورة الملف الشخصي بنجاح";
+
+"Update failed!" = "فشل التحديث!";
+
+
+"signup unsuccessful" = "الاشتراك غير ناجح";
+
+"Email cannot be empty" = "لا يمكن أن يكون البريد الإلكتروني فارغًا";
+
+"Invalid Phone number (e.g: 971xxxxxxxxx)" = "رقم الهاتف غير صالح (على سبيل المثال: 971xxxxxxxxx)";
+
+"Your application has been successfully submitted" = "تم تقديم طلبك بنجاح";
+
+"full name cannot be empty" = "الاسم الكامل لا يمكن أن يكون فارغا";
+
+"please select a future date" = "يرجى تحديد تاريخ في المستقبل";
+
+"your taxi has been successfully booked " = "";
+
+"cab booked" = "حجزت سيارة أجرة";
+
+
+
+"plate source missing" = "مصدر اللوحة مفقود";
+
+"plate number missing" = "رقم اللوحة مفقود";
+
+"parking hours missing" = "ساعات وقوف السيارات في عداد المفقودين";
+
+"SMS sending service unavailable" = "خدمة إرسال الرسائل القصيرة غير متوفرة";
+
+"Account details not found" = "لم يتم العثور على تفاصيل الحساب";
+
+"Account number cannot be empty" = "لا يمكن أن يكون رقم الحساب فارغًا";
+
+"Invalid Phone number (e.g: 971XXXXXXXXX)" = "رقم الهاتف غير صالح (على سبيل المثال: 971xxxxxxxxx)";
+
+"Incorrect Username or Password" = "البريد الإلكتروني او كلمة المرور غير صحيحة";
+
+
+"Password must be at least 8 characters in length and must cointain a minimum of 1 lower case letter [a-z] 1 upper case letter [A-Z] 1 numeric character [0-9] and 1 minimum special character." = "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل و يجب أن تحتوي على أحرف كبيرة وصغيرة وارقام ورموز خاصة";
+
+"cannot be empty" = "لايمكن ان يكون فارغا";

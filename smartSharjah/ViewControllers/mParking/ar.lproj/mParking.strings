@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Pay your parking by filling information below:"; ObjectID = "E5v-7b-fcU"; */
+"E5v-7b-fcU.text" = "دفع مواقف السيارات الخاصة بك عن طريق ملء المعلومات أدناه";
+
+/* Class = "UIButton"; normalTitle = "Pay for Parking"; ObjectID = "cNa-1Y-zor"; */
+"cNa-1Y-zor.normalTitle" = "احجز";

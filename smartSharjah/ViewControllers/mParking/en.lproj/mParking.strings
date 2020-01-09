@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Pay your parking by filling information below:"; ObjectID = "E5v-7b-fcU"; */
+"E5v-7b-fcU.text" = "Pay your parking by filling information below";
+
+/* Class = "UIButton"; normalTitle = "Pay for Parking"; ObjectID = "cNa-1Y-zor"; */
+"cNa-1Y-zor.normalTitle" = "Book";

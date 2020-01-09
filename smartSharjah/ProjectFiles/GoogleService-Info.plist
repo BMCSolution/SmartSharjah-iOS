@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>690945637930-drvasd5qg0tes22dunir60s6dh1lpr7n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.690945637930-drvasd5qg0tes22dunir60s6dh1lpr7n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBq7h0KmuRd3z0R6GjX2RAmcwRoRat2c0M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>690945637930</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.treehouse.smartsharjah</string>
+	<key>PROJECT_ID</key>
+	<string>smartsharjah-2b690</string>
+	<key>STORAGE_BUCKET</key>
+	<string>smartsharjah-2b690.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:690945637930:ios:061ecc63dde2b18ca7cd53</string>
+	<key>DATABASE_URL</key>
+	<string>https://smartsharjah-2b690.firebaseio.com</string>
+</dict>
+</plist>

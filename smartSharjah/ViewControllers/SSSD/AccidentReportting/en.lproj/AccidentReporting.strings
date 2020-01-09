@@ -1,0 +1,174 @@
+
+/* Class = "UILabel"; text = "Color"; ObjectID = "04y-2H-h6o"; */
+"04y-2H-h6o.text" = "Color";
+
+/* Class = "UILabel"; text = "Insurance Details"; ObjectID = "0gq-Hf-bsV"; */
+"0gq-Hf-bsV.text" = "Insurance details";
+
+/* Class = "UITextField"; placeholder = "Enter your Insurance Company Name"; ObjectID = "0xN-d5-GFG"; */
+"0xN-d5-GFG.placeholder" = "Enter your Insurance company name";
+
+/* Class = "UILabel"; text = "Left"; ObjectID = "1ug-wS-Sch"; */
+"1ug-wS-Sch.text" = "Left";
+
+/* Class = "UILabel"; text = "License Number"; ObjectID = "2yz-Fw-xXe"; */
+"2yz-Fw-xXe.text" = "License Number";
+
+/* Class = "UIButton"; normalTitle = "Save details"; ObjectID = "5OW-ah-Gj6"; */
+"5OW-ah-Gj6.normalTitle" = "Save details";
+
+/* Class = "UITextField"; placeholder = "Enter Policy Number"; ObjectID = "7oE-Qk-xwD"; */
+"7oE-Qk-xwD.placeholder" = "Enter Policy Number";
+
+/* Class = "UIButton"; normalTitle = "Save details"; ObjectID = "7ws-qS-Tfl"; */
+"7ws-qS-Tfl.normalTitle" = "Save Details";
+
+/* Class = "UILabel"; text = "Please move to a safe location and do not obstruct the traffic"; ObjectID = "9VH-ZC-Bpn"; */
+"9VH-ZC-Bpn.text" = "Please move to a safe location and do not obstruct the traffic";
+
+/* Class = "UILabel"; text = "Back"; ObjectID = "9q7-qE-o5t"; */
+"9q7-qE-o5t.text" = "Back";
+
+/* Class = "UITextField"; placeholder = "Enter your Email Number"; ObjectID = "AXj-59-pdW"; */
+"AXj-59-pdW.placeholder" = "Enter your email";
+
+/* Class = "UILabel"; text = "Right"; ObjectID = "Amu-5j-clC"; */
+"Amu-5j-clC.text" = "Right";
+
+/* Class = "UITextField"; placeholder = "Enter your Mobile Number"; ObjectID = "BT7-bW-1Bj"; */
+"BT7-bW-1Bj.placeholder" = "Enter your mobile number";
+
+/* Class = "UILabel"; text = "Fetching Location..."; ObjectID = "Bkh-ys-kYv"; */
+"Bkh-ys-kYv.text" = "Fetching location";
+
+/* Class = "UILabel"; text = "Owner Name"; ObjectID = "C3H-hp-Wef"; */
+"C3H-hp-Wef.text" = "Owner Name";
+
+/* Class = "UITextField"; placeholder = "Enter Expiry of your Insurance"; ObjectID = "EQY-aH-Be0"; */
+"EQY-aH-Be0.placeholder" = "Enter expiry of your insurance";
+
+/* Class = "UILabel"; text = "Review the Information"; ObjectID = "Eea-Or-vQS"; */
+"Eea-Or-vQS.text" = "Review the information";
+
+/* Class = "UITextField"; placeholder = "Enter License Number"; ObjectID = "HQ9-rU-xfv"; */
+"HQ9-rU-xfv.placeholder" = "Enter license number";
+
+/* Class = "UILabel"; text = "Source"; ObjectID = "IoJ-cw-vIz"; */
+"IoJ-cw-vIz.text" = "Source";
+
+/* Class = "UITextField"; placeholder = "PLATE NUMBER"; ObjectID = "JOT-m1-X5i"; */
+"JOT-m1-X5i.placeholder" = "PLATE NUMBER";
+
+/* Class = "UILabel"; text = "Confirm your location"; ObjectID = "KEL-YS-ZAI"; */
+"KEL-YS-ZAI.text" = "Confirm your location";
+
+/* Class = "UITextField"; placeholder = "Select"; ObjectID = "M2f-Js-Spb"; */
+"M2f-Js-Spb.placeholder" = "Select";
+
+/* Class = "UILabel"; text = "Faulty Car Details"; ObjectID = "Npg-c1-3gd"; */
+"Npg-c1-3gd.text" = "Faulty car details";
+
+/* Class = "UILabel"; text = "License Details"; ObjectID = "OXE-fD-OU8"; */
+"OXE-fD-OU8.text" = "License details";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "TFh-t5-Rdp"; */
+"TFh-t5-Rdp.text" = "Title";
+
+/* Class = "UILabel"; text = "Source"; ObjectID = "VEG-sF-Kio"; */
+"VEG-sF-Kio.text" = "Source";
+
+/* Class = "UILabel"; text = "Insurance Details"; ObjectID = "WT0-lm-PRa"; */
+"WT0-lm-PRa.text" = "Insurance details";
+
+/* Class = "UILabel"; text = "Registration"; ObjectID = "Y1n-P0-JXf"; */
+"Y1n-P0-JXf.text" = "Registration";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Ywn-Z2-xa7"; */
+"Ywn-Z2-xa7.text" = "Title";
+
+/* Class = "UILabel"; text = "Front"; ObjectID = "Z68-1I-L3x"; */
+"Z68-1I-L3x.text" = "Front";
+
+/* Class = "UILabel"; text = "Policy Number"; ObjectID = "a74-Jj-cbY"; */
+"a74-Jj-cbY.text" = "Policy Number";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "bdi-ds-N1R"; */
+"bdi-ds-N1R.text" = "Date of Birth";
+
+/* Class = "UILabel"; text = "Contact Information"; ObjectID = "crZ-nW-ont"; */
+"crZ-nW-ont.text" = "Contact Information";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "dA6-SU-vyo"; */
+"dA6-SU-vyo.text" = "Detail";
+
+/* Class = "UILabel"; text = "Select the Type of Accident"; ObjectID = "dkD-aF-Bos"; */
+"dkD-aF-Bos.text" = "Select the type of accident";
+
+/* Class = "UILabel"; text = "Contact Information"; ObjectID = "duD-6C-jdF"; */
+"duD-6C-jdF.text" = "Contact Information";
+
+/* Class = "UILabel"; text = "Insurance Expiry Date"; ObjectID = "e8p-bn-bVg"; */
+"e8p-bn-bVg.text" = "Insurance Expiry Date";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "eKp-Y5-Vl6"; */
+"eKp-Y5-Vl6.text" = "Gender";
+
+/* Class = "UILabel"; text = "Mobile Number"; ObjectID = "g3v-Rx-FFl"; */
+"g3v-Rx-FFl.text" = "Mobile Number";
+
+/* Class = "UILabel"; text = "Faulty Car Details"; ObjectID = "gUY-2q-wkW"; */
+"gUY-2q-wkW.text" = "Faulty car details";
+
+/* Class = "UILabel"; text = "Upload Pictures of Damaged Areas"; ObjectID = "hjJ-w6-Aw9"; */
+"hjJ-w6-Aw9.text" = "Upload pictures of damaged areas";
+
+/* Class = "UIButton"; normalTitle = "Report Accident"; ObjectID = "hul-bG-AoR"; */
+"hul-bG-AoR.normalTitle" = "Report Accident";
+
+/* Class = "UITextField"; placeholder = "Select"; ObjectID = "i2z-ih-jOT"; */
+"i2z-ih-jOT.placeholder" = "Select";
+
+/* Class = "UILabel"; text = "License Details"; ObjectID = "jBB-7B-sbW"; */
+"jBB-7B-sbW.text" = "License details";
+
+/* Class = "UILabel"; text = "Insurance Company"; ObjectID = "kde-N0-E0d"; */
+"kde-N0-E0d.text" = "Insurance company";
+
+/* Class = "UILabel"; text = "Non-Faulty Car Details"; ObjectID = "nIJ-HK-qrT"; */
+"nIJ-HK-qrT.text" = "Non-Faulty car details";
+
+/* Class = "UILabel"; text = "Contact Information"; ObjectID = "nVQ-U3-YMd"; */
+"nVQ-U3-YMd.text" = "Contact information";
+
+/* Class = "UITextField"; placeholder = "Enter Owners Name"; ObjectID = "oyd-En-4J7"; */
+"oyd-En-4J7.placeholder" = "Enter Owners name";
+
+/* Class = "UIButton"; normalTitle = "Submit Report"; ObjectID = "pES-mI-gtU"; */
+"pES-mI-gtU.normalTitle" = "Submit Report";
+
+/* Class = "UILabel"; text = "License Details"; ObjectID = "pRS-S5-dZJ"; */
+"pRS-S5-dZJ.text" = "License details";
+
+/* Class = "UITextField"; placeholder = "Select"; ObjectID = "pks-cP-4UR"; */
+"pks-cP-4UR.placeholder" = "Select";
+
+/* Class = "UIButton"; normalTitle = "Save details"; ObjectID = "rQp-9w-PdB"; */
+"rQp-9w-PdB.normalTitle" = "Save details";
+
+/* Class = "UILabel"; text = "Email Address"; ObjectID = "udY-QF-XVP"; */
+"udY-QF-XVP.text" = "Email Address";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "uij-uD-t1L"; */
+"uij-uD-t1L.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Insurance Details"; ObjectID = "ujl-gy-BCg"; */
+"ujl-gy-BCg.text" = "Insurance details";
+
+/* Class = "UILabel"; text = "License"; ObjectID = "ukB-bi-ZYr"; */
+"ukB-bi-ZYr.text" = "License";
+
+/* Class = "UITextField"; placeholder = "Select"; ObjectID = "vF4-vL-I3L"; */
+"vF4-vL-I3L.placeholder" = "Select";
+
+/* Class = "UITextField"; placeholder = "Select"; ObjectID = "yWn-ex-7PP"; */
+"yWn-ex-7PP.placeholder" = "Select";

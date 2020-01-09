@@ -1,0 +1,230 @@
+PODS:
+  - AEXML (4.5.0)
+  - Alamofire (4.9.1)
+  - AlamofireRSSParser (2.2.0):
+    - Alamofire
+  - ArcGIS-Runtime-SDK-iOS (100.4)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - DropDown (2.3.13)
+  - Fabric (1.10.2)
+  - Firebase/Analytics (6.13.0):
+    - Firebase/Core
+  - Firebase/Core (6.13.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.1.6)
+  - Firebase/CoreOnly (6.13.0):
+    - FirebaseCore (= 6.4.0)
+  - FirebaseAnalytics (6.1.6):
+    - FirebaseCore (~> 6.4)
+    - FirebaseInstanceID (~> 4.2)
+    - GoogleAppMeasurement (= 6.1.6)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (= 0.3.9011)
+  - FirebaseCore (6.4.0):
+    - FirebaseCoreDiagnostics (~> 1.0)
+    - FirebaseCoreDiagnosticsInterop (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Logger (~> 6.2)
+  - FirebaseCoreDiagnostics (1.1.2):
+    - FirebaseCoreDiagnosticsInterop (~> 1.0)
+    - GoogleDataTransportCCTSupport (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Logger (~> 6.2)
+    - nanopb (~> 0.3.901)
+  - FirebaseCoreDiagnosticsInterop (1.1.0)
+  - FirebaseInstanceID (4.2.7):
+    - FirebaseCore (~> 6.0)
+    - GoogleUtilities/Environment (~> 6.0)
+    - GoogleUtilities/UserDefaults (~> 6.0)
+  - GoogleAppMeasurement (6.1.6):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (= 0.3.9011)
+  - GoogleDataTransport (3.2.0)
+  - GoogleDataTransportCCTSupport (1.2.2):
+    - GoogleDataTransport (~> 3.2)
+    - nanopb (~> 0.3.901)
+  - GoogleUtilities/AppDelegateSwizzler (6.3.2):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.3.2)
+  - GoogleUtilities/Logger (6.3.2):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.3.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.3.2):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.3.2)"
+  - GoogleUtilities/Reachability (6.3.2):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.3.2):
+    - GoogleUtilities/Logger
+  - HTMLParser (0.1.2)
+  - IQKeyboardManagerSwift (6.5.4)
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
+  - MaterialComponents/AnimationTiming (97.0.1)
+  - MaterialComponents/Buttons (97.0.1):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Elevation (97.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (97.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/private/Application (97.0.1)
+  - MaterialComponents/private/Color (97.0.1)
+  - MaterialComponents/private/Math (97.0.1)
+  - MaterialComponents/Ripple (97.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (97.0.1)
+  - MaterialComponents/ShadowLayer (97.0.1):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (97.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Typography (97.0.1):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Moya/RxSwift (13.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - nanopb (0.3.9011):
+    - nanopb/decode (= 0.3.9011)
+    - nanopb/encode (= 0.3.9011)
+  - nanopb/decode (0.3.9011)
+  - nanopb/encode (0.3.9011)
+  - Result (4.1.0)
+  - RxSwift (4.5.0)
+  - SideMenu (5.0.3)
+  - SwiftDate (6.1.0)
+  - SwiftyJSON (4.3.0)
+  - Tags (0.3.1)
+  - TIFeedParser (2.2.3):
+    - AEXML
+    - SwiftDate
+  - TPKeyboardAvoidingSwift (3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireRSSParser
+  - ArcGIS-Runtime-SDK-iOS
+  - Crashlytics (~> 3.14.0)
+  - DropDown
+  - Fabric (~> 1.10.2)
+  - Firebase/Analytics
+  - HTMLParser
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - MaterialComponents/Buttons
+  - Moya
+  - Moya/RxSwift
+  - SideMenu (~> 5.0)
+  - SwiftyJSON (~> 4.0)
+  - Tags
+  - TIFeedParser (~> 2.2)
+  - TPKeyboardAvoidingSwift
+
+SPEC REPOS:
+  trunk:
+    - AEXML
+    - Alamofire
+    - AlamofireRSSParser
+    - ArcGIS-Runtime-SDK-iOS
+    - Crashlytics
+    - DropDown
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseInstanceID
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
+    - GoogleUtilities
+    - HTMLParser
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - Moya
+    - nanopb
+    - Result
+    - RxSwift
+    - SideMenu
+    - SwiftDate
+    - SwiftyJSON
+    - Tags
+    - TIFeedParser
+    - TPKeyboardAvoidingSwift
+
+SPEC CHECKSUMS:
+  AEXML: 0e8f1d874fa033ca6b3909452a8bc362faad46e6
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireRSSParser: 4feb3c8cedf1fba2759ba30cf37cdf6ba45efd38
+  ArcGIS-Runtime-SDK-iOS: 3e3f7480fe2a3b0c094ed57977cab1482e81ec6f
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
+  FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
+  FirebaseCore: 307ea2508df730c5865334e41965bd9ea344b0e5
+  FirebaseCoreDiagnostics: 511f4f3ed7d440bb69127e8b97c2bc8befae639e
+  FirebaseCoreDiagnosticsInterop: e9b1b023157e3a2fc6418b5cb601e79b9af7b3a0
+  FirebaseInstanceID: ebd2ea79ee38db0cb5f5167b17a0d387e1cc7b6e
+  GoogleAppMeasurement: dfe55efa543e899d906309eaaac6ca26d249862f
+  GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
+  GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
+  GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
+  HTMLParser: 0aff2823b285cfe41996d55d1ae742a27ff89305
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
+  MaterialComponents: f0663c214cc879861da6a7f8add330c3c0ec017d
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  Tags: 77420a200531fb338563b07279858edb51d080c5
+  TIFeedParser: 332002c46d489d46c99134f1e19a79406a3a6629
+  TPKeyboardAvoidingSwift: ce1a75e0bc3af6b485f8bfa1d0a8320cfc565851
+
+PODFILE CHECKSUM: 19ac0e5e07f084b46c45c0fc6d8d620d402cdf15
+
+COCOAPODS: 1.8.4

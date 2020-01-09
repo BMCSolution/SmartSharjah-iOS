@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "Qualification"; ObjectID = "1Ri-D2-KH5"; */
+"1Ri-D2-KH5.text" = "Qualification";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "1kg-xc-qCZ"; */
+"1kg-xc-qCZ.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Date of Expiry"; ObjectID = "6gk-Sa-UOz"; */
+"6gk-Sa-UOz.text" = "Date of expiry";
+
+/* Class = "UILabel"; text = "Copy of emirates id (front page)*"; ObjectID = "8it-Ov-8xP"; */
+"8it-Ov-8xP.text" = "Copy of emirates id (front page)";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "9hi-TZ-yBj"; */
+"9hi-TZ-yBj.text" = "Gender";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "ETS-Ad-zel"; */
+"ETS-Ad-zel.text" = "Date of birth";
+
+/* Class = "UILabel"; text = "Copy of Residency Card"; ObjectID = "Fni-CZ-QN2"; */
+"Fni-CZ-QN2.text" = "Copy of residency card";
+
+/* Class = "UIButton"; normalTitle = "Choose Picture"; ObjectID = "Lm6-Aw-RId"; */
+"Lm6-Aw-RId.normalTitle" = "Select Picture";
+
+/* Class = "UILabel"; text = "Desired Gender*"; ObjectID = "MdF-Ga-TuB"; */
+"MdF-Ga-TuB.text" = "Desired gender";
+
+/* Class = "UILabel"; text = "File"; ObjectID = "Osg-x4-Qwg"; */
+"Osg-x4-Qwg.text" = "File";
+
+/* Class = "UILabel"; text = "Date of Birth"; ObjectID = "Qk6-ZW-dmy"; */
+"Qk6-ZW-dmy.text" = "Date of birth";
+
+/* Class = "UILabel"; text = "Copy of Passport*"; ObjectID = "VIb-0B-PXr"; */
+"VIb-0B-PXr.text" = "Copy of passport";
+
+/* Class = "UILabel"; text = "Place of Issue"; ObjectID = "Ybb-Hr-raP"; */
+"Ybb-Hr-raP.text" = "Place of issue";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "aRy-jv-rFQ"; */
+"aRy-jv-rFQ.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Do you mind adopting a child who has been adopted before?"; ObjectID = "aU5-st-hHA"; */
+"aU5-st-hHA.text" = "Do you mind adopting a child who has been adopted before?";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "cmv-hZ-1cF"; */
+"cmv-hZ-1cF.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Nationality"; ObjectID = "d2y-gV-NeJ"; */
+"d2y-gV-NeJ.text" = "Nationality";
+
+/* Class = "UILabel"; text = "Have you ever cared for a child of unknown parentage?"; ObjectID = "dcE-UP-Ct6"; */
+"dcE-UP-Ct6.text" = "Have you ever cared for a child of unknown parentage?";
+
+/* Class = "UILabel"; text = "Do you agree to lactaction conditions?"; ObjectID = "ezO-CA-t8R"; */
+"ezO-CA-t8R.text" = "Do you agree to lactaction conditions?";
+
+/* Class = "UILabel"; text = "Employment Status"; ObjectID = "foi-o1-hqT"; */
+"foi-o1-hqT.text" = "Employment status";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "hZR-E7-lbU"; */
+"hZR-E7-lbU.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Identification Documents"; ObjectID = "nUN-xv-SrX"; */
+"nUN-xv-SrX.text" = "Identification documents";
+
+/* Class = "UILabel"; text = "Marital Status"; ObjectID = "oF9-vG-BMe"; */
+"oF9-vG-BMe.text" = "Marital status";
+
+/* Class = "UILabel"; text = "Copy of emirates id (back page)*"; ObjectID = "vZ6-7u-vfP"; */
+"vZ6-7u-vfP.text" = "Copy of emirates id (back page)";
+
+/* Class = "UILabel"; text = "Update your personal data"; ObjectID = "zgz-V8-TNN"; */
+"zgz-V8-TNN.text" = "Update your personal data";

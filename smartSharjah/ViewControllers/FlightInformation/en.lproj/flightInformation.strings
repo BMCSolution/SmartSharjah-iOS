@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "AirLine Name - Flight Code"; ObjectID = "3Vh-fI-9TD"; */
+"3Vh-fI-9TD.text" = "AirLine Name - Flight Code";
+
+/* Class = "UILabel"; text = "From Date"; ObjectID = "B4K-tq-h2v"; */
+"B4K-tq-h2v.text" = "From Date";
+
+/* Class = "UISegmentedControl"; HL4-Zn-Jgb.segmentTitles[0] = "Arrival"; ObjectID = "HL4-Zn-Jgb"; */
+"HL4-Zn-Jgb.segmentTitles[0]" = "Arrival";
+
+/* Class = "UISegmentedControl"; HL4-Zn-Jgb.segmentTitles[1] = "Departure"; ObjectID = "HL4-Zn-Jgb"; */
+"HL4-Zn-Jgb.segmentTitles[1]" = "Departure";
+
+/* Class = "UIButton"; normalTitle = "Select Date"; ObjectID = "Ka1-Te-pxL"; */
+"Ka1-Te-pxL.normalTitle" = "Select Date";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "LLg-1j-WG9"; */
+"LLg-1j-WG9.normalTitle" = "Search";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "OIG-CB-Czl"; */
+"OIG-CB-Czl.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "12:00"; ObjectID = "T5Y-HY-QSc"; */
+"T5Y-HY-QSc.text" = "12:00";
+
+/* Class = "UIButton"; normalTitle = "Select Date"; ObjectID = "THF-4j-17I"; */
+"THF-4j-17I.normalTitle" = "Select Date";
+
+/* Class = "UILabel"; text = "12-02-2019"; ObjectID = "ecX-fO-olG"; */
+"ecX-fO-olG.text" = "12-02-2019";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "fM2-Pv-Tpn"; */
+"fM2-Pv-Tpn.text" = "From";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "ikF-xa-Kj7"; */
+"ikF-xa-Kj7.text" = "To";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "lBv-F2-mcV"; */
+"lBv-F2-mcV.text" = "Status";
+
+/* Class = "UILabel"; text = "To Date"; ObjectID = "rfn-zp-UjT"; */
+"rfn-zp-UjT.text" = "To Date";
+
+/* Class = "UILabel"; text = "CODE"; ObjectID = "tmp-vk-Hfs"; */
+"tmp-vk-Hfs.text" = "CODE";
+
+/* Class = "UILabel"; text = "Enter required information to search"; ObjectID = "UEE-vg-T4v"; */
+"UEE-vg-T4v.text" = "Enter required information to search";

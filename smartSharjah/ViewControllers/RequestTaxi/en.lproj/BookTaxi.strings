@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "2ah-S2-0x9"; */
+"2ah-S2-0x9.text" = "Location";
+
+/* Class = "UILabel"; text = "Pick Up Location"; ObjectID = "430-hk-yXi"; */
+"430-hk-yXi.text" = "Pick Up Location";
+
+/* Class = "UIButton"; normalTitle = "Book a Taxi"; ObjectID = "B0U-Gs-7cr"; */
+"B0U-Gs-7cr.normalTitle" = "Book a Taxi";
+
+/* Class = "UILabel"; text = "Drop Off Location"; ObjectID = "EdN-4E-Iul"; */
+"EdN-4E-Iul.text" = "Drop Off Location";
+
+/* Class = "UITextField"; placeholder = "Destination"; ObjectID = "K0x-Ze-Swj"; */
+"K0x-Ze-Swj.placeholder" = "Destination";
+
+/* Class = "UILabel"; text = "Please fill in the required information"; ObjectID = "Rg2-Xa-kEm"; */
+"Rg2-Xa-kEm.text" = "Please fill-in the required information";
+
+/* Class = "UILabel"; text = "Fetching Location"; ObjectID = "XzW-i5-bUB"; */
+"XzW-i5-bUB.text" = "Fetching Location";
+
+/* Class = "UIButton"; normalTitle = "Confirm Drop off"; ObjectID = "tqw-I0-VQq"; */
+"tqw-I0-VQq.normalTitle" = "Confirm";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "zwV-aw-COO"; */
+"zwV-aw-COO.text" = "Location";

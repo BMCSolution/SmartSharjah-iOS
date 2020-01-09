@@ -1,0 +1,129 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "5Xw-8Y-PlV"; */
+"5Xw-8Y-PlV.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "751-jj-tmo"; */
+"751-jj-tmo.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "7fJ-gF-1yb"; */
+"7fJ-gF-1yb.normalTitle" = "Forgot Password?";
+
+/* Class = "UILabel"; text = "Your login details"; ObjectID = "Bb4-rE-3zE"; */
+"Bb4-rE-3zE.text" = "Your login details";
+
+/* Class = "UIButton"; normalTitle = "Create new account"; ObjectID = "BuT-FA-HWp"; */
+"BuT-FA-HWp.normalTitle" = "Create new account";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Dzm-Po-gM0"; */
+"Dzm-Po-gM0.title" = "Item";
+
+/* Class = "UILabel"; text = "Enter the OTP received on your Phone"; ObjectID = "JgO-UW-O9O"; */
+"JgO-UW-O9O.text" = "Enter the OTP received on your Mobile number";
+
+/* Class = "UILabel"; text = "Your login details"; ObjectID = "Jte-uc-lCG"; */
+"Jte-uc-lCG.text" = "Your login details";
+
+/* Class = "UIButton"; normalTitle = "Send OTP"; ObjectID = "Kxj-7p-SUh"; */
+"Kxj-7p-SUh.normalTitle" = "Send OTP";
+
+/* Class = "UITextField"; placeholder = "Your Email"; ObjectID = "Lo4-UN-kaG"; */
+"Lo4-UN-kaG.placeholder" = "Your Email";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Td4-am-UEx"; */
+"Td4-am-UEx.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "UAf-SH-dRA"; */
+"UAf-SH-dRA.normalTitle" = "Forgot Password?";
+
+/* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "WiA-nM-wKL"; */
+"WiA-nM-wKL.placeholder" = "Email";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Xsa-1z-7F3"; */
+"Xsa-1z-7F3.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Create new Account"; ObjectID = "ZYL-NL-re6"; */
+"ZYL-NL-re6.normalTitle" = "Create new account";
+
+/* Class = "UIButton"; normalTitle = "Remember"; ObjectID = "Zye-Uk-u8r"; */
+"Zye-Uk-u8r.normalTitle" = "Remember";
+
+/* Class = "UIButton"; normalTitle = "Login as Guest"; ObjectID = "a5i-jZ-2Hz"; */
+"a5i-jZ-2Hz.normalTitle" = "Login as Guest";
+
+/* Class = "UIButton"; normalTitle = "Login to Existing Account"; ObjectID = "b7h-vx-2of"; */
+"b7h-vx-2of.normalTitle" = "Login to existing account";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "b9l-jf-Tfl"; */
+"b9l-jf-Tfl.placeholder" = "Confirm Password";
+
+/* Class = "UIButton"; normalTitle = "      Remember"; ObjectID = "boj-6o-aI4"; */
+"boj-6o-aI4.normalTitle" = "      Remember me";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "ccC-8G-ZB1"; */
+"ccC-8G-ZB1.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Enter your Mobile Number for Verification"; ObjectID = "fKO-WI-KZB"; */
+"fKO-WI-KZB.text" = "Enter your Mobile Number";
+
+/* Class = "UILabel"; text = "Create new account"; ObjectID = "iEY-IE-xfg"; */
+"iEY-IE-xfg.text" = "Create new account";
+
+/* Class = "UIButton"; normalTitle = "Login as Guest"; ObjectID = "lZ8-Jm-yI7"; */
+"lZ8-Jm-yI7.normalTitle" = "Login as Guest";
+
+/* Class = "UIButton"; normalTitle = "Create Account"; ObjectID = "luf-3t-Ks5"; */
+"luf-3t-Ks5.normalTitle" = "Create Account";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "mta-4z-5oy"; */
+"mta-4z-5oy.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Passsword"; ObjectID = "nas-9q-XA1"; */
+"nas-9q-XA1.placeholder" = "Passsword";
+
+/* Class = "UITextField"; placeholder = "Your Name"; ObjectID = "p25-Jb-mIU"; */
+"p25-Jb-mIU.placeholder" = "Full Name";
+
+/* Class = "UIButton"; normalTitle = "عربى"; ObjectID = "r10-Sk-kNW"; */
+"r10-Sk-kNW.normalTitle" =  "العربية";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "rAE-40-zWg"; */
+"rAE-40-zWg.normalTitle" = "English";
+
+/* Class = "UIButton"; normalTitle = "Submit Code"; ObjectID = "wu2-ZT-gSF"; */
+"wu2-ZT-gSF.normalTitle" = "Submit Code";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "yZg-h5-qXw"; */
+"yZg-h5-qXw.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "zb9-Xt-OVU"; */
+"zb9-Xt-OVU.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "vmj-S7-bNI"; */
+"vmj-S7-bNI.text" = "Privacy Policy";
+
+
+/* Class = "UILabel"; text = "Terms & Conditions"; ObjectID = "ASL-7u-wQo"; */
+"ASL-7u-wQo.text" = "Terms & Conditions";
+
+
+/* Class = "UILabel"; text = "SMART SHARJAH"; ObjectID = "ASL-7u-wQo"; */
+"BPz-iy-5SU.text" = "SMART SHARJAH";
+
+/* Class = "UILabel"; text = "Welcome to Smart Sharjah"; ObjectID = "3cJ-aL-NS7"; */
+"3cJ-aL-NS7.text" = "Welcome to Smart Sharjah";
+
+
+/* Class = "UILabel"; text = "SMART SHARJAH"; ObjectID = "ASL-7u-wQo"; */
+"6bj-li-Ud1.text" = "SMART SHARJAH";
+
+/* Class = "UILabel"; text = "Welcome to Smart Sharjah"; ObjectID = "3cJ-aL-NS7"; */
+"Did-P4-sjM.text" = "Welcome to Smart Sharjah";
+
+/* Class = "UILabel"; text = "SMART SHARJAH"; ObjectID = "ASL-7u-wQo"; */
+"pjr-4f-J4D.text" = "SMART SHARJAH";
+
+/* Class = "UILabel"; text = "Welcome to Smart Sharjah"; ObjectID = "3cJ-aL-NS7"; */
+"jRn-Yg-qGc.text" = "Welcome to Smart Sharjah";
+
+/* Class = "UILabel"; text = "Enter your Email"; ObjectID = "baB-Gu-kA3"; */
+"baB-Gu-kA3.text" = "Enter your Email";

@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Payments History"; ObjectID = "B2I-UV-Lat"; */
+"B2I-UV-Lat.text" = "تاريخ المدفوعات";
+
+/* Class = "UITabBarItem"; title = "Payments"; ObjectID = "XoY-Qn-uKt"; */
+"XoY-Qn-uKt.title" = "المدفوعات";

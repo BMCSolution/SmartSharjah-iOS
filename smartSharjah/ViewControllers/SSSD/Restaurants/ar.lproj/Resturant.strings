@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5It-IJ-6Qa"; */
+"5It-IJ-6Qa.text" = "Label";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "F7Q-QY-3vO"; */
+"F7Q-QY-3vO.text" = "Phone";
+
+/* Class = "UILabel"; text = "Activity Title"; ObjectID = "Hy8-V4-T9P"; */
+"Hy8-V4-T9P.text" = "Activity Title";
+
+/* Class = "UILabel"; text = "Website"; ObjectID = "K7c-ZS-Dp4"; */
+"K7c-ZS-Dp4.text" = "Website";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "Uih-aj-Wkn"; */
+"Uih-aj-Wkn.text" = "Email";
+
+/* Class = "UILabel"; text = "budget"; ObjectID = "bUe-Zz-yp7"; */
+"bUe-Zz-yp7.text" = "budget";
+
+/* Class = "UILabel"; text = "COntent Type"; ObjectID = "jo2-WS-5jq"; */
+"jo2-WS-5jq.text" = "COntent Type";
+
+/* Class = "UILabel"; text = "Activity Name"; ObjectID = "p62-Jm-PDi"; */
+"p62-Jm-PDi.text" = "Activity Name";
+
+/* Class = "UILabel"; text = "TypeFlag"; ObjectID = "r9c-Zj-ci8"; */
+"r9c-Zj-ci8.text" = "TypeFlag";
+
+/* Class = "UILabel"; text = "DestFlag"; ObjectID = "uxE-5B-MGR"; */
+"uxE-5B-MGR.text" = "DestFlag";
+
+/* Class = "UILabel"; text = "Subtitlte"; ObjectID = "xZn-dT-219"; */
+"xZn-dT-219.text" = "Subtitlte";

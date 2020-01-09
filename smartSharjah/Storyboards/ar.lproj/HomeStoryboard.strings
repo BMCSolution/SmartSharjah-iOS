@@ -1,0 +1,136 @@
+
+/* Class = "UIButton"; normalTitle = "..."; ObjectID = "0ci-QD-cHb"; */
+"0ci-QD-cHb.normalTitle" = "...";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "21e-1h-brp"; */
+"21e-1h-brp.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Enter Account Number"; ObjectID = "2wk-wv-4cO"; */
+"2wk-wv-4cO.placeholder" = "أدخل رقم الحساب";
+
+/* Class = "UILabel"; text = "Description:"; ObjectID = "2wm-U6-6sf"; */
+"2wm-U6-6sf.text" = "وصف:";
+
+/* Class = "UILabel"; text = "Date:"; ObjectID = "3LK-q1-KeD"; */
+"3LK-q1-KeD.text" = "تاريخ:";
+
+/* Class = "UITextField"; placeholder = "Consultation Type"; ObjectID = "53G-lv-2Ak"; */
+"53G-lv-2Ak.placeholder" = "اكتب التشاور";
+
+/* Class = "UIButton"; normalTitle = "..."; ObjectID = "6g2-Yh-MBe"; */
+"6g2-Yh-MBe.normalTitle" = "...";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8Tf-SR-WdQ"; */
+"8Tf-SR-WdQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9DJ-2r-EGC"; */
+"9DJ-2r-EGC.text" = "Label";
+
+/* Class = "UILabel"; text = "Description:"; ObjectID = "9DL-k1-Uvh"; */
+"9DL-k1-Uvh.text" = "وصف:";
+
+/* Class = "UILabel"; text = "Date:"; ObjectID = "9bJ-Hj-9BC"; */
+"9bJ-Hj-9BC.text" = "تاريخ:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "B5Z-Ce-FtO"; */
+"B5Z-Ce-FtO.text" = "Label";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "B7Q-Rv-kV7"; */
+"B7Q-Rv-kV7.placeholder" = "البحث عن خدمة";
+
+/* Class = "UITextField"; placeholder = "Consultation Details"; ObjectID = "Bv3-e3-iuJ"; */
+"Bv3-e3-iuJ.placeholder" = "تفاصيل التشاور";
+
+/* Class = "UILabel"; text = "Payment History"; ObjectID = "EOh-Nd-swg"; */
+"EOh-Nd-swg.text" = "الأحدث استخداما";
+
+/* Class = "UIButton"; normalTitle = "Search Trade Names"; ObjectID = "Enu-0x-rxb"; */
+"Enu-0x-rxb.normalTitle" =  "بحث";
+
+/* Class = "UILabel"; text = "Other Services"; ObjectID = "GBR-Zy-x7x"; */
+"GBR-Zy-x7x.text" = "خدمات أخرى";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "J0w-au-XKT"; */
+"J0w-au-XKT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KFT-cI-9nx"; */
+"KFT-cI-9nx.text" = "Label";
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "N6a-MH-ZFS"; */
+"N6a-MH-ZFS.placeholder" = "البحث عن خدمة";
+
+/* Class = "UIButton"; normalTitle = "..."; ObjectID = "PiU-0N-fAC"; */
+"PiU-0N-fAC.normalTitle" = "...";
+
+/* Class = "UILabel"; text = "Amount:"; ObjectID = "Qt3-Mz-IKs"; */
+"Qt3-Mz-IKs.text" = "كمية:";
+
+/* Class = "UILabel"; text = "News"; ObjectID = "RYl-eu-OsS"; */
+"RYl-eu-OsS.text" = "الأخبار";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SY4-Ia-9Ga"; */
+"SY4-Ia-9Ga.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "Sdp-Iu-eND"; */
+"Sdp-Iu-eND.placeholder" = "الاسم بالكامل";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TfT-ZE-fkf"; */
+"TfT-ZE-fkf.text" = "Label";
+
+/* Class = "UILabel"; text = "Government Services"; ObjectID = "Vv8-ta-ysB"; */
+"Vv8-ta-ysB.text" = "الخدمات الحكومية";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XxA-n7-chC"; */
+"XxA-n7-chC.text" = "Label";
+
+/* Class = "UILabel"; text = "User Name"; ObjectID = "Zm9-6I-WfZ"; */
+"Zm9-6I-WfZ.text" = "اسم المستخدم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bOJ-VV-3Rq"; */
+"bOJ-VV-3Rq.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "fDh-uC-H2F"; */
+"fDh-uC-H2F.title" = "الرئيسية";
+
+/* Class = "UIButton"; normalTitle = "Get Details"; ObjectID = "fpB-4S-GG1"; */
+"fpB-4S-GG1.normalTitle" = "الحصول على التفاصيل";
+
+/* Class = "UITextField"; placeholder = "Consultation category"; ObjectID = "gYE-Db-q1Y"; */
+"gYE-Db-q1Y.placeholder" = "فئة التشاور";
+
+/* Class = "UILabel"; text = "Item"; ObjectID = "iA1-2e-qH1"; */
+"iA1-2e-qH1.text" = "Item";
+
+/* Class = "UITextField"; placeholder = "Mobile Number"; ObjectID = "jNZ-cI-HEb"; */
+"jNZ-cI-HEb.placeholder" = "رقم الهاتف المحمول";
+
+/* Class = "UIButton"; normalTitle = "Agree & Start"; ObjectID = "kME-6r-p3a"; */
+"kME-6r-p3a.normalTitle" = "توافق وابدأ";
+
+/* Class = "UITextField"; placeholder = "Enter Trade Name"; ObjectID = "okC-Vs-wOY"; */
+"okC-Vs-wOY.placeholder" =  "أدخل الاسم التجاري باللغة العربية";
+
+/* Class = "UILabel"; text = "Amount:"; ObjectID = "p4v-0i-jCc"; */
+"p4v-0i-jCc.text" = "كمية:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tRK-Nd-YMJ"; */
+"tRK-Nd-YMJ.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Smart Sharjah"; ObjectID = "urZ-SG-Cgh"; */
+"urZ-SG-Cgh.title" = "الشارقة – مدينة ذكية";
+
+/* Class = "UIViewController"; title = "Home"; ObjectID = "vlk-2c-qik"; */
+"vlk-2c-qik.title" = "الصفحة الرئيسية";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "weq-Yp-Drs"; */
+"weq-Yp-Drs.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "xmQ-Cp-W6b"; */
+"xmQ-Cp-W6b.normalTitle" = "تقديم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xwa-Ou-IbI"; */
+"xwa-Ou-IbI.text" = "Label";
+
+/* Class = "UILabel"; text = "
+ No recent services found"; ObjectID = "iaP-NH-cCY"; */
+"iaP-NH-cCY.text" = "لم يتم استخدام أي خدمات بعد";

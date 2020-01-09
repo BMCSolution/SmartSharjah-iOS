@@ -1,0 +1,88 @@
+/* 
+  Localizable.strings
+  smartSharjah
+
+  Created by OzzY on 8/28/19.
+  Copyright © 2019 DEG. All rights reserved.
+*/
+"Smart Sharjah" = "SMART SHARJAH";
+
+"OK" = "OK";
+ 
+"Alert" = "Alert";
+
+"Please enter matching Password" = "Please enter matching Password";
+
+"Password & Confirm Password do not match" = "Password & Confirm Password do not match";
+
+"Please enter a valid name" = "Please enter a valid name";
+
+"Please enter a valid Password"  = "Please enter a valid Password";
+
+"Please enter a valid email" =  "Please enter a valid email";
+
+"Coming soon..." = "Service is not available";
+
+"No Internet Connection" = "No Internet Connection";
+
+
+"Make sure your device is connected to the internet." = "Make sure your device is connected to the internet.";
+
+"You have successfully logged out" = "You have successfully logged out";
+
+"Password should have 8 characters or more" = "Password should have 8 characters or more";
+
+"Password should have at least one lower case letter" = "Password should have at least one lower case letter";
+
+"Password should have at least one upper case letter" = "Password should have at least one upper case letter";
+
+"Password should contain at least one digit" = "Password should contain at least one digit";
+
+"Password should contain at least one special character" = "Password should contain at least one special character";
+
+"Login to use this feature" = "Login to use this feature";
+
+"Select a Language or swipe up for Login" = "Select a Language or swipe up for Login";
+
+"Successfully Updated Profile Image" = "Successfully Updated Profile Image";
+
+"Update failed!" = "Update failed!";
+
+
+"signup unsuccessful" = "signup unsuccessful";
+
+"Email cannot be empty" = "Email cannot be empty";
+
+"Invalid Phone number (e.g: 971xxxxxxxxx)" = "Invalid Phone number (e.g: 971xxxxxxxxx)";
+
+"Your application has been successfully submitted" = "Your application has been successfully submitted";
+
+"full name cannot be empty" = "full name cannot be empty";
+
+"please select a future date" = "please select a future date";
+
+"your taxi has been successfully booked " ="your taxi has been successfully booked";
+
+"cab booked" = "cab booked";
+
+"plate source missing" = "plate source missing";
+
+"plate number missing" = "plate number missing";
+
+"parking hours missing" = "parking hours missing";
+
+"SMS sending service unavailable" = "SMS sending service unavailable";
+
+"account details not found" = "account details not found";
+
+"Account number cannot be empty" = "Account number cannot be empty";
+
+"Invalid Phone number (e.g: 971XXXXXXXXX)" = "Invalid Phone number (e.g: 971XXXXXXXXX)";
+
+
+"Incorrect Username or Password" = "Incorrect Username or Password";
+
+
+"Password must be at least 8 characters in length and must cointain a minimum of 1 lower case letter [a-z] 1 upper case letter [A-Z] 1 numeric character [0-9] and 1 minimum special character." =  "Password must be at least 8 characters in length and must cointain a minimum of 1 lower case letter [a-z] 1 upper case letter [A-Z] 1 numeric character [0-9] and 1 minimum special character.";
+
+"cannot be empty" = "cannot be empty" ;
