@@ -71,7 +71,19 @@ class RequestConsultVC: UIViewController {
         return true
     }
     
-    
+    func fillData()
+    {
+        let user = User().getUser()
+        
+        if let name  = user.value(forKey: User().name_Key) as? String
+        {
+            self.fullName.textField.text = name
+        }
+        if let num  = user.value(forKey: User().mobileNumber_key) as? String
+        {
+            self.mobileNumber.textField.text = num
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -80,6 +92,9 @@ class RequestConsultVC: UIViewController {
         self.hideKeyboardWhenTappedAround()
         consultFNameTxtOutlet.delegate = self
         consultMobNotxtOutlet.delegate = self
+        //self.fullName.textField.isEnabled = false
+        //self.mobileNumber.textField.isEnabled = false
+        self.fillData()
         consultCatTxtOutlet.delegate = self
         consultCat2TxtOutlet.delegate = self
         consultDetailsTxtOutlet.delegate = self

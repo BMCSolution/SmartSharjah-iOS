@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SoC-xs-3A1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SoC-xs-3A1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1651,8 +1651,11 @@
                     </view>
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
+                        <outlet property="mothernameTF" destination="zIM-e4-W3v" id="vWY-f4-pLg"/>
                         <outlet property="navBar" destination="MyR-zp-vV7" id="vYn-tr-unk"/>
+                        <outlet property="otherskillsTF" destination="1xs-hr-Loz" id="Bfx-cg-O0H"/>
                         <outlet property="scrollView" destination="aR8-7F-wMa" id="LmQ-aw-r8t"/>
+                        <outlet property="unifiednoTF" destination="C7G-f0-sfb" id="cR8-pq-CSy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeC-Yc-KfP" userLabel="First Responder" sceneMemberID="firstResponder"/>

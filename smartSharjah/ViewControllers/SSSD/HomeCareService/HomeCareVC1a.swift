@@ -208,47 +208,47 @@ class HomeCareVC1a: UIViewController {
 //         self.performSegue(withIdentifier: "next", sender: self)
         
         
-//        if ( self.phoneNumberTF.textField.text != "" )
-//        {
-//            self.phoneNumber = self.phoneNumberTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(issuedByTF.hintLbl.text!) \("cannot be empty".localized())" , viewController: self)
-//            return
-//        }
-//        
-//        if ( self.issuedByTF.textField.text != "" )
-//        {
-//            self.issuedBy = self.issuedByTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(issuedByTF.hintLbl.text!) \("cannot be empty".localized())" , viewController: self)
-//            return
-//        }
-//        
-//        
-//        if ( self.cityTF.textField.text != "" )
-//        {
-//            self.city = self.cityTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(cityTF.hintLbl.text!) \("cannot be empty".localized())" , viewController: self)
-//            return
-//        }
-//        
-//        
-//        if ( self.fullAddressTF.textField.text != "" )
-//        {
-//            self.fullAddress = self.fullAddressTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(fullAddressTF.hintLbl.text!) \("cannot be empty".localized())" , viewController: self)
-//            return
-//        }
+        if ( self.phoneNumberTF.textField.text != "" )
+        {
+            self.phoneNumber = self.phoneNumberTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(issuedByTF.hintLbl.text!) \("cannot be empty".localized())" , viewController: self)
+            return
+        }
+        
+        if ( self.issuedByTF.textField.text != "" )
+        {
+            self.issuedBy = self.issuedByTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(issuedByTF.hintLbl.text!) \("cannot be empty".localized())" , viewController: self)
+            return
+        }
+        
+        
+        if ( self.cityTF.textField.text != "" )
+        {
+            self.city = self.cityTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(cityTF.hintLbl.text!) \("cannot be empty".localized())" , viewController: self)
+            return
+        }
+        
+        
+        if ( self.fullAddressTF.textField.text != "" )
+        {
+            self.fullAddress = self.fullAddressTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(fullAddressTF.hintLbl.text!) \("cannot be empty".localized())" , viewController: self)
+            return
+        }
 
         if (self.validated())
         {

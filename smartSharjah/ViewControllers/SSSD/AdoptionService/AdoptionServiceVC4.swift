@@ -66,7 +66,7 @@ class AdoptionServiceVC4: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if (self.navBar != nil)
         {
             if Utility.isArabicSelected() {
@@ -125,10 +125,10 @@ class AdoptionServiceVC4: UIViewController {
 
     @IBAction func nextPressed(_ sender: UIButton) {
         //self.performSegue(withIdentifier: "next", sender: self)
-
-        if ( self.desiredGenderTF.textField.text != "" )
+        
+        if ( self.childAdoptionTF.textField.text != "" )
         {
-            self.desiredGender = self.childAdoptionTF.textField.text
+            self.childAdoption = self.childAdoptionTF.textField.text
         }
         else
         {
@@ -138,7 +138,7 @@ class AdoptionServiceVC4: UIViewController {
 
         if ( self.desiredGenderTF.textField.text != "" )
         {
-            self.desiredGender = self.desiredGenderTF.textField.text
+            self.desiredGender = "\(self.desiredGenderTF.picker.selectedRow(inComponent: 0)+1)"
         }
         else
         {
@@ -247,78 +247,58 @@ class AdoptionServiceVC4: UIViewController {
     func apicallHttps(){
             SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
         
-            /*var params:[String: Any] = [
-            "countryCode" : txtCode.textField.text!,
-            "mobile" : txtPhoneNum.textField.text!,
-            "name" : txtFullName.textField.text!,
-            "jobType" : "ADVANCE",
-            "pickupAddrText" : self.txtPickupLocation.textField.text!,
-            "pickupAddrLat" : currentLat,
-            "pickupAddrLon" : currentLong,
-            "dropoffAddrText" : txtDropoffLocation.textField.text!,
-            "dropoffAddrLat" : dropOffLat,
-            "dropoffAddrLon" : dropOfflong,
-            "vehicleTypeId" : 30,
-            "driverNotes" : driverNotes_txtView.text!,
-            "notificationToken" : 123,
-            "paymentMode" : 2 ,
-            "recurrenceId": "-1",
-            "accessToken": "",
-            "pickupTime" : self.txtPickerDateTime.textField.text!
-            ]*/
+        var emiratesIDFrontStr = "";
+        var emiratesIDBackStr = "";
+        var passportImgStr = "";
         
-        var emiratesIDFront: UIImage?
-        var emiratesIDBack: UIImage?
-        var passportImg: UIImage?
+        do {
+            try emiratesIDFront!.compressImage(7, completion: { (image, compressRatio) in
+                print(image.size)
+                let imageData = image.jpegData(compressionQuality: compressRatio)
+                emiratesIDFrontStr = imageData!.base64EncodedString(options: []) ?? ""
+            })
+        } catch {
+            print("Error")
+        }
         
-        var residenceCard: UIImage?
+        do {
+            try emiratesIDBack!.compressImage(7, completion: { (image, compressRatio) in
+                print(image.size)
+                let imageData = image.jpegData(compressionQuality: compressRatio)
+                emiratesIDBackStr = imageData!.base64EncodedString(options: []) ?? ""
+            })
+        } catch {
+            print("Error")
+        }
         
-        var picture: UIImage!
+        do {
+            try passportImg!.compressImage(7, completion: { (image, compressRatio) in
+                print(image.size)
+                let imageData = image.jpegData(compressionQuality: compressRatio)
+                passportImgStr = imageData!.base64EncodedString(options: []) ?? ""
+            })
+        } catch {
+            print("Error")
+        }
         
-        var fullName:String!
-        var emiratiID:String!
-        var mobileNo:String!
-        var emailAddress:String!
-        var nationality:String!
-        var familyRegistration:String!
-        var dob:String!
-        var placeOfBirth:String!
-        var gender:String!
-        var maritalStatus:String!
-        var numOfChildren:String!
-        
-        var qualification: String!
-        var dob2: String!
-        var placeOfBirth2: String!
-        var employeementStatus: String!
-        var income: String!
-        var file: UIImage!
-        
-        var passportNum: String!
-        var passportIssuePlace: String!
-        var passportDateIssue: String!
-        var passportExpiry: String!
-        
-        var childAdoption: String!
-        var desiredGender: String!
-        var desiredAge: String!
-        var adoptedBefore: String!
-        var lactaction: String!
-        var qualification2: String!
-        var adoptionReason: String!
-        
-        var params:[String: Any] = ["uuid":"54654545646546222222254654546","userType":"SOP3","mobile":"971508041141","email":self.emailAddress,"idn":"784111111111111","dob":self.dob,"photo":"xxx","placeOfBirthAR":self.placeOfBirth,"firstnameAR":"xxx","fullnameAR":"xxx","idCardNumber":"xxx","idCardIssueDate":"xxx","idCardExpiryDate":"xxx","fullnameEN":"xxx","firstnameEN":"xxx","lastnameEN":"xxx","lastnameAR":"xxx","gender":"xxx","nationalityAR":"xxx","nationalityEN":"xxx","residencyNumber":"xxx","maritalStatus":"xxx","passportNumber":"xxx","upassportCountryDescriptionAR":"xxx","passportCountryDescriptionEN":"xxx","passportIssueDate":"xxx","passportExpiryDate":"xxx","idType":"xxx","cardSerialNumber":"xxx","occupationCode":"xxx","titleAR":"xxx","titleEN":"xxx","motherFirstNameAR":"xxx","motherFirstNa meEN":"xxx","familyNumber":"xxx","husbandIDN":"xxx","residencyType":"xxx","residencyExpiryDate":"xxx","placeOfBirthEN":"xxx","occupationTypeAR":"xxx","occupationTypeEN":"xxx","motherFullNameAR":"xxx","motherFullNameEN":"xxx","companyNameAR":"xxx","companyNameEN":"xxx","passportTypeCode":"xxx","qualificationLevelCode":"xxx","qualificationLevelDescriptionAR":"xxx","qualificationLevelDescriptionEN":"xxx","degreeDescriptionAR":"xxx","degreeDescriptionEN":"xxx","fieldOfStudyCode":"xxx","fieldOfStudyAR":"xxx","fieldOfStudyEN":"xxx","placeOfStudyAR":"xxx","placeOfStudyEN":"xxx","dateOfGraduation":"xxx","homeAddressTypeCode":"xxx","homeLocationCode":"xxx","homeAddressEmirateCode":"xxx","homeAddressEmirateDescriptionAR":"xxx","homeAddressEmirateDescriptionEN":"xxx","homeAddressCityCode":"xxx","homeAddressCityDescriptionAR":"xxx","homeAddressCityDescriptionEN":"xxx","homeAddressStreetAR":"xxx","homeAddressStreetEN":"xxx","homeAddressPOBox":"xxx","homeAddressA reaCode":"xxx","homeAddressA reaDescriptionAR":"xxx","homeAddressA reaDescriptionEN":"xxx","homeAddressBuildingNameAR":"xxx","homeAddressBuildingNameEN":"xxx","homeAddressFlatNo":"xxx","homeAddressResidentPhoneNumber":"xxx","cardHolderSignatureImage":"xxx","adoption_before":self.adoptedBefore,"adoption_from":"test","child_gender_id":self.desiredGender,"child_age":self.desiredAge,"adoption_reason":self.adoptionReason,"child_from_nursery":"yes","approve_feeding":"no","emirates_id_front_file":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==","emirates_id_back_file":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==","passport_file":"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="]
+        //let imageDataemiratesIDFront: Data? = emiratesIDFront!.jpegData(compressionQuality: 0.0002)
+        //let imageDataemiratesIDBack: Data? = emiratesIDBack!.jpegData(compressionQuality: 0.0002)
+        //let imageDatapassportImg: Data? = passportImg!.jpegData(compressionQuality: 0.0002)
+        //let emiratesIDFrontStr = imageDataemiratesIDFront?.base64EncodedString(options: .lineLength64Characters) ?? ""
+        //let emiratesIDBackStr = imageDataemiratesIDBack?.base64EncodedString(options: .lineLength64Characters) ?? ""
+        //let passportImgStr = imageDatapassportImg?.base64EncodedString(options: .lineLength64Characters) ?? ""
+         
+        var params:[String: Any] = ["uuid":"54654545646546222222254654546","userType":"SOP3","mobile":(self.mobileNo as! String),"email":(self.emailAddress as! String),"idn":"784111111111111","dob":(self.dob as! String),"photo":"xxx","placeOfBirthAR":(self.placeOfBirth as! String),"firstnameAR":"xxx","fullnameEN":(self.fullName as! String),"idCardNumber":(self.emiratiID as! String),"idCardIssueDate":"xxx","idCardExpiryDate":"xxx","lastnameEN":"xxx","lastnameAR":"xxx","gender":"xxx","nationalityAR":"xxx","nationalityEN":"xxx","residencyNumber":"xxx","maritalStatus":"xxx","passportNumber":"xxx","upassportCountryDescriptionAR":"xxx","passportCountryDescriptionEN":"xxx","passportIssueDate":"xxx","passportExpiryDate":"xxx","idType":"xxx","cardSerialNumber":"xxx","occupationCode":"xxx","titleAR":"xxx","titleEN":"xxx","motherFirstNameAR":"xxx","motherFirstNameEN":"xxx","familyNumber":"xxx","husbandIDN":"xxx","residencyType":"xxx","residencyExpiryDate":"xxx","placeOfBirthEN":"xxx","occupationTypeAR":"xxx","occupationTypeEN":"xxx","motherFullNameAR":"xxx","motherFullNameEN":"xxx","companyNameAR":"xxx","companyNameEN":"xxx","passportTypeCode":"xxx","qualificationLevelCode":"xxx","qualificationLevelDescriptionAR":"xxx","qualificationLevelDescriptionEN":"xxx","degreeDescriptionAR":"xxx","degreeDescriptionEN":"xxx","fieldOfStudyCode":"xxx","fieldOfStudyAR":"xxx","fieldOfStudyEN":"xxx","placeOfStudyAR":"xxx","placeOfStudyEN":"xxx","dateOfGraduation":"xxx","homeAddressTypeCode":"xxx","homeLocationCode":"xxx","homeAddressEmirateCode":"xxx","homeAddressEmirateDescriptionAR":"xxx","homeAddressEmirateDescriptionEN":"xxx","homeAddressCityCode":"xxx","homeAddressCityDescriptionAR":"xxx","homeAddressCityDescriptionEN":"xxx","homeAddressStreetAR":"xxx","homeAddressStreetEN":"xxx","homeAddressPOBox":"xxx","homeAddressAreaCode":"xxx","homeAddressAreaDescriptionAR":"xxx","homeAddressAreaDescriptionEN":"xxx","homeAddressBuildingNameAR":"xxx","homeAddressBuildingNameEN":"xxx","homeAddressFlatNo":"xxx","homeAddressResidentPhoneNumber":"xxx","cardHolderSignatureImage":"xxx","adoption_before":(self.adoptedBefore as! String),"adoption_from":"xxx","child_gender_id":(self.desiredGender as! String),"child_age":(self.desiredAge as! String),"adoption_reason":(self.adoptionReason as! String),"child_from_nursery":"yes","approve_feeding":(self.lactaction as! String),"emirates_id_front_file":emiratesIDFrontStr,"emirates_id_back_file":emiratesIDBackStr,"passport_file":passportImgStr]
             
             let ulr =  URL(string: APILayer().baseURL +  "api/SaveSSDInfoController/SaveAdoptInfo")!
             var request = URLRequest(url: ulr as URL)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             let userDefaults = UserDefaults.standard
-               
-                      let accesstoken = userDefaults.object(forKey: "access_token") as! String
-                      let authData = accesstoken
+            let accesstoken = userDefaults.object(forKey: "access_token") as! String
+            let authData = accesstoken
             request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
-            let data = try! JSONSerialization.data(withJSONObject: [], options: JSONSerialization.WritingOptions.prettyPrinted)
+            let data = try! JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)
 
                        let json = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
                        if let json = json {
@@ -331,7 +311,7 @@ class AdoptionServiceVC4: UIViewController {
                 
                 if (response.error != nil)
                 {
-                    print ("\(response.error)")
+                    print ("responseJson: \(response.error)")
                     SmartSharjahShareClass.hideActivityIndicator(view: self.view)
                 }
                 else
@@ -350,6 +330,20 @@ class AdoptionServiceVC4: UIViewController {
                                 if let respJson = response.value as? NSDictionary
                                 {
                                     print ("responseJson: \(respJson)")
+                                    //if let successFlag = respJson.value(forKey: "success") as? Bool{
+                                        
+                                    //}
+                                    if let message = respJson.value(forKey: "message") as? String{
+                                        let otherAlert = UIAlertController(title: self.navBar.title.text, message: message, preferredStyle: UIAlertController.Style.alert)
+                                                        let dismiss = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+                                                            self.navigationController?.dismiss(animated: true, completion: nil)
+                                                                }
+                                        
+                                        
+                                                        otherAlert.addAction(dismiss)
+                                                    
+                                                    self.present(otherAlert, animated: true, completion: nil)
+                                    }
                                 }
                         }
                     }

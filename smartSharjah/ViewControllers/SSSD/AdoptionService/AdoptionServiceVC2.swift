@@ -149,52 +149,55 @@ class AdoptionServiceVC2: UIViewController {
     
     @IBAction func nextPressed(_ sender: UIButton) {
         
-//        if ( self.qualificationTF.textField.text != "" )
-//        {
-//            self.qualification = self.qualificationTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(qualificationTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
+        if ( self.qualificationTF.textField.text != "" )
+        {
+            self.qualification = self.qualificationTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(qualificationTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+        if ( self.dobTF.textField.text != "" )
+        {
+            self.dob2 = self.dobTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(dobTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+
+
+        if ( self.placeOfBirthTF.textField.text != "" )
+        {
+            self.placeOfBirth2 = self.placeOfBirthTF.textField.text        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(placeOfBirthTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+
+
+        if ( self.employeementStatusTF.textField.text != "" )
+        {
+            self.employeementStatus = self.employeementStatusTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(employeementStatusTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
 //
-//        if ( self.dobTF.textField.text != "" )
-//        {
-//            self.dob2 = self.dobTF.textField.text        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(dobTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
 //
 //
-//
-//        if ( self.placeOfBirthTF.textField.text != "" )
-//        {
-//            self.placeOfBirth2 = self.placeOfBirthTF.textField.text        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(placeOfBirthTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//
-//
-//
-//        if ( self.employeementStatusTF.textField.text != "" )
-//        {
-//            self.employeementStatus = self.employeementStatusTF.textField.text        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(employeementStatusTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//
-//
-//
-//        if ( self.fileTF.img != nil )
-//        {
-//            self.file = self.fileTF.img    }
+        if ( self.fileTF.img != nil )
+        {
+            self.file = self.fileTF.img
+        }
 //        else
 //        {
 //            SetDefaultWrappers().showAlert(info: "\(fileTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)

@@ -490,7 +490,7 @@ class ViewController: UIViewController,XMLParserDelegate {
         manager.session.configuration.timeoutIntervalForResource = 10
         manager.session.configuration.timeoutIntervalForRequest = 10
         
-        if Reachability.isConnectedToNetwork()
+        /*if Reachability.isConnectedToNetwork()
         {
             if(Utility.checkSesion())
             {
@@ -503,7 +503,7 @@ class ViewController: UIViewController,XMLParserDelegate {
                     self.getData()
                 }
             }
-        }
+        }*/
         
         self.tabBarController?.tabBar.isHidden = false
         NotificationCenter.default.addObserver(self, selector: #selector(self.searchPressed), name: NSNotification.Name(rawValue: "searchPressed"), object: nil)

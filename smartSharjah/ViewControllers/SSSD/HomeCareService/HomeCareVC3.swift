@@ -130,15 +130,81 @@ class HomeCareVC3: UIViewController {
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
         if segue.identifier == "nextJobSeeker"
         {
-
+            let dest = segue.destination as! HomeCareVC6
+            dest.picture = picture
+            
+            dest.emiratesIDFront = emiratesIDFront
+            dest.emiratesIDBack = emiratesIDBack
+            dest.passportImg = passportImg
+            dest.residenceCard = residenceCard
+            
+            dest.fullName = fullName
+            dest.emiratiID = emiratiID
+            dest.mobileNo = mobileNo
+            dest.emailAddress = emailAddress
+            dest.nationality = nationality
+            dest.familyRegistration = familyRegistration
+            dest.dob = dob
+            dest.placeOfBirth = placeOfBirth
+            dest.gender = gender
+            dest.maritalStatus = maritalStatus
+            dest.numOfChildren = numOfChildren
+            
+            dest.phoneNumber = phoneNumber
+            dest.issuedBy = issuedBy
+            dest.city = city
+            dest.fullAddress = fullAddress
+            
+            dest.qualification = qualification
+            dest.dateOfIssue = dateOfIssue
+            dest.qualificationIssuedBy = qualificationIssuedBy
+            dest.employmentStatus = employmentStatus
+            dest.monthlyIncome = monthlyIncome
+            
+            dest.passportNum = passportNum
+            dest.passportIssuePlace = passportIssuePlace
+            dest.passportDateIssue = passportDateIssue
+            dest.passportExpiry = passportExpiry
         }
         else if segue.identifier == "nextVolunteer"
         {
-//             let dest = segue.destination as! HomeCareVC5
+            let dest = segue.destination as! HomeCareVC5
+            dest.picture = picture
             
+            dest.emiratesIDFront = emiratesIDFront
+            dest.emiratesIDBack = emiratesIDBack
+            dest.passportImg = passportImg
+            dest.residenceCard = residenceCard
+            
+            dest.fullName = fullName
+            dest.emiratiID = emiratiID
+            dest.mobileNo = mobileNo
+            dest.emailAddress = emailAddress
+            dest.nationality = nationality
+            dest.familyRegistration = familyRegistration
+            dest.dob = dob
+            dest.placeOfBirth = placeOfBirth
+            dest.gender = gender
+            dest.maritalStatus = maritalStatus
+            dest.numOfChildren = numOfChildren
+            
+            dest.phoneNumber = phoneNumber
+            dest.issuedBy = issuedBy
+            dest.city = city
+            dest.fullAddress = fullAddress
+            
+            dest.qualification = qualification
+            dest.dateOfIssue = dateOfIssue
+            dest.qualificationIssuedBy = qualificationIssuedBy
+            dest.employmentStatus = employmentStatus
+            dest.monthlyIncome = monthlyIncome
+            
+            dest.passportNum = passportNum
+            dest.passportIssuePlace = passportIssuePlace
+            dest.passportDateIssue = passportDateIssue
+            dest.passportExpiry = passportExpiry
         }
         else
         {
@@ -178,12 +244,51 @@ class HomeCareVC3: UIViewController {
             dest.passportDateIssue = passportDateIssue
             dest.passportExpiry = passportExpiry
         }
-       
      }
      
     
     @IBAction func nextPressed(_ sender: UIButton) {
         print(" button pressed here ")
+        if ( self.idFront.img != nil )
+        {
+            self.emiratesIDFront = self.idFront.img!
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(idFront.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+        
+        if ( self.idBack.img != nil )
+        {
+            self.emiratesIDBack = self.idBack.img!
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(idBack.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+        
+        if ( self.passportPic.img != nil )
+        {
+            self.passportImg = self.passportPic.img!
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(passportPic.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+        
+        if ( self.residencePic.img != nil )
+        {
+            self.residenceCard = self.residencePic.img!
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(residencePic.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+        
         if let title = UserDefaults.standard.value(forKey: "service") as? String{
                 print(" button pressed here musa raza gillani ")
             if title.contains("Volunteer")
@@ -363,47 +468,6 @@ class HomeCareVC3: UIViewController {
                 SetDefaultWrappers().showAlert(info: "\(passportExpiryTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
                 return
             }
-            
-            if ( self.idFront.img != nil )
-            {
-                self.emiratesIDFront = self.idFront.img!
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(idFront.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.idBack.img != nil )
-            {
-                self.emiratesIDBack = self.idBack.img!
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(idBack.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.passportPic.img != nil )
-            {
-                self.passportImg = self.passportPic.img!
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(passportPic.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.residencePic.img != nil )
-            {
-                self.residenceCard = self.residencePic.img!
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(residencePic.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
             
             if (self.validated())
             {self.performSegue(withIdentifier: "next", sender: self)}

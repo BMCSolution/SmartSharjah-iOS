@@ -181,123 +181,123 @@ class AdoptionServiceVC1: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     */
     @IBAction func nextPressed(_ sender: UIButton) {
-//        if ( self.fullNameTF.textField.text != "" )
-//        {
-//            self.fullName = self.fullNameTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(fullNameTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//
-//        if ( self.emiratiIDTF.textField.text != "" )
-//        {
-//            self.emiratiID = self.emiratiIDTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(emiratiIDTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//
-//        if ( self.mobileNoTF.textField.text != "" )
-//        {
-//            self.mobileNo = self.mobileNoTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(mobileNoTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
+        if ( self.fullNameTF.textField.text != "" )
+        {
+            self.fullName = self.fullNameTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(fullNameTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+        if ( self.emiratiIDTF.textField.text != "" )
+        {
+            self.emiratiID = self.emiratiIDTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(emiratiIDTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+        if ( self.mobileNoTF.textField.text != "" )
+        {
+            self.mobileNo = self.mobileNoTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(mobileNoTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
         
-//        if ( self.emailAddressTF.textField.text == "" || self.emailAddressTF.textField.text == nil )
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(emailAddressTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//            
-//        }
-//        else if(APILayer().validateEmailAddress(enteredEmail: self.emailAddressTF.textField.text!) == false){
-//            SetDefaultWrappers().showAlert(info: "\(emailAddressTF.hintLbl.text!) enter valid email.", viewController: self)
-//            return
-//        }
-//        else
-//        {
-//            self.emailAddress = self.emailAddressTF.textField.text
-//        }
+        if ( self.emailAddressTF.textField.text == "" || self.emailAddressTF.textField.text == nil )
+        {
+            SetDefaultWrappers().showAlert(info: "\(emailAddressTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+            
+        }
+        else if(APILayer().validateEmailAddress(enteredEmail: self.emailAddressTF.textField.text!) == false){
+            SetDefaultWrappers().showAlert(info: "\(emailAddressTF.hintLbl.text!) enter valid email.", viewController: self)
+            return
+        }
+        else
+        {
+            self.emailAddress = self.emailAddressTF.textField.text
+        }
                 
-//        if ( self.nationalityTF.textField.text != "" )
-//        {
-//            self.nationality = self.nationalityTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(nationalityTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//
-//        if ( self.familyRegistrationTF.textField.text != "" )
-//        {
-//            self.familyRegistration = self.familyRegistrationTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(familyRegistrationTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//
-//        if ( self.dobTF.textField.text != "" )
-//        {
-//            self.dob = self.dobTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(dobTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//        if ( self.placeOfBirthTF.textField.text != "" )
-//        {
-//            self.placeOfBirth = self.placeOfBirthTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(placeOfBirthTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//
-//        if ( self.genderTF.textField.text != "" )
-//        {
-//            self.gender = self.genderTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(genderTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//
-//        if ( self.maritalStatusTF.textField.text != "" )
-//        {
-//            self.maritalStatus = self.maritalStatusTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(maritalStatusTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
-//        if ( self.numOfChildrenTF.textField.text != "" )
-//        {
-//            self.numOfChildren = self.numOfChildrenTF.textField.text
-//        }
-//        else
-//        {
-//            SetDefaultWrappers().showAlert(info: "\(numOfChildrenTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-//            return
-//        }
+        if ( self.nationalityTF.textField.text != "" )
+        {
+            self.nationality = self.nationalityTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(nationalityTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+        if ( self.familyRegistrationTF.textField.text != "" )
+        {
+            self.familyRegistration = self.familyRegistrationTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(familyRegistrationTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+        if ( self.dobTF.textField.text != "" )
+        {
+            self.dob = self.dobTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(dobTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+        if ( self.placeOfBirthTF.textField.text != "" )
+        {
+            self.placeOfBirth = self.placeOfBirthTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(placeOfBirthTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+        if ( self.genderTF.textField.text != "" )
+        {
+            self.gender = self.genderTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(genderTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+
+        if ( self.maritalStatusTF.textField.text != "" )
+        {
+            self.maritalStatus = self.maritalStatusTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(maritalStatusTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
+        if ( self.numOfChildrenTF.textField.text != "" )
+        {
+            self.numOfChildren = self.numOfChildrenTF.textField.text
+        }
+        else
+        {
+            SetDefaultWrappers().showAlert(info: "\(numOfChildrenTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+            return
+        }
         
         
         if (self.validated())
         {
-        self.performSegue(withIdentifier: "next", sender: self)
+            self.performSegue(withIdentifier: "next", sender: self)
         
         }
 }
