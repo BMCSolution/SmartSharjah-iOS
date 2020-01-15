@@ -108,7 +108,7 @@
 "kME-6r-p3a.normalTitle" = "توافق وابدأ";
 
 /* Class = "UITextField"; placeholder = "Enter Trade Name"; ObjectID = "okC-Vs-wOY"; */
-"okC-Vs-wOY.placeholder" =  "أدخل الاسم التجاري باللغة العربية";
+"okC-Vs-wOY.placeholder" =  "أدخل الاسم التجاري";
 
 /* Class = "UILabel"; text = "Amount:"; ObjectID = "p4v-0i-jCc"; */
 "p4v-0i-jCc.text" = "كمية:";

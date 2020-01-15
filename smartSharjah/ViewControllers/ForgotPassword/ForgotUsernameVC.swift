@@ -44,7 +44,7 @@ class ForgotUsernameVC: UIViewController {
         
         if(!self.usernameTF.text!.isValidEmail()) || self.usernameTF.text! == ""
         {
-            SetDefaultWrappers().showAlert(info:enterEmailMsg.localized(), viewController: self)
+            SetDefaultWrappers().showAlert(info:"Please enter a valid email".localized(), viewController: self)
         }
         else
         {

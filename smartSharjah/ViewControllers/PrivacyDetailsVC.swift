@@ -41,7 +41,20 @@ class PrivacyDetailsVC: UIViewController {
             self.navBar.menuSettings(navController: self.navigationController, menuShown: false)
         }
         
-       self.getDetails(title: self.navTitle)
+        if Reachability.isConnectedToNetwork()
+        {
+            if(Utility.checkSesion())
+            {
+                self.getDetails(title: self.navTitle)
+            }
+            else
+            {
+                Utility.getFreshToken {
+                    (success, response) in
+                    self.getDetails(title: self.navTitle)
+                }
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -50,19 +63,30 @@ class PrivacyDetailsVC: UIViewController {
         var path = ""
         if title == "Privacy Policy"
         {
-            
             path = "https://stg-smtshjapp.shj.ae/api/useragreements/privacyandpolicy"
         }
         else
         {
-           path = "https://stg-smtshjapp.shj.ae/api/useragreements/termsandconditions"
+            path = "https://stg-smtshjapp.shj.ae/api/useragreements/termsandconditions"
         }
         
         if path != ""
         {
             
             SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
-            Alamofire.request(URL(string: path)!, method: .get, parameters: [:], headers: [:]).responseJSON { (response) in
+            let ulr =  URL(string: path)!
+            var request = URLRequest(url: ulr as URL)
+            request.httpMethod = "GET"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let userDefaults = UserDefaults.standard
+            let accesstoken = userDefaults.object(forKey: "access_token") as! String
+            let authData = accesstoken
+            request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
+                       
+            
+            Alamofire.request(request as! URLRequestConvertible)
+            //Alamofire.request(URL(string: path)!, method: .get, parameters: [:], headers: [:])
+                .responseJSON { (response) in
                 SmartSharjahShareClass.hideActivityIndicator(view: self.view)
                 if (response.error != nil)
                 {
@@ -71,11 +95,23 @@ class PrivacyDetailsVC: UIViewController {
                 }
                 else
                 {
-                    if let value = response.result.value as? NSDictionary{
-                        print("Response: \(value)")
-                        if let details = value.value(forKey: "data") as? String
+                    if let code = response.response?.statusCode as? Int{
+                        if code == 401
                         {
-                            self.details_TxtView.text = details
+                            Utility.getFreshToken {
+                                (success, response) in
+                                self.getDetails(title: self.navTitle)
+                            }
+                        }
+                        else
+                        {
+                                if let value = response.result.value as? NSDictionary{
+                                    print("Response: \(value)")
+                                    if let details = value.value(forKey: "data") as? String
+                                    {
+                                        self.details_TxtView.text = details
+                                    }
+                                }
                         }
                     }
                 }

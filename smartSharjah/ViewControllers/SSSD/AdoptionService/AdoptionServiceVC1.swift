@@ -98,6 +98,20 @@ class AdoptionServiceVC1: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*if Reachability.isConnectedToNetwork()
+        {
+            if(Utility.checkSesion())
+            {
+                self.getData()
+            }
+            else
+            {
+                Utility.getFreshToken {
+                    (success, response) in
+                    self.getData()
+                }
+            }
+        }*/
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.donePressed), name: NSNotification.Name(rawValue: "donePressed"), object: nil)
         self.numOfChildrenTF.textField.delegate = self

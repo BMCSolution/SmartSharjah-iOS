@@ -6,7 +6,7 @@
 /* Class = "UILabel"; text = "Enter your OTP Code Below"; ObjectID = "6cD-dq-u2k"; */
 "6cD-dq-u2k.text" = "أدخل رمز OTP الخاص بك أدناه";
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "751-jj-tmo"; */
-"751-jj-tmo.placeholder" = "كلمة المرور";
+//"751-jj-tmo.placeholder" = "كلمة المرور";
 /* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "7fJ-gF-1yb"; */
 "7fJ-gF-1yb.normalTitle" = "هل نسيت كلمة المرور؟";
 /* Class = "UILabel"; text = "Your login details"; ObjectID = "Bb4-rE-3zE"; */
@@ -35,6 +35,7 @@
 "UAf-SH-dRA.normalTitle" = "هل نسيت كلمة المرور؟";
 /* Class = "UITextField"; placeholder = "Email Address"; ObjectID = "WiA-nM-wKL"; */
 "WiA-nM-wKL.placeholder" = "البريد الإلكتروني";
+
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "Xsa-1z-7F3"; */
 "Xsa-1z-7F3.title" = "Item";
 /* Class = "UIButton"; normalTitle = "Create an Account"; ObjectID = "ZYL-NL-re6"; */
@@ -46,7 +47,7 @@
 /* Class = "UIButton"; normalTitle = "Login to Existing Account"; ObjectID = "b7h-vx-2of"; */
 "b7h-vx-2of.normalTitle" = "تسجيل الدخول إلى حساب حالي";
 /* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "b9l-jf-Tfl"; */
-"b9l-jf-Tfl.placeholder" = "تأكيد كلمة المرور";
+//"b9l-jf-Tfl.placeholder" = "تأكيد كلمة المرور";
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "bF8-9T-RgQ"; */
 "bF8-9T-RgQ.normalTitle" = "إرسال";
 /* Class = "UILabel"; text = "Enter your Username"; ObjectID = "baB-Gu-kA3"; */

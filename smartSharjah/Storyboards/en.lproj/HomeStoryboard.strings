@@ -108,7 +108,7 @@
 "kME-6r-p3a.normalTitle" = "Agree & Start";
 
 /* Class = "UITextField"; placeholder = "Enter Trade Name"; ObjectID = "okC-Vs-wOY"; */
-"okC-Vs-wOY.placeholder" = "Enter trade name in arabic";
+"okC-Vs-wOY.placeholder" = "Enter trade name";
 
 /* Class = "UILabel"; text = "Amount:"; ObjectID = "p4v-0i-jCc"; */
 "p4v-0i-jCc.text" = "Amount:";

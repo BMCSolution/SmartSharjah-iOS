@@ -3,7 +3,7 @@
 "5Xw-8Y-PlV.title" = "Item";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "751-jj-tmo"; */
-"751-jj-tmo.placeholder" = "Password";
+//"751-jj-tmo.placeholder" = "Password";
 
 /* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "7fJ-gF-1yb"; */
 "7fJ-gF-1yb.normalTitle" = "Forgot Password?";
@@ -54,7 +54,7 @@
 "b7h-vx-2of.normalTitle" = "Login to existing account";
 
 /* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "b9l-jf-Tfl"; */
-"b9l-jf-Tfl.placeholder" = "Confirm Password";
+//"b9l-jf-Tfl.placeholder" = "Confirm Password";
 
 /* Class = "UIButton"; normalTitle = "      Remember"; ObjectID = "boj-6o-aI4"; */
 "boj-6o-aI4.normalTitle" = "      Remember me";

@@ -19,7 +19,19 @@
 
 "Please enter a valid name" = "يرجى ادخال اسم صحيح";
 
+//"Please enter a valid username" = ""
+
+//"Please enter a valid emirates id" = ""
+
+//"Please enter a valid licence no" = ""
+
+//"Please enter a valid address" = ""
+
+//"Please enter a valid mobile number" = ""
+
 "Please enter a valid Password"  = "يرجى ادخال كلمة المرور الصحيحة";
+
+
 
 "Coming soon..." = "الخدمة غير متوفرة";
 

@@ -497,7 +497,9 @@ class APILayer {
                                                                    User().setUserJson(d: dataJson, replaceProfilePic: false)**/
                                 
                            // completion(true, NSDictionary() )
-                            }else{
+                            }
+                            else
+                            {
                                 
                                 let expires = value.value(forKey: ".expires") as? String
                                                                                              

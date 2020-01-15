@@ -201,7 +201,7 @@ class HomeCareVC1: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
      
-        if Reachability.isConnectedToNetwork()
+        /*if Reachability.isConnectedToNetwork()
         {
             if(Utility.checkSesion())
             {
@@ -214,14 +214,14 @@ class HomeCareVC1: UIViewController {
                     self.getData()
                 }
             }
-        }
+        }*/
         
         
         if Utility.isArabicSelected() {
             fullNameTF.hint = "الاسم بالكامل"
             emiratiIDTF.hint = "رقم الهوية الإماراتية"
             emiratiIDTF.keyboardType = UIKeyboardType.numberPad
-            mobileNoTF.hint = "رقم الجوال"
+            mobileNoTF.hint = "رقم الهاتف"
             emailAddressTF.hint = " البريد الإلكتروني"
             nationalityTF.hint = "الجنسية"
             familyRegistrationTF.hint = "بطاقة الملكية"
@@ -305,7 +305,7 @@ class HomeCareVC1: UIViewController {
                         self.navBar.title.text = "الباحث عن عمل"
                     }
                 }
-                textLabelUnderPicture.text = "تحديث البيانات الشخصية الخاصة بك"
+                textLabelUnderPicture.text = "حدث بياناتك الشخصية"
             }
             else
             {

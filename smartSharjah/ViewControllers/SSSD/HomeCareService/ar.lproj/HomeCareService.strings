@@ -78,7 +78,7 @@
 "evC-nT-hpu.normalTitle" = "التالي";
 
 /* Class = "UILabel"; text = "Update your personal data"; ObjectID = "gKv-aA-buE"; */
-"gKv-aA-buE.text" = "تحديث البيانات الشخصية الخاصة بك";
+"gKv-aA-buE.text" = "حدث بياناتك الشخصية";
 
 /* Class = "UILabel"; text = "Copy of Emirati ID (front page)*"; ObjectID = "jCl-Ts-G4C"; */
 "jCl-Ts-G4C.text" = "صورة الهوية الإماراتية (الصفحة الأمامية)";

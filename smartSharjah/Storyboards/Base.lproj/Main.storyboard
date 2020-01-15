@@ -684,10 +684,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6U-2n-cmT" userLabel="RegisterViewNew">
-                                <rect key="frame" x="0.0" y="234" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="254" width="414" height="672"/>
                                 <subviews>
-                                    <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uby-Bs-3fR">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                                    <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uby-Bs-3fR">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="638.5"/>
                                         <subviews>
                                             <view verifyAmbiguity="off" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAD-Q0-sMk">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
@@ -789,7 +789,7 @@
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Phone No"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone No" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3d-bw-Lvb" userLabel="PhonenoTF">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3d-bw-Lvb" userLabel="PhonenoTF">
                                                                 <rect key="frame" x="58" y="375.5" width="298" height="39"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
@@ -837,10 +837,10 @@
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isPassword" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9l-jf-Tfl">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9l-jf-Tfl">
                                                                 <rect key="frame" x="58" y="555.5" width="298" height="39"/>
                                                                 <fontDescription key="fontDescription" name="Password" family="Password" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                                <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7h-vx-2of">
                                                                 <rect key="frame" x="0.0" y="670" width="414" height="30"/>
@@ -981,10 +981,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="uby-Bs-3fR" firstAttribute="height" secondItem="j6U-2n-cmT" secondAttribute="height" id="Jin-nK-X53"/>
+                                    <constraint firstItem="uby-Bs-3fR" firstAttribute="height" secondItem="j6U-2n-cmT" secondAttribute="height" multiplier="0.95" id="Jin-nK-X53"/>
+                                    <constraint firstItem="uby-Bs-3fR" firstAttribute="top" secondItem="j6U-2n-cmT" secondAttribute="top" id="Ud3-rs-EFv"/>
                                     <constraint firstItem="uby-Bs-3fR" firstAttribute="width" secondItem="j6U-2n-cmT" secondAttribute="width" id="d1n-e3-5Hb"/>
-                                    <constraint firstItem="uby-Bs-3fR" firstAttribute="centerX" secondItem="j6U-2n-cmT" secondAttribute="centerX" id="nYI-I3-lvo"/>
-                                    <constraint firstItem="uby-Bs-3fR" firstAttribute="centerY" secondItem="j6U-2n-cmT" secondAttribute="centerY" id="rNy-C2-ipQ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1016,7 +1015,7 @@
                             <constraint firstItem="kHY-nl-KNg" firstAttribute="top" secondItem="hD2-WJ-j9r" secondAttribute="top" id="g8y-Xq-mt7"/>
                             <constraint firstItem="kHY-nl-KNg" firstAttribute="trailing" secondItem="01r-xJ-6wi" secondAttribute="trailing" id="gPU-Hg-07T"/>
                             <constraint firstItem="jRn-Yg-qGc" firstAttribute="centerX" secondItem="pjr-4f-J4D" secondAttribute="centerX" id="jWi-GN-cTN"/>
-                            <constraint firstAttribute="bottom" secondItem="j6U-2n-cmT" secondAttribute="bottom" constant="-10" id="rFr-Ck-B7S"/>
+                            <constraint firstAttribute="bottom" secondItem="j6U-2n-cmT" secondAttribute="bottom" constant="-30" id="rFr-Ck-B7S"/>
                             <constraint firstItem="kHY-nl-KNg" firstAttribute="width" secondItem="hD2-WJ-j9r" secondAttribute="width" id="sd2-no-BP2"/>
                             <constraint firstItem="jRn-Yg-qGc" firstAttribute="top" secondItem="pjr-4f-J4D" secondAttribute="bottom" constant="5" id="seE-kK-QAb"/>
                         </constraints>
@@ -1252,17 +1251,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lang_back" translatesAutoresizingMaskIntoConstraints="NO" id="3M2-ey-7tT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1129" height="896"/>
                             </imageView>
                             <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aA-N9-Gnj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1129" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9E-hS-SLU">
-                                <rect key="frame" x="0.0" y="506" width="414" height="400"/>
+                                <rect key="frame" x="0.0" y="506" width="1129" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your login details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb4-rE-3zE">
-                                        <rect key="frame" x="0.0" y="30" width="414" height="20"/>
+                                        <rect key="frame" x="0.0" y="30" width="1129" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="nMl-5G-dcC"/>
                                         </constraints>
@@ -1271,7 +1270,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" background="txtfield_back" translatesAutoresizingMaskIntoConstraints="NO" id="Lo4-UN-kaG">
-                                        <rect key="frame" x="52" y="70" width="310.5" height="40"/>
+                                        <rect key="frame" x="141" y="70" width="847" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="StF-bK-mbO"/>
                                         </constraints>
@@ -1284,7 +1283,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="txtfield_back" translatesAutoresizingMaskIntoConstraints="NO" id="Td4-am-UEx">
-                                        <rect key="frame" x="52" y="120" width="310.5" height="40"/>
+                                        <rect key="frame" x="141" y="120" width="847" height="40"/>
                                         <fontDescription key="fontDescription" name="VodafoneRg-Regular" family="Vodafone Rg" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -1294,7 +1293,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fJ-gF-1yb">
-                                        <rect key="frame" x="212.5" y="180" width="150" height="30"/>
+                                        <rect key="frame" x="838" y="180" width="150" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="jo4-xD-TWM"/>
                                             <constraint firstAttribute="width" constant="150" id="xAo-fu-fwR"/>
@@ -1305,7 +1304,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYL-NL-re6">
-                                        <rect key="frame" x="0.0" y="290" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="290" width="1129" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Jnx-bp-o65"/>
                                         </constraints>
@@ -1314,7 +1313,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zb9-Xt-OVU">
-                                        <rect key="frame" x="52" y="230" width="149" height="40"/>
+                                        <rect key="frame" x="141" y="230" width="406.5" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="VodafoneRg-Regular" family="Vodafone Rg" pointSize="17"/>
                                         <state key="normal" title="Login">
@@ -1327,7 +1326,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5i-jZ-2Hz">
-                                        <rect key="frame" x="213" y="230" width="149.5" height="40"/>
+                                        <rect key="frame" x="581.5" y="230" width="406.5" height="40"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="jXw-Lv-fHQ"/>
@@ -1343,13 +1342,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="mOI-4l-gfl">
-                                        <rect key="frame" x="52" y="180" width="30" height="30"/>
+                                        <rect key="frame" x="141" y="180" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mOI-4l-gfl" secondAttribute="height" multiplier="1:1" id="h6x-VI-WGG"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zye-Uk-u8r">
-                                        <rect key="frame" x="52" y="180" width="160.5" height="30"/>
+                                        <rect key="frame" x="141" y="180" width="697" height="30"/>
                                         <fontDescription key="fontDescription" name="VodafoneRg-Regular" family="Vodafone Rg" pointSize="17"/>
                                         <state key="normal" title="Remember">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2000,9 +1999,10 @@
         <image name="unchecked" width="62" height="61"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V1H-dJ-ZEZ"/>
+        <segue reference="TzY-Mx-e49"/>
+        <segue reference="q9l-kw-6HN"/>
         <segue reference="3ag-5y-pIv"/>
-        <segue reference="PAc-5d-yIE"/>
-        <segue reference="lIh-Mw-EfK"/>
+        <segue reference="ndQ-Vs-HCJ"/>
+        <segue reference="pYW-lY-QL8"/>
     </inferredMetricsTieBreakers>
 </document>

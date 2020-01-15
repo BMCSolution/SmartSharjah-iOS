@@ -75,7 +75,7 @@ class HomeCareVC2: UIViewController {
 
         
         if Utility.isArabicSelected() {
-            qualificationTF.hint = "المؤهل"
+            qualificationTF.hint = "المؤهلات العلمية"
             dateOfIssueTF.hint = "تاريخ الإصدار"
             qualificationIssuedByTF.hint = "جهة الإصدار"
             employmentStatusTF.hint = "الحالة الوظيفية"

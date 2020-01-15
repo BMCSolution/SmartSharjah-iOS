@@ -36,7 +36,15 @@ class ProfileVC: UIViewController {
     var user_id = "1"
     var username = ""
     var searchMode: Bool!
-    var titleArr:[String] = ["User Name","Full Name", "Emirates ID","License Number", "Email", "Address","Mobile Number"]
+    var titleArr:[String] = [
+        "User Name",
+        "Full Name",
+        "Emirates ID",
+        "License Number",
+        "Email",
+        "Address",
+        "Mobile Number"
+    ]
     
 //    var titles_Ar:[String] = ["الهاتف المتحرك","الهاتف المتحرك"
 //        ,"العنوان"
@@ -45,12 +53,15 @@ class ProfileVC: UIViewController {
 //        ,"الهوية الإماراتية"
 //        ,"الاسم الكامل"]
 //   //اسم المستخدم
-    var titles_Ar:[String] = ["لعنوان","الهاتف المتحرك"
+    var titles_Ar:[String] = [
+        "الهاتف المتحرك"
+        ,   "العنوان"
            ,"لبريد الإلكتروني"
            ,"رقم الرخصة"
-           ,"لهوية الإماراتية"
+,"لهوية الإماراتية"
            ,"الاسم الكامل"
-           ,"اسم المستخدم"]
+        ,"اسم المستخدم"
+    ]
     
     var imageStr = ""
     var valueArr:[String] = ["", "", "", "", "","",""]
@@ -86,11 +97,11 @@ class ProfileVC: UIViewController {
             SetDefaultWrappers().showAlert(info:"Emirates ID cannot be empty".localized(), viewController: self)
             return false
         }
-            else if self.valueArr[3] == ""
-            {
-                SetDefaultWrappers().showAlert(info:"License No cannot be empty".localized(), viewController: self)
-                return false
-            }
+        else if self.valueArr[3] == ""
+        {
+            SetDefaultWrappers().showAlert(info:"License No cannot be empty".localized(), viewController: self)
+            return false
+        }
         else if self.valueArr[4] == ""
         {
             SetDefaultWrappers().showAlert(info:"Email cannot be empty".localized(), viewController: self)

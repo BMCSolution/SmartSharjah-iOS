@@ -85,6 +85,16 @@ class SignupVC: UIViewController {
         self.addressTF.textAlignment = Utility.isArabicSelected() ? .right : .left
         self.phonenoTF.textAlignment = Utility.isArabicSelected() ? .right : .left
         
+        //self.emailTF.textAlignment = .left
+        //self.passwordTF.textAlignment = .left
+        //self.confirmPasswordTF.textAlignment = .left
+        //self.nameTF.textAlignment = .left
+        
+        //self.emiratesTF.textAlignment = .left
+        //self.licenseTF.textAlignment = .left
+        
+        //self.phonenoTF.textAlignment = .left
+        
     }
 
     override func viewDidLoad() {
@@ -94,7 +104,8 @@ class SignupVC: UIViewController {
         // Do any additional setup after loading the view.
         
         if Utility.isArabicSelected()
-       {
+        {
+        
 //        self.passwordTF.attributedPlaceholder = NSAttributedString(string: "كلمة المرور", attributes: [
 //            .foregroundColor: UIColor.lightGray,
 //            .font: AppFontArabic.bold
@@ -107,86 +118,71 @@ class SignupVC: UIViewController {
         
                     var placeHolder = NSMutableAttributedString()
                     var Name  = "كلمة المرور"
-                              
-                       // Set the Font
-                       placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
-
-                      
-                       self.passwordTF.attributedPlaceholder = placeHolder
-        
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    //self.passwordTF.attributedPlaceholder = placeHolder
         
                     placeHolder = NSMutableAttributedString()
                     Name  = "تأكيد كلمة المرور"
-                                  
-                           // Set the Font
-                           placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
-
-                          
-                           self.confirmPasswordTF.attributedPlaceholder = placeHolder
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    //self.confirmPasswordTF.attributedPlaceholder = placeHolder
         
-        placeHolder = NSMutableAttributedString()
-        Name  = "اسم المستخدم"
-                  
-           // Set the Font
-           placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
-
-          
-           self.nameTF.attributedPlaceholder = placeHolder
+                    placeHolder = NSMutableAttributedString()
+                    Name  = "اسم المستخدم"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.nameTF.attributedPlaceholder = placeHolder
         
+                    placeHolder = NSMutableAttributedString()
+                    Name  = "الاسم الكامل"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.fullnameTF.attributedPlaceholder = placeHolder
+            
+                    placeHolder = NSMutableAttributedString()
+                    Name  = "الهوية الإماراتية"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.emiratesTF.attributedPlaceholder = placeHolder
+            
+                    placeHolder = NSMutableAttributedString()
+                    Name  = "رقم الرخصة"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.licenseTF.attributedPlaceholder = placeHolder
+            
+                    placeHolder = NSMutableAttributedString()
+                    Name  = "العنوان"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.addressTF.attributedPlaceholder = placeHolder
+            
+                    placeHolder = NSMutableAttributedString()
+                    Name  = "الهاتف المتحرك"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.phonenoTF.attributedPlaceholder = placeHolder
+            
+                    //self.fullnameTF.textAlignment = Utility.isArabicSelected() ? .right : .left
+                    //self.emiratesTF.textAlignment = Utility.isArabicSelected() ? .right : .left
+                    //self.licenseTF.textAlignment = Utility.isArabicSelected() ? .right : .left
+                    //self.addressTF.textAlignment = Utility.isArabicSelected() ? .right : .left
+                    //self.phonenoTF.textAlignment = Utility.isArabicSelected() ? .right : .left
         
-        }
+            }
         else
         {
             
-            var placeHolder = NSMutableAttributedString()
-                        var Name  = "Password"
-                                  
-                           // Set the Font
-                           placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    var placeHolder = NSMutableAttributedString()
+                    var Name  = "Password"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.passwordTF.attributedPlaceholder = placeHolder
+            
+                    placeHolder = NSMutableAttributedString()
+                    Name  = "Confirm Password"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.confirmPasswordTF.attributedPlaceholder = placeHolder
+            
+                    placeHolder = NSMutableAttributedString()
+                    Name  = "User Name"
+                    placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                    self.nameTF.attributedPlaceholder = placeHolder
 
-                          
-                           self.passwordTF.attributedPlaceholder = placeHolder
-            
-            
-            placeHolder = NSMutableAttributedString()
-            Name  = "Confirm Password"
-                      
-               // Set the Font
-               placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
-
-              
-               self.confirmPasswordTF.attributedPlaceholder = placeHolder
-            
-            placeHolder = NSMutableAttributedString()
-            Name  = "User Name"
-                      
-               // Set the Font
-               placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
-
-              
-               self.nameTF.attributedPlaceholder = placeHolder
-//
-//            var placeHolder = NSMutableAttributedString()
-//                           let Name  = "كلمة المرور"
-//
-//                           // Set the Font
-//                           placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
-//
-//
-//                           self.passwordTF.attributedPlaceholder = placeHolder
-//
-            
-//            self.passwordTF.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [
-//                .foregroundColor: UIColor.lightGray,
-//                .font: UIFont.systemFont(ofSize: 15.0) ])
-//
-//            self.passwordTF.attributedPlaceholder = NSAttributedString(string: "Confirm Password", attributes: [
-//                .foregroundColor: UIColor.lightGray,
-//                .font: UIFont.systemFont(ofSize: 15.0)
-//            ])
-//
         }
-        self.loadLocalization();
+        //self.loadLocalization();
         
     }
     
@@ -327,181 +323,181 @@ class SignupVC: UIViewController {
          let enterAddressMsg  = "Please enter a valid address"
          let enterPhoneNoMsg  = "Please enter a valid phone no"
          */
-        if (self.fullnameTF.text! == "")
-        {
-            SetDefaultWrappers().showAlert(info:enterFullUsernameMsg.localized(), viewController: self)
-        }
-         else if (self.nameTF.text! == "")
-        {
-            SetDefaultWrappers().showAlert(info:enterUserNameMsg.localized(), viewController: self)
-        }
+            if (self.fullnameTF.text! == "")
+            {
+                SetDefaultWrappers().showAlert(info:"Please enter a valid name".localized(), viewController: self)
+            }
+            else if (self.nameTF.text! == "")
+            {
+                SetDefaultWrappers().showAlert(info:"Please enter a valid username".localized(), viewController: self)
+            }
             else if (self.emiratesTF.text! == "")
-                   {
-                       SetDefaultWrappers().showAlert(info:enterEmiratesIdMsg.localized(), viewController: self)
-                   }
+            {
+                SetDefaultWrappers().showAlert(info:"Please enter a valid emirates id".localized(), viewController: self)
+            }
             else if (self.licenseTF.text! == "")
             {
-                SetDefaultWrappers().showAlert(info:enterLicenseNoMsg.localized(), viewController: self)
+                SetDefaultWrappers().showAlert(info:"Please enter a valid licence no".localized(), viewController: self)
             }
             else if (self.addressTF.text! == "")
             {
-                SetDefaultWrappers().showAlert(info:enterAddressMsg.localized(), viewController: self)
+                SetDefaultWrappers().showAlert(info:"Please enter a valid address".localized(), viewController: self)
             }
             else if (self.phonenoTF.text! == "")
             {
-                SetDefaultWrappers().showAlert(info:enterPhoneNoMsg.localized(), viewController: self)
+                SetDefaultWrappers().showAlert(info:"Please enter a valid mobile number".localized(), viewController: self)
             }
-         else if (!self.emailTF.text!.isValidEmail()) || self.emailTF.text! == ""
-        {
-            SetDefaultWrappers().showAlert(info:enterEmailMsg.localized(), viewController: self)
-        }  else if (self.passwordTF.text! == "")
-        {
-            SetDefaultWrappers().showAlert(info:enterPasswordMsg.localized(), viewController: self)
-        }
-        else if (self.confirmPasswordTF.text! == "")
-        {
-            SetDefaultWrappers().showAlert(info:enterConfirmPasswordMsg.localized(), viewController: self)
-        }
-         else if (self.passwordTF.text! != self.confirmPasswordTF.text!)
-        {
-            SetDefaultWrappers().showAlert(info:passwordMismatchMsg.localized(), viewController: self)
-        } else{
-
-
-            if (validatePass())
+            else if (!self.emailTF.text!.isValidEmail()) || self.emailTF.text! == ""
             {
-                
-                
-                /*"userName": "Rahim.Khawaja",
-                "passWord": "Rahim1234",
-                "fullName": "Rahim Khawaja",
-                "emirateID": "0123",
-                "licenseNo": "0123",
-                "emailAddr": "rahim.khawaja@bmcsolution.com",
-                "addressHome": "",
-                "pictureUrl": "/Userimage/bh_connect_logo.png",
-                "phoneNo": ""*/
-                let headers = [
-                    "Content-Type": "application/json"
-                ]
-                    SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
-                                APILayer().postDataToAPINewInsertUser(name: "UserSignup", method: .post, path: "api/Registration/UserSignUp", params: ["userName":self.nameTF.text!, "passWord": self.passwordTF.text!
-                                ,"fullName": self.fullnameTF.text!
-                                ,"emirateID": self.emiratesTF.text!
-                                ,"licenseNo": self.licenseTF.text!
-                                ,"emailAddr": self.emailTF.text!
-                                ,"addressHome": self.addressTF.text!
-                                ,"pictureUrl": ""
-                                ,"phoneNo": self.phonenoTF.text!], headers: headers) { (success, response) in
-                                    SmartSharjahShareClass.hideActivityIndicator(view: self.view)
-                                    print ("------Success: \(success)")
+                SetDefaultWrappers().showAlert(info:"Please enter a valid email".localized(), viewController: self)
+            }
+            else if (self.passwordTF.text! == "")
+            {
+                SetDefaultWrappers().showAlert(info:"Please enter a valid Password".localized(), viewController: self)
+            }
+            else if (self.confirmPasswordTF.text! == "")
+            {
+                SetDefaultWrappers().showAlert(info:"Please enter matching Password".localized(), viewController: self)
+            }
+            else if (self.passwordTF.text! != self.confirmPasswordTF.text!)
+            {
+                SetDefaultWrappers().showAlert(info:"Password & Confirm Password do not match".localized(), viewController: self)
+            }
+            else
+            {
+                if (validatePass())
+                {
+                    
+                    
+                    /*"userName": "Rahim.Khawaja",
+                    "passWord": "Rahim1234",
+                    "fullName": "Rahim Khawaja",
+                    "emirateID": "0123",
+                    "licenseNo": "0123",
+                    "emailAddr": "rahim.khawaja@bmcsolution.com",
+                    "addressHome": "",
+                    "pictureUrl": "/Userimage/bh_connect_logo.png",
+                    "phoneNo": ""*/
+                    let headers = [
+                        "Content-Type": "application/json"
+                    ]
+                        SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
+                                    APILayer().postDataToAPINewInsertUser(name: "UserSignup", method: .post, path: "api/Registration/UserSignUp", params: ["userName":self.nameTF.text!, "passWord": self.passwordTF.text!
+                                    ,"fullName": self.fullnameTF.text!
+                                    ,"emirateID": self.emiratesTF.text!
+                                    ,"licenseNo": self.licenseTF.text!
+                                    ,"emailAddr": self.emailTF.text!
+                                    ,"addressHome": self.addressTF.text!
+                                    ,"pictureUrl": ""
+                                    ,"phoneNo": self.phonenoTF.text!], headers: headers) { (success, response) in
+                                        SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+                                        print ("------Success: \(success)")
 
-                                    if (success)
-                                    {
-                                         print ("------Success: \(success)")
-                                        
-                                                   let userDefaults = UserDefaults.standard
-                                                                                        userDefaults.set(self.nameTF.text, forKey: "username")
-                                                                                        userDefaults.set(self.nameTF.text, forKey: "fullname")
-                                                                                        
-                                        
-                                                                                        UserDefaults.standard.set(self.emailTF.text!, forKey: "temp_username")
-                                                                                        UserDefaults.standard.set(self.passwordTF.text!, forKey: "temp_password")
-                                        
-                                        if let user = response as? NSDictionary{
-                                        
-                                            UserDefaults.standard.set(user.object(forKey: "OTP") as? String ?? "", forKey: "OTP")
-                                           
-                                            UserDefaults.standard.set("False", forKey: "OTPFlag")
+                                        if (success)
+                                        {
+                                             print ("------Success: \(success)")
                                             
-                                           // userDefaults.synchronize()
-                                            self.performSegue(withIdentifier: "signupNext", sender: self)
+                                                       let userDefaults = UserDefaults.standard
+                                                                                            userDefaults.set(self.nameTF.text, forKey: "username")
+                                                                                            userDefaults.set(self.nameTF.text, forKey: "fullname")
+                                                                                            
                                             
+                                                                                            UserDefaults.standard.set(self.emailTF.text!, forKey: "temp_username")
+                                                                                            UserDefaults.standard.set(self.passwordTF.text!, forKey: "temp_password")
+                                            
+                                            if let user = response as? NSDictionary{
+                                            
+                                                UserDefaults.standard.set(user.object(forKey: "OTP") as? String ?? "", forKey: "OTP")
+                                               
+                                                UserDefaults.standard.set("False", forKey: "OTPFlag")
+                                                
+                                               // userDefaults.synchronize()
+                                                self.performSegue(withIdentifier: "signupNext", sender: self)
+                                                
+                                            }
+                                                                                            
+                                            //self.dismiss(animated: true, completion: nil)
+    //                                        let userDefaults = UserDefaults.standard
+    //                                        userDefaults.set(self.emailTF.text, forKey: "username")
+    //                                        userDefaults.synchronize()
+    //                    //                    self.performSegue(withIdentifier: "signupNext", sender: self)
+    //
+    //                                        APILayer().createNewUser(name: "UserSignup", method: .post , path: "createNewUser/Post", username: self.emailTF.text!, fullName: self.nameTF.text!, emiratesID: "", licenseNo: "", emailAddr: self.emailTF.text!, AddrHome: "", userActStatus: "", headers: [:]) { (success, response) in
+    //                                            SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+    //                                            print ("Success: \(success)")
+    //
+    //                                            if (success)
+    //                                            {
+    //                                                let userDefaults = UserDefaults.standard
+    //                                                userDefaults.set(self.emailTF.text, forKey: "username")
+    //                                                userDefaults.set(self.nameTF.text, forKey: "fullname")
+    //                                                userDefaults.synchronize()
+    //
+    //                                                UserDefaults.standard.set(self.emailTF.text!, forKey: "temp_username")
+    //                                                UserDefaults.standard.set(self.passwordTF.text!, forKey: "temp_password")
+    //
+    //                                                self.performSegue(withIdentifier: "signupNext", sender: self)
+    //                                            }
+    //                                            else
+    //                                            {
+    //                                                SetDefaultWrappers().showAlert(info:"Signup Unsuccessful!".localized(), viewController: self)
+    //                                            }
+    //                                        }
+
+
                                         }
-                                                                                        
-                                        //self.dismiss(animated: true, completion: nil)
-//                                        let userDefaults = UserDefaults.standard
-//                                        userDefaults.set(self.emailTF.text, forKey: "username")
-//                                        userDefaults.synchronize()
-//                    //                    self.performSegue(withIdentifier: "signupNext", sender: self)
-//
-//                                        APILayer().createNewUser(name: "UserSignup", method: .post , path: "createNewUser/Post", username: self.emailTF.text!, fullName: self.nameTF.text!, emiratesID: "", licenseNo: "", emailAddr: self.emailTF.text!, AddrHome: "", userActStatus: "", headers: [:]) { (success, response) in
-//                                            SmartSharjahShareClass.hideActivityIndicator(view: self.view)
-//                                            print ("Success: \(success)")
-//
-//                                            if (success)
-//                                            {
-//                                                let userDefaults = UserDefaults.standard
-//                                                userDefaults.set(self.emailTF.text, forKey: "username")
-//                                                userDefaults.set(self.nameTF.text, forKey: "fullname")
-//                                                userDefaults.synchronize()
-//
-//                                                UserDefaults.standard.set(self.emailTF.text!, forKey: "temp_username")
-//                                                UserDefaults.standard.set(self.passwordTF.text!, forKey: "temp_password")
-//
-//                                                self.performSegue(withIdentifier: "signupNext", sender: self)
-//                                            }
-//                                            else
-//                                            {
-//                                                SetDefaultWrappers().showAlert(info:"Signup Unsuccessful!".localized(), viewController: self)
-//                                            }
-//                                        }
+                                        else
+                                        {
+                                            SetDefaultWrappers().showAlert(info:"Signup Unsuccessful!".localized(), viewController: self)
+                                        }
+                    }
+
+    //                SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
+    //                            APILayer().postDataToAPI(name: "UserSignup", method: .post, path: "createNewCredential/Post", params: ["username":self.emailTF.text!, "password": self.passwordTF.text!], headers: [:]) { (success, response) in
+    //                                SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+    //                                print ("------Success: \(success)")
+    //
+    //                                if (success)
+    //                                {
+    //                                    let userDefaults = UserDefaults.standard
+    //                                    userDefaults.set(self.emailTF.text, forKey: "username")
+    //                                    userDefaults.synchronize()
+    //                //                    self.performSegue(withIdentifier: "signupNext", sender: self)
+    //
+    //                                    APILayer().createNewUser(name: "UserSignup", method: .post , path: "createNewUser/Post", username: self.emailTF.text!, fullName: self.nameTF.text!, emiratesID: "", licenseNo: "", emailAddr: self.emailTF.text!, AddrHome: "", userActStatus: "", headers: [:]) { (success, response) in
+    //                                        SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+    //                                        print ("Success: \(success)")
+    //
+    //                                        if (success)
+    //                                        {
+    //                                            let userDefaults = UserDefaults.standard
+    //                                            userDefaults.set(self.emailTF.text, forKey: "username")
+    //                                            userDefaults.set(self.nameTF.text, forKey: "fullname")
+    //                                            userDefaults.synchronize()
+    //
+    //                                            UserDefaults.standard.set(self.emailTF.text!, forKey: "temp_username")
+    //                                            UserDefaults.standard.set(self.passwordTF.text!, forKey: "temp_password")
+    //
+    //                                            self.performSegue(withIdentifier: "signupNext", sender: self)
+    //                                        }
+    //                                        else
+    //                                        {
+    //                                            SetDefaultWrappers().showAlert(info:"Signup Unsuccessful!".localized(), viewController: self)
+    //                                        }
+    //                                    }
+    //
+    //
+    //                                }
+    //                                else
+    //                                {
+    //                                    SetDefaultWrappers().showAlert(info:"Signup Unsuccessful!".localized(), viewController: self)
+    //                                }
+    //            }
 
 
-                                    }
-                                    else
-                                    {
-                                        SetDefaultWrappers().showAlert(info:"Signup Unsuccessful!".localized(), viewController: self)
-                                    }
                 }
 
-//                SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
-//                            APILayer().postDataToAPI(name: "UserSignup", method: .post, path: "createNewCredential/Post", params: ["username":self.emailTF.text!, "password": self.passwordTF.text!], headers: [:]) { (success, response) in
-//                                SmartSharjahShareClass.hideActivityIndicator(view: self.view)
-//                                print ("------Success: \(success)")
-//
-//                                if (success)
-//                                {
-//                                    let userDefaults = UserDefaults.standard
-//                                    userDefaults.set(self.emailTF.text, forKey: "username")
-//                                    userDefaults.synchronize()
-//                //                    self.performSegue(withIdentifier: "signupNext", sender: self)
-//
-//                                    APILayer().createNewUser(name: "UserSignup", method: .post , path: "createNewUser/Post", username: self.emailTF.text!, fullName: self.nameTF.text!, emiratesID: "", licenseNo: "", emailAddr: self.emailTF.text!, AddrHome: "", userActStatus: "", headers: [:]) { (success, response) in
-//                                        SmartSharjahShareClass.hideActivityIndicator(view: self.view)
-//                                        print ("Success: \(success)")
-//
-//                                        if (success)
-//                                        {
-//                                            let userDefaults = UserDefaults.standard
-//                                            userDefaults.set(self.emailTF.text, forKey: "username")
-//                                            userDefaults.set(self.nameTF.text, forKey: "fullname")
-//                                            userDefaults.synchronize()
-//
-//                                            UserDefaults.standard.set(self.emailTF.text!, forKey: "temp_username")
-//                                            UserDefaults.standard.set(self.passwordTF.text!, forKey: "temp_password")
-//
-//                                            self.performSegue(withIdentifier: "signupNext", sender: self)
-//                                        }
-//                                        else
-//                                        {
-//                                            SetDefaultWrappers().showAlert(info:"Signup Unsuccessful!".localized(), viewController: self)
-//                                        }
-//                                    }
-//
-//
-//                                }
-//                                else
-//                                {
-//                                    SetDefaultWrappers().showAlert(info:"Signup Unsuccessful!".localized(), viewController: self)
-//                                }
-//            }
-
-
-            }
-
         }
-
     }
 
     // MARK: - Navigation

@@ -458,7 +458,7 @@ extension ServicesListVC: UITableViewDelegate, UITableViewDataSource{
                 
                 if (!isLoggedIn)
                 {
-                    SetDefaultWrappers().showAlert(info:loginToUseFeatureMsg.localized(), viewController: self)
+                    SetDefaultWrappers().showAlert(info:"Login to use this feature".localized(), viewController: self)
                 }
                 else
                 {
@@ -504,7 +504,7 @@ extension ServicesListVC: UITableViewDelegate, UITableViewDataSource{
                 {
                     if (!isLoggedIn)
                     {
-                        SetDefaultWrappers().showAlert(info:loginToUseFeatureMsg.localized(), viewController: self)
+                        SetDefaultWrappers().showAlert(info:"Login to use this feature".localized(), viewController: self)
                     }
                     else
                     {

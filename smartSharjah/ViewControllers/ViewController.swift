@@ -454,7 +454,7 @@ class ViewController: UIViewController,XMLParserDelegate {
     override func viewDidAppear(_ animated: Bool) {
         //print(dataArray.count)
         //noor edit
-                if Utility.isArabicSelected() {
+                /*if Utility.isArabicSelected() {
                     parseNewsTesting(lang: "ar")
         //            getXMLDataFromServer(lang: "ar")
         //            self.getNewsRSS(lang: "ar")
@@ -463,24 +463,30 @@ class ViewController: UIViewController,XMLParserDelegate {
                     parseNewsTesting(lang: "en")
         //            getXMLDataFromServer(lang: "en")
         //            self.getNewsRSS(lang: "en")
-                }
+                }*/
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        /*
+        
+        DispatchQueue.main.async {
+
+                if Utility.isArabicSelected() {
+                        self.parseNewsTesting(lang: "ar")
+            //            getXMLDataFromServer(lang: "ar")
+            //            self.getNewsRSS(lang: "ar")
+                        self.otherTitles = ["منظم الدواء"]
+                    } else {
+                        self.parseNewsTesting(lang: "en")
+            //            getXMLDataFromServer(lang: "en")
+            //            self.getNewsRSS(lang: "en")
+                    }
+            
+        }
+        
         //noor edit
-        if Utility.isArabicSelected() {
-            parseNewsTesting(lang: "ar")
-//            getXMLDataFromServer(lang: "ar")
-//            self.getNewsRSS(lang: "ar")
-            otherTitles = ["منظم الدواء"]
-        } else {
-            parseNewsTesting(lang: "en")
-//            getXMLDataFromServer(lang: "en")
-//            self.getNewsRSS(lang: "en")
-        }*/
+        
         
        
        
@@ -490,20 +496,25 @@ class ViewController: UIViewController,XMLParserDelegate {
         manager.session.configuration.timeoutIntervalForResource = 10
         manager.session.configuration.timeoutIntervalForRequest = 10
         
-        /*if Reachability.isConnectedToNetwork()
-        {
-            if(Utility.checkSesion())
+        DispatchQueue.main.async {
+         
+            if Reachability.isConnectedToNetwork()
             {
-                self.getData()
-            }
-            else
-            {
-                Utility.getFreshToken {
-                    (success, response) in
+                if(Utility.checkSesion())
+                {
                     self.getData()
                 }
+                else
+                {
+                    Utility.getFreshToken {
+                        (success, response) in
+                        self.getData()
+                    }
+                }
             }
-        }*/
+            
+        }
+        
         
         self.tabBarController?.tabBar.isHidden = false
         NotificationCenter.default.addObserver(self, selector: #selector(self.searchPressed), name: NSNotification.Name(rawValue: "searchPressed"), object: nil)
@@ -520,7 +531,7 @@ class ViewController: UIViewController,XMLParserDelegate {
         
         if (self.navBar != nil)
         {
-            self.navBar.title.text = SMART_SHARJAH.localized()
+            self.navBar.title.text = "Smart Sharjah".localized()
             self.navBar.menuSettings(navController: self.navigationController, menuShown: true)
         }
         

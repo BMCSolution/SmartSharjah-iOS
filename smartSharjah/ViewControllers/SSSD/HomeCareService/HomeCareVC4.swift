@@ -135,6 +135,7 @@ class HomeCareVC4: UIViewController {
             medicalPic.hint = "صورة من التقرير الطبي*"
             
             gender2TF.options = "ذكر,انثى"
+            nationality2TF.options = nationalityList_Arabic
             
         }
         else

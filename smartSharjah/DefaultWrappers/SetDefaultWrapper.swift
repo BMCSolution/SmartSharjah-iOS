@@ -22,8 +22,8 @@ class SetDefaultWrappers : NSObject {
         }
         else
         {
-            let popUp = UIAlertController(title: SMART_SHARJAH.localized(), message: info, preferredStyle: UIAlertController.Style.alert)
-                   popUp.addAction(UIAlertAction(title: buttonOK.localized(), style: .default, handler: { action in
+            let popUp = UIAlertController(title: "Smart Sharjah".localized(), message: info, preferredStyle: UIAlertController.Style.alert)
+                   popUp.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: { action in
                        print("Tapped ok");
                        popUp.dismiss(animated: true, completion: nil)
                    }))

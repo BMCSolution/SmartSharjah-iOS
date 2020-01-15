@@ -48,7 +48,7 @@ class SigninVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.loadLocalization();
+        //self.loadLocalization();
         if Utility.isArabicSelected()
         {
             self.passwordTF.textContentType = .password
@@ -68,26 +68,38 @@ class SigninVC: UIViewController {
 //                   .font: UIFont.systemFont(ofSize: 15.0) ])
 
                 var placeHolder = NSMutableAttributedString()
-                let Name  = "كلمة المرور"
+                var Name  = "كلمة المرور"
                        
                 // Set the Font
                 placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
 
                
                 self.passwordTF.attributedPlaceholder = placeHolder
+                
+                placeHolder = NSMutableAttributedString()
+                Name  = "اسم المستخدم"
+                placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                self.emailTF.attributedPlaceholder = placeHolder
+                
                }
                else
                {
                 
                 
                 var placeHolder = NSMutableAttributedString()
-                 let Name  = "Password"
+                 var Name  = "Password"
                         
                  // Set the Font
                  placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
 
                 
                  self.passwordTF.attributedPlaceholder = placeHolder
+                
+                
+                placeHolder = NSMutableAttributedString()
+                Name  = "User Name"
+                placeHolder = NSMutableAttributedString(string:Name, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+                self.emailTF.attributedPlaceholder = placeHolder
                 
 //                   self.passwordTF.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [
 //                       .foregroundColor: UIColor.lightGray,
@@ -245,10 +257,10 @@ class SigninVC: UIViewController {
         //) || !(self.emailTF.text!.isValidEmail()
         if (self.emailTF.text! == "")
         {
-             SetDefaultWrappers().showAlert(info:enterUserNameMsg.localized(), viewController: self)
+             SetDefaultWrappers().showAlert(info:"Please enter a valid name".localized(), viewController: self)
         }
         else if (self.passwordTF.text! == ""){
-            SetDefaultWrappers().showAlert(info:enterPasswordMsg.localized(), viewController: self)
+            SetDefaultWrappers().showAlert(info:"Please enter a valid Password".localized(), viewController: self)
         }
         else
         {

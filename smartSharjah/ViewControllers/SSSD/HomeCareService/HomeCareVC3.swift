@@ -65,7 +65,7 @@ class HomeCareVC3: UIViewController {
         super.viewDidLoad()
         
         if Utility.isArabicSelected() {
-            passportNumTF.hint = "رقم جواز"
+            passportNumTF.hint = "رقم جواز السفر"
             passportIssuePlaceTF.hint = "مكان الإصدار"
             passportDateIssueTF.hint = "تاريخ الإصدار"
             passportExpiryTF.hint = "تاريخ الانتهاء"

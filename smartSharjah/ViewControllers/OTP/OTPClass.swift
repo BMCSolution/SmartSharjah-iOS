@@ -73,7 +73,7 @@ class OTPClass: UIViewController {
             self.startTimer()
             self.label.text = t
             //self.entryField.hintLbl.text = e
-            self.entryField.textField.text = self.code
+            //self.entryField.textField.text = self.code
         }
         else{
             var t = "Enter the OTP code here"
@@ -137,8 +137,8 @@ class OTPClass: UIViewController {
                         if (success){
 //                            self.editable = !self.editable
 //                            self.tableView.reloadData()
-                            let username = UserDefaults.standard.object(forKey: "temp_username") as? String
-                            let password = UserDefaults.standard.object(forKey: "temp_password") as? String
+                            //let username = UserDefaults.standard.object(forKey: "temp_username") as? String
+                            //let password = UserDefaults.standard.object(forKey: "temp_password") as? String
                              self.performSegue(withIdentifier: "backtologin", sender: self)
 //                            SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
 //
@@ -223,7 +223,7 @@ class OTPClass: UIViewController {
                 {
                     m = "تم إرسال رمز التحقق الى رقمك بنجاح"
                 }
-                let alert = UIAlertController(title: SMART_SHARJAH.localized(), message: m, preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "Smart Sharjah".localized(), message: m, preferredStyle: UIAlertController.Style.alert)
                 
                 // add the actions (buttons)
                 
@@ -293,7 +293,7 @@ class OTPClass: UIViewController {
     
     @IBAction func resendPressed(_ sender: UIButton) {
         self.isResendPressed = true
-    
+        self.startTimer()
                               if let username =  UserDefaults.standard.value(forKey: "username") as? String{
                                   
                                   
@@ -301,12 +301,14 @@ class OTPClass: UIViewController {
                                   
                                       if(otpFlag == "True")
                                       {
-                                          self.methodName = "logingetnewotp"
-                                         self.apiUrl = "api/WebApi/sendOTP"
-                                      }else{
+                                            self.methodName = "logingetnewotp"
+                                            self.apiUrl = "api/WebApi/sendOTP"
+                                      }
+                                      else
+                                      {
                                             self.methodName = "getnewotp"
-                                      self.apiUrl = "api/Registration/sendOTP"
-                                        }
+                                            self.apiUrl = "api/Registration/sendOTP"
+                                       }
                                      
                                          
                                   

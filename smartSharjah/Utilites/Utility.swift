@@ -31,14 +31,14 @@ class Utility: NSObject {
     
     static func showAlertWithTitle(_ title:String,message:String,sender:UIViewController){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: buttonOK.localized(), style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK".localized(), style: UIAlertAction.Style.default, handler: nil))
         sender.present(alert, animated: true, completion: nil)
         
     }
     
     static func showErrorAlert(_ message:String,sender:UIViewController){
-        let alert = UIAlertController(title: Alert.localized(), message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: buttonOK.localized(), style: UIAlertAction.Style.default, handler: nil))
+        let alert = UIAlertController(title: "Alert".localized(), message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK".localized(), style: UIAlertAction.Style.default, handler: nil))
         sender.present(alert, animated: true, completion: nil)
         
     }
