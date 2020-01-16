@@ -495,25 +495,26 @@ class ViewController: UIViewController,XMLParserDelegate {
         // Do any additional setup after loading the view.
         manager.session.configuration.timeoutIntervalForResource = 10
         manager.session.configuration.timeoutIntervalForRequest = 10
-        
-        DispatchQueue.main.async {
-         
-            if Reachability.isConnectedToNetwork()
-            {
-                if(Utility.checkSesion())
+        if User().isLoggedin()
+        {
+            DispatchQueue.main.async {
+                if Reachability.isConnectedToNetwork()
                 {
-                    self.getData()
-                }
-                else
-                {
-                    Utility.getFreshToken {
-                        (success, response) in
+                    if(Utility.checkSesion())
+                    {
                         self.getData()
+                    }
+                    else
+                    {
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.getData()
+                        }
                     }
                 }
             }
-            
         }
+        
         
         
         self.tabBarController?.tabBar.isHidden = false
