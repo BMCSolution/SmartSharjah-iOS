@@ -2044,40 +2044,40 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="326" height="28.5"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfU-Wx-jrC">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="28.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="146.5" height="28.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTa-e0-nEM">
-                                                                                    <rect key="frame" x="114" y="0.0" width="212" height="28.5"/>
+                                                                                    <rect key="frame" x="146.5" y="0.0" width="179.5" height="28.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstItem="kfU-Wx-jrC" firstAttribute="width" secondItem="mG7-kG-X1q" secondAttribute="width" multiplier="0.35" id="IJf-UR-9oE"/>
+                                                                                <constraint firstItem="kfU-Wx-jrC" firstAttribute="width" secondItem="mG7-kG-X1q" secondAttribute="width" multiplier="0.45" id="IJf-UR-9oE"/>
                                                                             </constraints>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="pSd-6t-1Sy">
                                                                             <rect key="frame" x="0.0" y="28.5" width="326" height="29"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datetime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bK9-nE-K9w">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="29"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bK9-nE-K9w">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5o-aV-i9G">
-                                                                                    <rect key="frame" x="114" y="0.0" width="212" height="29"/>
+                                                                                    <rect key="frame" x="146.5" y="0.0" width="179.5" height="29"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstItem="bK9-nE-K9w" firstAttribute="width" secondItem="pSd-6t-1Sy" secondAttribute="width" multiplier="0.35" id="OE3-Vu-QGd"/>
+                                                                                <constraint firstItem="bK9-nE-K9w" firstAttribute="width" secondItem="pSd-6t-1Sy" secondAttribute="width" multiplier="0.45" id="OE3-Vu-QGd"/>
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
@@ -2103,7 +2103,9 @@
                                                 <connections>
                                                     <outlet property="bg" destination="L9x-Dd-ZIQ" id="oYx-bW-z1M"/>
                                                     <outlet property="datetimeLabel" destination="h5o-aV-i9G" id="aec-Lj-cem"/>
+                                                    <outlet property="datetimeLabelText" destination="bK9-nE-K9w" id="JkU-W7-6i0"/>
                                                     <outlet property="serviceLabel" destination="FTa-e0-nEM" id="FFN-C1-gpg"/>
+                                                    <outlet property="serviceLabelText" destination="kfU-Wx-jrC" id="xGc-Kq-zQn"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

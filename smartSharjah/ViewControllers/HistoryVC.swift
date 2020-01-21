@@ -26,11 +26,11 @@ class HistoryVC: UIViewController {
         {
             if Utility.isArabicSelected()
             {
-                navBar.title.text = "التاريخ"
+                navBar.title.text = "سجل الخدمات"
             }
             else
             {
-                navBar.title.text = "History"
+                navBar.title.text = "Logs"
             }
            
             self.navBar.menuSettings(navController: self.navigationController, menuShown: false)
@@ -140,6 +140,17 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource{
         cell.bg.layer.cornerRadius = 10
         cell.serviceLabel.text = self.historyDataDict[indexPath.row].value(forKey: "serviceName") as? String
         cell.datetimeLabel.text = self.historyDataDict[indexPath.row].value(forKey: "createdOn") as? String
+        
+        if Utility.isArabicSelected()
+        {
+            cell.serviceLabelText.text = "اسم الخدمة"
+            cell.datetimeLabelText.text = "الوقت"
+        }
+        else
+        {
+            cell.serviceLabelText.text = "Service Name"
+            cell.datetimeLabelText.text = "Time"
+        }
         
         
         return cell

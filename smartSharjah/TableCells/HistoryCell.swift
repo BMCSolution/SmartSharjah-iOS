@@ -16,6 +16,9 @@ class HistoryCell: UITableViewCell {
     @IBOutlet weak var serviceLabel: UILabel!
     @IBOutlet weak var datetimeLabel: UILabel!
     
+    @IBOutlet weak var serviceLabelText: UILabel!
+    @IBOutlet weak var datetimeLabelText: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

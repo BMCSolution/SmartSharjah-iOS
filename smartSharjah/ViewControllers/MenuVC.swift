@@ -17,12 +17,12 @@ class MenuVC: UIViewController {
     
     var imagePath: String?
     
-    let menuItems = ["Home","Dashboard", "Payments","Profile","History","Settings"]
-    var menuItems_Ar = ["الرئيسية","لوحة البيانات","المدفوعات","الملف الشخصي","التاريخ","الإعدادات"]
+    let menuItems = ["Home","Dashboard", "Payments","Profile","Logs","Settings"]
+    var menuItems_Ar = ["الرئيسية","لوحة البيانات","المدفوعات","الملف الشخصي","سجل الخدمات","الإعدادات"]
     let menuIcons = ["NavHome","ic_tab_dash_new","ic_tab_payment_new","ic_tab_profile_new","NavHistory","ic_menu_settings"]
     
     
-   var imgBaseURL = "http://sharjah24.ae"
+    var imgBaseURL = "http://sharjah24.ae"
     
     
     @objc func logout(){
@@ -126,9 +126,10 @@ extension MenuVC: UITableViewDataSource{
             print("Settings Pressed...!")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SettingsPressed"), object: nil)
         }
-        else if cell.itemName.text! == "History" || cell.itemName.text! == "التاريخ"
+        else if cell.itemName.text! == "Logs" || cell.itemName.text! == "سجل الخدمات"
+            
         {
-            print("History Pressed...!")
+            print("Logs Pressed...!")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "HistoryPressed"), object: nil)
         }
         else
