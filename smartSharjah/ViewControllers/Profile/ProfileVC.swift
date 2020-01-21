@@ -37,10 +37,10 @@ class ProfileVC: UIViewController {
     var username = ""
     var searchMode: Bool!
     var titleArr:[String] = [
-        "User Name",
+        //"User Name",
         "Full Name",
         "Emirates ID",
-        "License Number",
+        //"License Number",
         "Email",
         "Address",
         "Mobile Number"
@@ -57,10 +57,10 @@ class ProfileVC: UIViewController {
         "الهاتف المتحرك"
         ,   "العنوان"
            ,"لبريد الإلكتروني"
-           ,"رقم الرخصة"
+          // ,"رقم الرخصة"
 ,"لهوية الإماراتية"
            ,"الاسم الكامل"
-        ,"اسم المستخدم"
+       // ,"اسم المستخدم"
     ]
     
     var imageStr = ""
@@ -81,11 +81,11 @@ class ProfileVC: UIViewController {
     func validateFields() -> Bool
     {
         
-        if self.valueArr[0] == ""
+        /*if self.valueArr[0] == ""
         {
             SetDefaultWrappers().showAlert(info:"User name cannot be empty".localized(), viewController: self)
             return false
-        }
+        }*/
         
         if self.valueArr[1] == ""
         {
@@ -97,11 +97,11 @@ class ProfileVC: UIViewController {
             SetDefaultWrappers().showAlert(info:"Emirates ID cannot be empty".localized(), viewController: self)
             return false
         }
-        else if self.valueArr[3] == ""
+        /*else if self.valueArr[3] == ""
         {
             SetDefaultWrappers().showAlert(info:"License No cannot be empty".localized(), viewController: self)
             return false
-        }
+        }*/
         else if self.valueArr[4] == ""
         {
             SetDefaultWrappers().showAlert(info:"Email cannot be empty".localized(), viewController: self)
@@ -326,8 +326,8 @@ class ProfileVC: UIViewController {
                                 userDefaults.synchronize()
                               
                                 self.imagePath = self.x
-                    self.imageStr = self.x!
-                                               self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+                                self.imageStr = self.x!
+                                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
                                 
                     SetDefaultWrappers().showAlert(info:"Successfully Updated Profile Image".localized(), viewController: self)
                     //self.getProfileInfo(updatePic: true)
@@ -343,7 +343,7 @@ class ProfileVC: UIViewController {
                                 
                                 APILayer().postDataToAPINew(name: "UserLogin", method: .post, path: "AuthenticationTokenService", params: [
                                                "grant_type":"password",
-                                               "username":User().getUser(field: User().username_key) as? String,
+                                               "username":User().getUserData(field: User().username_key) as? String,
                                               
                                                "ServiceTYPE": "refreshtoken",
                                                "DeviceDetails": Utility.getDeviceDetail(),
@@ -375,9 +375,9 @@ class ProfileVC: UIViewController {
                                                                         userDefaults.set(self.x, forKey: "pictureUrl")
                                                                         userDefaults.synchronize()
                                                                       
-                                                                        self.imagePath = self.x
-                                            self.imageStr = self.x!
-                                                                                       self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+                                                                self.imagePath = self.x
+                                                                self.imageStr = self.x!
+                                                                self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)],with:.none)
                                                                         
                                                             SetDefaultWrappers().showAlert(info:"Successfully Updated Profile Image".localized(), viewController: self)
                                                             //self.getProfileInfo(updatePic: true)
@@ -667,7 +667,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                 cell.textField.hint = self.titles_Ar[indexPath.row]
                 
                 //if self.titles_Ar[indexPath.row] == "اسم المستخدم"
-                if indexPath.row == 0
+                /*if indexPath.row == 0
                 {
                     cell.textField.textField.keyboardType = .default
                     
@@ -675,12 +675,13 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                         cell.textField.textField.text = val
                         //                        self.valueArr.insert(val, at: 0)
                     }
-                }
+                }*/
                 
                 //else if self.titles_Ar[indexPath.row] == "الاسم الكامل"
-                else if indexPath.row == 1
+                //else
+                if indexPath.row == 0
                 {
-                    
+                    cell.textField.textField.tag = 1
                     cell.textField.textField.keyboardType = .default
                     if let val = User().getUserData(field: User().name_Key) as? String {
                         cell.textField.textField.text = val
@@ -688,24 +689,26 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                     }
                 }
                 //else if self.titles_Ar[indexPath.row] == "الهوية الإماراتية"
-                else if indexPath.row == 2
+                else if indexPath.row == 1
                 {
+                    cell.textField.textField.tag = 2
                     cell.textField.textField.keyboardType = .default
                     if let val = User().getUserData(field: User().emirateID_Key) as? String {
                         cell.textField.textField.text = val
                     }
                 }
                     //else if self.titleArr[indexPath.row] == "رقم الرخصة"
-                    else if indexPath.row == 3
+                    /*else if indexPath.row == 3
                     {
                         cell.textField.textField.keyboardType = .default
                         if let val = User().getUserData(field: User().licenseNo_key) as? String {
                             cell.textField.textField.text = val
                         }
-                    }
+                    }*/
                 //else if self.titles_Ar[indexPath.row] == "البريد الإلكتروني"
-                else if indexPath.row == 4
+                else if indexPath.row == 2
                 {
+                    cell.textField.textField.tag = 4
                     cell.textField.textField.isEnabled = false
                     cell.textField.textField.keyboardType = .emailAddress
                     if let val = User().getUserData(field: User().email_Key) as? String {
@@ -714,8 +717,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                     }
                 }
                 //else if self.titles_Ar[indexPath.row] == "العنوان"
-                else if indexPath.row == 5
+                else if indexPath.row == 3
                 {
+                    cell.textField.textField.tag = 5
                     cell.textField.textField.keyboardType = .default
                     if let val = User().getUserData(field: User().address_Key) as? String {
                         cell.textField.textField.text = val
@@ -724,8 +728,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                     
                 }
                 //else if self.titles_Ar[indexPath.row] == "الهاتف المتحرك"
-                else if indexPath.row == 6
+                else if indexPath.row == 4
                 {
+                    cell.textField.textField.tag = 6
                     cell.textField.textField.keyboardType = .numberPad
                     if let val = User().getUserData(field: User().mobileNumber_key) as? String {
                         cell.textField.textField.text = val
@@ -739,17 +744,19 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                 //"User Name","Full Name", "Emirates ID","License No", "Email", "Address","Mobile Number"
                 cell.textField.hint = self.titleArr[indexPath.row]
                 //if self.titleArr[indexPath.row] == "User Name"
-                if indexPath.row == 0
+                /*if indexPath.row == 0
                 {
                     cell.textField.textField.keyboardType = .default
                     if let val = User().getUserData(field: User().username_key) as? String {
                         cell.textField.textField.text = val
                         //                        self.valueArr[0] = val
                     }
-                }
+                }*/
                 //else if self.titleArr[indexPath.row] == "Full Name"
-                else if indexPath.row == 1
+                //else
+                if indexPath.row == 0
                                    {
+                                    cell.textField.textField.tag = 1
                                        cell.textField.textField.keyboardType = .default
                                        if let val = User().getUserData(field: User().name_Key) as? String {
                                            cell.textField.textField.text = val
@@ -757,8 +764,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                                        }
                                    }
                 //else if self.titleArr[indexPath.row] == "Emirates ID"
-                else if indexPath.row == 2
+                else if indexPath.row == 1
                 {
+                    cell.textField.textField.tag = 2
                     cell.textField.textField.keyboardType = .numberPad
                     if let val = User().getUserData(field: User().emirateID_Key) as? String {
                         cell.textField.textField.text = val
@@ -766,16 +774,17 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                     }
                 }
                 //else if self.titleArr[indexPath.row] == "License Number"
-                else if indexPath.row == 3
+                /*else if indexPath.row == 3
                 {
                     cell.textField.textField.keyboardType = .default
                     if let val = User().getUserData(field: User().licenseNo_key) as? String {
                         cell.textField.textField.text = val
                     }
-                }
+                }*/
                 //else if self.titleArr[indexPath.row] == "Email"
-                else if indexPath.row == 4
+                else if indexPath.row == 2
                 {
+                    cell.textField.textField.tag = 4
                     cell.textField.textField.isEnabled = false
                     cell.textField.textField.keyboardType = .emailAddress
                     if let val = User().getUserData(field: User().email_Key) as? String {
@@ -784,8 +793,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                     }
                 }
                 //else if self.titleArr[indexPath.row] == "Address"
-                else if indexPath.row == 5
+                else if indexPath.row == 3
                 {
+                    cell.textField.textField.tag = 5
                     cell.textField.textField.keyboardType = .default
                     if let val = User().getUserData(field: User().address_Key) as? String {
                         cell.textField.textField.text = val
@@ -795,8 +805,9 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                     
                 }
                 //else if self.titleArr[indexPath.row] == "Mobile Number"
-                else if indexPath.row == 6
+                else if indexPath.row == 4
                 {
+                    cell.textField.textField.tag = 6
                     cell.textField.textField.keyboardType = .numberPad
                     if let val = User().getUserData(field: User().mobileNumber_key) as? String {
                         print("Mobile Number: \(val)")
@@ -820,10 +831,10 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource{
                 {
                     cell.textField.textField.isEnabled = false
                 }
-                if(indexPath.row == 0)
+                /*if(indexPath.row == 0)
                 {
                     cell.textField.textField.isEnabled = false
-                }
+                }*/
             }
             else{
                 cell.textField.textField.isEnabled = false

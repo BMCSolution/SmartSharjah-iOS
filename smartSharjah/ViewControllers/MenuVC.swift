@@ -17,9 +17,9 @@ class MenuVC: UIViewController {
     
     var imagePath: String?
     
-    let menuItems = ["Home","Dashboard", "Payments","Profile","Settings"]
-    var menuItems_Ar = ["الرئيسية","لوحة البيانات","المدفوعات","الملف الشخصي","الإعدادات"]
-    let menuIcons = ["NavHome","ic_tab_dash_new","ic_tab_payment_new","ic_tab_profile_new","ic_menu_settings"]
+    let menuItems = ["Home","Dashboard", "Payments","Profile","History","Settings"]
+    var menuItems_Ar = ["الرئيسية","لوحة البيانات","المدفوعات","الملف الشخصي","التاريخ","الإعدادات"]
+    let menuIcons = ["NavHome","ic_tab_dash_new","ic_tab_payment_new","ic_tab_profile_new","NavHistory","ic_menu_settings"]
     
     
    var imgBaseURL = "http://sharjah24.ae"
@@ -85,7 +85,7 @@ class MenuVC: UIViewController {
     }
     func fillUserData()
     {
-        if let name = User().getUser(field: User().name_Key) as? String{
+        if let name = User().getUserData(field: User().name_Key) as? String{
             self.nameLbl.text = name
         }
         else{
@@ -123,8 +123,13 @@ extension MenuVC: UITableViewDataSource{
         let cell = tableView.cellForRow(at: indexPath) as! MenuTableCell
         if cell.itemName.text! == "Settings" || cell.itemName.text! == "الإعدادات"
         {
-             print("Settings Pressed...!")
+            print("Settings Pressed...!")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SettingsPressed"), object: nil)
+        }
+        else if cell.itemName.text! == "History" || cell.itemName.text! == "التاريخ"
+        {
+            print("History Pressed...!")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "HistoryPressed"), object: nil)
         }
         else
         {

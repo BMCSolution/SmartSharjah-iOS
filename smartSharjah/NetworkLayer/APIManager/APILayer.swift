@@ -1019,8 +1019,10 @@ class APILayer {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
             }
             
+
+            
             if let data = imageData{
-                multipartFormData.append(data, withName: "image", fileName: "image.png", mimeType: "image/png")
+                multipartFormData.append(data, withName: "image_", fileName: ("image_\(Utility.getUdid())_\(Date().millisecondsSince1970).png"), mimeType: "image/png")
             }
             
         }, usingThreshold: UInt64.init(), to: url, method: .post, headers: headers) { (result) in
@@ -1426,5 +1428,15 @@ extension Request {
         debugPrint(self)
         #endif
         return self
+    }
+}
+
+extension Date {
+    var millisecondsSince1970:Int64 {
+        return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds:Int64) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
 }

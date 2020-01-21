@@ -49,6 +49,8 @@ class MainTabVC: UITabBarController {
         
          NotificationCenter.default.addObserver(self, selector: #selector(self.settingsPressed), name: NSNotification.Name(rawValue: "SettingsPressed"), object: nil)
         
+         NotificationCenter.default.addObserver(self, selector: #selector(self.historyPressed), name: NSNotification.Name(rawValue: "HistoryPressed"), object: nil)
+        
         
     }
     
@@ -62,6 +64,17 @@ class MainTabVC: UITabBarController {
         
         
     }
+    
+    @objc func historyPressed()
+        {
+    //        let vc = self.storyboard!.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            
+                self.performSegue(withIdentifier: "OpenHistory", sender: self)
+            }
+            
+            
+        }
     
     @objc func gotoLogin() {
         

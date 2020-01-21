@@ -982,6 +982,7 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate
                {
                    if govtTitles_Ar[indexPath.row] == "وسائل الإعلام" || govtTitles_Ar[indexPath.row] == "التبرعات"         {
                          SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                        return
                      }
                      else
                       {
@@ -999,6 +1000,7 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate
                    if govtTitles[indexPath.row] == "Media" || govtTitles[indexPath.row] == "Donations"
                     {
                       SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                        return
                     }
                     else
                    {
@@ -1040,6 +1042,7 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate
                 if self.otherTitles[indexPath.row] == "منظم الدواء"
                 {
                      SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                    return
                 }
                 else
                 {
@@ -1053,6 +1056,7 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate
                 if self.otherTitles[indexPath.row] == "Medicine Reminder"
                 {
                      SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                    return
                 }
                 else
                 {

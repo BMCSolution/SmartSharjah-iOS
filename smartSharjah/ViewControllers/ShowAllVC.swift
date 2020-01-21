@@ -188,6 +188,7 @@ extension ShowAllVC: UICollectionViewDelegate, UICollectionViewDataSource{
                 if govtTitles_Ar[indexPath.row] == "وسائل الإعلام" || govtTitles_Ar[indexPath.row] == "التبرعات"
                  {
                       SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                    return
                   }
 //                else if UserDefaults.standard.object(forKey: "username") == nil  && self.govtTitles[indexPath.row] == "الخدمات الاجتماعية"
 //                   {
@@ -209,6 +210,7 @@ extension ShowAllVC: UICollectionViewDelegate, UICollectionViewDataSource{
                 if govtTitles[indexPath.row] == "Media" || govtTitles[indexPath.row] == "Donations"
                 {
                    SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                    return
                }
 //                else if UserDefaults.standard.object(forKey: "username") == nil  && self.govtTitles[indexPath.row] == "Social Services"
 //                {
@@ -237,6 +239,7 @@ extension ShowAllVC: UICollectionViewDelegate, UICollectionViewDataSource{
                   if self.otherTitles_Ar[indexPath.row] == "منظم الدواء"
                   {
                        SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                    return
                   }
                   
               }
@@ -245,6 +248,7 @@ extension ShowAllVC: UICollectionViewDelegate, UICollectionViewDataSource{
                   if self.otherTitles[indexPath.row] == "Medicine Reminder"
                   {
                        SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                    return
                   }
                  
               }

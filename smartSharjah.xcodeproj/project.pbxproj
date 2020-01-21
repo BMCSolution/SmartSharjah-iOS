@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1799463C23D5E858003A85AA /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799463B23D5E858003A85AA /* HistoryVC.swift */; };
+		1799463E23D6F303003A85AA /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799463D23D6F303003A85AA /* HistoryCell.swift */; };
 		17DD19DD23A900200088A563 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17DD19DC23A900200088A563 /* CloudKit.framework */; };
 		18C7362D231BD5E60085F516 /* MQAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7362B231BD5E60085F516 /* MQAPIManager.swift */; };
 		22507F85656172BDE18D9039 /* Pods_smartSharjah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE90EFC938950B82D69FCF7 /* Pods_smartSharjah.framework */; };
@@ -154,6 +156,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1799463B23D5E858003A85AA /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		1799463D23D6F303003A85AA /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		17DD19DC23A900200088A563 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		18C7362B231BD5E60085F516 /* MQAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQAPIManager.swift; sourceTree = "<group>"; };
 		3EE90EFC938950B82D69FCF7 /* Pods_smartSharjah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smartSharjah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -623,6 +627,7 @@
 				B63525EC2376B346004CBD72 /* PostalCodesVC.swift */,
 				9F8A68272379F99A00B15599 /* arcGISVC.swift */,
 				9F8A6831237A3D6D00B15599 /* NewAllNewsVC.swift */,
+				1799463B23D5E858003A85AA /* HistoryVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -703,6 +708,7 @@
 				B6D99F13232AB3AF00A8763C /* MenuTableCell.swift */,
 				B66988DB2361A95A00CFA5B8 /* ProfileTopCell.swift */,
 				B63404C72361C6DD006C46D9 /* SaveProfileCell.swift */,
+				1799463D23D6F303003A85AA /* HistoryCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -1084,6 +1090,7 @@
 				9F022236231FF5A00089052F /* LegalVC.swift in Sources */,
 				B6691B19236C3ED700ED4788 /* PrivacyDetailsVC.swift in Sources */,
 				9F6C3BE6231E0081007E4A36 /* InfoVC.swift in Sources */,
+				1799463C23D5E858003A85AA /* HistoryVC.swift in Sources */,
 				9F6C3BDC231DCDB9007E4A36 /* PersonalInfoVC.swift in Sources */,
 				9F6C3BD8231DC69F007E4A36 /* AccidentTypeVC.swift in Sources */,
 				B6166D8B2317455400F86FCF /* FlightInformation.swift in Sources */,
@@ -1127,6 +1134,7 @@
 				B6D99F16232B60F000A8763C /* SearchVC.swift in Sources */,
 				B6A14561231536490048B651 /* NewUserRegistrationVC.swift in Sources */,
 				875BEE72231C3AAE0035F536 /* BookTaxiVC.swift in Sources */,
+				1799463E23D6F303003A85AA /* HistoryCell.swift in Sources */,
 				B6D99F12232AB35B00A8763C /* MenuVC.swift in Sources */,
 				B6117F462311336E00EE7134 /* otherServicesCollectionViewCell.swift in Sources */,
 				B6BE4EEF231AC5C80058D56E /* ShjDestTableViewCell.swift in Sources */,

@@ -451,7 +451,8 @@ extension ServicesListVC: UITableViewDelegate, UITableViewDataSource{
             {
                 SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
             }
-            else if (cell.serviceLabel.text as NSString? == "تقارير الحوادث الصغرى" || cell.serviceLabel.text as NSString? == "Minor Accident Reporting" ||
+            else
+                if (cell.serviceLabel.text as NSString? == "تقارير الحوادث الصغرى" || cell.serviceLabel.text as NSString? == "Minor Accident Reporting" ||
                 cell.serviceLabel.text as NSString? == "تطبيق وظائف الخدمات الاجتماعية"
                 || cell.serviceLabel.text as NSString? == "Social Services Job Application" || cell.serviceLabel.text as NSString? == "" || cell.serviceLabel.text as NSString? == "Volunteer at SSSD" || cell.serviceLabel.text as NSString? == "Adoption at SSSD" || cell.serviceLabel.text as NSString? == "Consultation Services" || cell.serviceLabel.text as NSString? == "Homecare for Elderly" || cell.serviceLabel.text as NSString? == "Nursing" ||  cell.serviceLabel.text as NSString? == "متطوعون بدائرة الخدمات الاجتماعية بالشارقة" || cell.serviceLabel.text as NSString? == "الاحتضان  من خلال دائرة الخدمات الاجتماعية بالشارقة" || cell.serviceLabel.text as NSString? == "خدمات استشارية" || cell.serviceLabel.text as NSString? == "الرعاية المنزلية لكبار السن" || cell.serviceLabel.text as NSString? == "تمريض")
             {
@@ -488,8 +489,35 @@ extension ServicesListVC: UITableViewDelegate, UITableViewDataSource{
                     }
                     
                    self.performSegue(withIdentifier:seg, sender: self)
-                }
-            }*/
+                }*/
+                            else
+                            {
+                                //noor edit
+                                if ( cell.serviceLabel.text as NSString? == "Restaurants" || cell.serviceLabel.text as NSString? == "المطاعم"){
+                                    
+                                    let storyBoard: UIStoryboard = UIStoryboard(name: "Resturant", bundle: nil)
+                                    let restaurantViewController = storyBoard.instantiateViewController(withIdentifier: "resturant") as! Resturant
+            //                        self.present(balanceViewController, animated: true, completion: nil)
+                                    self.navigationController?.title = "Restaurants"
+                                    self.navigationController?.pushViewController(restaurantViewController, animated: true)
+                                    
+                                    print("going through from here")
+                                    
+                                }
+                                    //---end
+                                else{
+                                                           
+                                    if let seg = self.filterDataDict[indexPath.row].value(forKey: "segue") as? String
+                                    {
+                                        if let title = self.filterDataDict[indexPath.row].value(forKey: "serviceName") as? String
+                                        {
+                                             self.selection = title
+                                        }
+                                        
+                                       self.performSegue(withIdentifier:seg, sender: self)
+                                    }
+                                }
+                            }
         }
         else
         {
