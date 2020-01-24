@@ -27,23 +27,26 @@ class PicturesVC: UIViewController {
     var ownerNameString: String!
     var mobileNumString: String!
     var EmailAddressString: String!
+    var NationalityString: String!
+    
     var images:[UIImage] = [UIImage(), UIImage(), UIImage(), UIImage(), UIImage(), UIImage()]
     
     // for Non-Faulty car details
-       var fn_plateCodeString: String!
-       var fn_plateNumberString: String!
-       var fn_sourceString: String!
-       var fn_colorString: String!
-       var fn_licenseSourceString: String!
-       var fn_LicenseNumberString: String!
-       var fn_genderString: String!
-       var fn_dobString: String!
-       var fn_policyNumString: String!
-       var fn_insuranceCompanyString: String!
-       var fn_insuranceExpiryString: String!
-       var fn_ownerNameString: String!
-       var fn_mobileNumString: String!
-       var fn_EmailAddressString: String!
+    var fn_plateCodeString: String!
+    var fn_plateNumberString: String!
+    var fn_sourceString: String!
+    var fn_colorString: String!
+    var fn_licenseSourceString: String!
+    var fn_LicenseNumberString: String!
+    var fn_genderString: String!
+    var fn_dobString: String!
+    var fn_policyNumString: String!
+    var fn_insuranceCompanyString: String!
+    var fn_insuranceExpiryString: String!
+    var fn_ownerNameString: String!
+    var fn_mobileNumString: String!
+    var fn_EmailAddressString: String!
+    var fn_NationalityString: String!
     
     
     
@@ -91,21 +94,23 @@ class PicturesVC: UIViewController {
             dest.ownerNameString = self.ownerNameString
             dest.mobileNumString = self.mobileNumString
             dest.EmailAddressString = self.EmailAddressString
+            dest.NationalityString = self.NationalityString
             dest.images = self.images
             
             dest.fn_plateNumberString = self.fn_plateNumberString
-             dest.fn_sourceString = self.fn_sourceString
-             dest.fn_colorString = self.fn_colorString
-             dest.fn_licenseSourceString = self.fn_licenseSourceString
-             dest.fn_LicenseNumberString = self.fn_LicenseNumberString
-             dest.fn_genderString = self.fn_genderString
-             dest.fn_dobString = self.fn_dobString
-             dest.fn_policyNumString = self.fn_policyNumString
-             dest.fn_insuranceCompanyString = self.fn_insuranceCompanyString
-             dest.fn_insuranceExpiryString = self.fn_insuranceExpiryString
-             dest.fn_ownerNameString = self.fn_ownerNameString
-             dest.fn_mobileNumString = self.fn_mobileNumString
-             dest.fn_EmailAddressString = self.fn_EmailAddressString
+            dest.fn_sourceString = self.fn_sourceString
+            dest.fn_colorString = self.fn_colorString
+            dest.fn_licenseSourceString = self.fn_licenseSourceString
+            dest.fn_LicenseNumberString = self.fn_LicenseNumberString
+            dest.fn_genderString = self.fn_genderString
+            dest.fn_dobString = self.fn_dobString
+            dest.fn_policyNumString = self.fn_policyNumString
+            dest.fn_insuranceCompanyString = self.fn_insuranceCompanyString
+            dest.fn_insuranceExpiryString = self.fn_insuranceExpiryString
+            dest.fn_ownerNameString = self.fn_ownerNameString
+            dest.fn_mobileNumString = self.fn_mobileNumString
+            dest.fn_EmailAddressString = self.fn_EmailAddressString
+            dest.fn_NationalityString = self.fn_NationalityString
             
         }
     }

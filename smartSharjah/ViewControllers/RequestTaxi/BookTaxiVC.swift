@@ -533,26 +533,43 @@ class BookTaxiVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
 //        request.httpMethod = "POST"
 //        request.allHTTPHeaderFields = headers
 //        request.httpBody = postData as Data
+        /*{"accessToken":"88e085b7-c0bc-4eba-8d6a-df068949d56a","countryCode":"971","driverNotes":"uvjvvj","dropoffAddrLat":"25.39146248246002","dropoffAddrLon":"55.44513311237097","dropoffAddrText":"Safeer Mall Ajman ","jobType":"","mobile":"482563125","name":"Salman  Name","notificationToken":"","paymentMode":"","pickupAddrLat":"25.372150907848347","pickupAddrLon":"55.45351769775153","pickupAddrText":"Sharjah Transport Authority Building, ","pickupPoint":"","pickupTime":"23 Jan 2020 16:20","vehicleTypeId":""}*/
+        
+        var formatter1 = DateFormatter()
+        formatter1.dateFormat = "HH:mm dd/MM/yyyy"
+        formatter1.locale = Locale.init(identifier: "en_US")
+        formatter1.timeZone = TimeZone.current
+            
+        let pickupDateTime = formatter1.date(from:self.txtPickerDateTime.textField.text!) ?? Date()
+        print("pickupDateTime: \(pickupDateTime)")
+        
+        var formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        formatter.locale = Locale.init(identifier: "en_US")
+        formatter.timeZone = TimeZone.current
+        let pickupDateTimeRequiredFormat = formatter.string(from:pickupDateTime)
+        
         
         
         var params:[String: Any] = [
-        "countryCode" : txtCode.textField.text!,
-        "mobile" : txtPhoneNum.textField.text!,
-        "name" : txtFullName.textField.text!,
-        "jobType" : "ADVANCE",
-        "pickupAddrText" : self.txtPickupLocation.textField.text!,
-        "pickupAddrLat" : currentLat,
-        "pickupAddrLon" : currentLong,
-        "dropoffAddrText" : txtDropoffLocation.textField.text!,
-        "dropoffAddrLat" : dropOffLat,
-        "dropoffAddrLon" : dropOfflong,
-        "vehicleTypeId" : 30,
-        "driverNotes" : driverNotes_txtView.text!,
-        "notificationToken" : 123,
-        "paymentMode" : 2 ,
-        "recurrenceId": "-1",
-        "accessToken": "",
-        "pickupTime" : self.txtPickerDateTime.textField.text!
+            "accessToken":"88e085b7-c0bc-4eba-8d6a-df068949d56a",
+            "countryCode" : txtCode.textField.text!,
+            "mobile" : txtPhoneNum.textField.text!,
+            "name" : txtFullName.textField.text!,
+            "jobType" : "ADVANCE",
+            "pickupAddrText" : self.txtPickupLocation.textField.text!,
+            "pickupAddrLat" : currentLat,
+            "pickupAddrLon" : currentLong,
+            "dropoffAddrText" : txtDropoffLocation.textField.text!,
+            "dropoffAddrLat" : dropOffLat,
+            "dropoffAddrLon" : dropOfflong,
+            "vehicleTypeId" : 30,
+            "driverNotes" : driverNotes_txtView.text!,
+            "notificationToken" : 123,
+            "paymentMode" : 2 ,
+            "recurrenceId": "-1",
+            //"accessToken": "",
+            "pickupTime" : pickupDateTimeRequiredFormat
         ]
         
         let ulr =  URL(string: APILayer().baseURL +  "api/BookATaxiController/HireATaxi")!
@@ -598,30 +615,48 @@ class BookTaxiVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
                             if let respJson = response.value as? NSDictionary
                             {
                                 print ("responseJson: \(respJson)")
-                                
-                                if let msg = respJson.value(forKey: "Message") as? String{
-                                    
-                                    var m = "Taxi has been successfully booked - Please call 600525252 to follow-up"
-                                    if Utility.isArabicSelected()
-                                    {
-                                        m = "تم حجز المكبة بنجاح، يرجى الاتصال ب 600525252 للمتابعة"
-                                    }
-                                    
-                                    var t = "Book a Taxi"
-                                    if Utility.isArabicSelected()
-                                    {
-                                        t = "احجز سيارة أجرة"
-                                    }
-                                     let otherAlert = UIAlertController(title: t, message: m, preferredStyle: UIAlertController.Style.alert)
-                                        let dismiss = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
-                                            self.navigationController?.dismiss(animated: true, completion: nil)
+                                let status = respJson.value(forKey: "result") as! String
+                                if(status == "success")
+                                {
+                                    if let msg = respJson.value(forKey: "jobNo") as? String{
+                                                
+                                                var m = "Taxi has been successfully booked - Please call 600525252 to follow-up"
+                                                if Utility.isArabicSelected()
+                                                {
+                                                    m = "تم حجز المكبة بنجاح، يرجى الاتصال ب 600525252 للمتابعة"
                                                 }
-                        
-                        
-                                        otherAlert.addAction(dismiss)
+                                                
+                                                var t = "Book a Taxi"
+                                                if Utility.isArabicSelected()
+                                                {
+                                                    t = "احجز سيارة أجرة"
+                                                }
+                                                 let otherAlert = UIAlertController(title: t, message: m, preferredStyle: UIAlertController.Style.alert)
+                                                    let dismiss = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+                                                        self.navigationController?.dismiss(animated: true, completion: nil)
+                                                            }
                                     
-                                    self.present(otherAlert, animated: true, completion: nil)
+                                    
+                                                    otherAlert.addAction(dismiss)
+                                                
+                                                self.present(otherAlert, animated: true, completion: nil)
+                                            }
                                 }
+                                else
+                                {
+                                    if let message = respJson.value(forKey: "debug") as? String{
+                                        let otherAlert = UIAlertController(title: self.navBar.title.text, message: message, preferredStyle: UIAlertController.Style.alert)
+                                                        let dismiss = UIAlertAction(title: "OK".localized(), style: .default) { (action:UIAlertAction) in
+                                                            //self.navigationController?.dismiss(animated: true, completion: nil)
+                                                                }
+                                        
+                                        
+                                                        otherAlert.addAction(dismiss)
+                                                    
+                                                    self.present(otherAlert, animated: true, completion: nil)
+                                    }
+                                }
+                                
                             }
                     }
                 }

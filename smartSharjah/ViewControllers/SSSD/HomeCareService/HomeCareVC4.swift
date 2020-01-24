@@ -460,7 +460,7 @@ class HomeCareVC4: UIViewController {
             "homeAddressResidentPhoneNumber":"xxx",
             "cardHolderSignatureImage":"xxx",
             "name":(self.fullName2 as! String),
-            "gender_id":(self.gender2 as! String),
+            "gender_id":"1",
             "marital_status_id":"1",
             "hc_category_id":(self.category2 as! String),
             "date_of_birth":(self.dob2 as! String),

@@ -20,6 +20,8 @@ class PersonalInfoVC: UIViewController {
     @IBOutlet weak var heading3: UILabel!
     @IBOutlet weak var heading4: UILabel!
     
+    @IBOutlet weak var nationality: TextField!
+    
 //    @IBOutlet weak var dob: iOSDropDown!
     @IBOutlet weak var dob: TextField!
     //    @IBOutlet weak var gender: iOSDropDown!
@@ -73,6 +75,7 @@ class PersonalInfoVC: UIViewController {
     var ownerNameString: String!
     var mobileNumString: String!
     var EmailAddressString: String!
+    var NationalityString: String!
     
     
     // for Non-Faulty car details
@@ -90,6 +93,7 @@ class PersonalInfoVC: UIViewController {
     var fn_ownerNameString: String!
     var fn_mobileNumString: String!
     var fn_EmailAddressString: String!
+    var fn_NationalityString: String!
     
     
     var toolBar = UIToolbar()
@@ -160,7 +164,9 @@ class PersonalInfoVC: UIViewController {
             mobileNum.hint = "الهاتف المتحرك *"
             emailAddress.hint = "البريد الإلكتروني *"
             plateCode.hint = "رمز لوحة المركبة *"
+            nationality.hint = "الجنسية"
             
+            nationality.options = nationalityList_Arabic
             gender.options = "ذكر,انثى"
             color.options =  "أبيض,أسود,فضة"
             source.options = "أبو ظبي,دبي,الشارقة,عجمان,أم القيوين, رأس الخيمة ,الفجيرة,شرطة أبو ظبي, الجيش, الوزارة الداخلية,M.O.F.A"
@@ -182,6 +188,7 @@ class PersonalInfoVC: UIViewController {
             mobileNum.hint = "Mobile Number *"
             emailAddress.hint = "Email *"
             plateCode.hint = "Plate Code *"
+            nationality.hint = "Nationality *"
         }
         
         self.mobileNum.textField.keyboardType = .numberPad
@@ -244,7 +251,7 @@ class PersonalInfoVC: UIViewController {
         {
             if (validated())
             {
-                self.performSegue(withIdentifier: "nexttofaulty", sender: self)
+                self.performSegue(withIdentifier: "nexttononfaulty", sender: self)
             }
         }
         else
@@ -301,6 +308,9 @@ class PersonalInfoVC: UIViewController {
             dest.insuranceCompanyString = self.insuranceNum.textField.text!
             dest.insuranceExpiryString = self.insuranceExp.textField.text!
             dest.EmailAddressString = self.emailAddress.textField.text!
+            dest.NationalityString = self.nationality.textField.text!
+            dest.ownerNameString = self.ownersName.textField.text!
+            dest.mobileNumString = self.mobileNum.textField.text!
             
             dest.fn_plateNumberString = self.fn_plateNumberString
             dest.fn_sourceString = self.fn_sourceString
@@ -315,26 +325,30 @@ class PersonalInfoVC: UIViewController {
             dest.fn_ownerNameString = self.fn_ownerNameString
             dest.fn_mobileNumString = self.fn_mobileNumString
             dest.fn_EmailAddressString = self.fn_EmailAddressString
+            dest.fn_NationalityString = self.fn_NationalityString
             
         }
         else{
             
             var dest = segue.destination as! PersonalInfoVC
+            dest.location = self.location
+            dest.type = self.type
             dest.faulty = true
             
             dest.fn_plateNumberString = self.plateNumber.textField.text!
-           dest.fn_sourceString = self.source.textField.text!
-           dest.fn_colorString = self.color.textField.text!
-           dest.fn_licenseSourceString = self.licenseSource.textField.text!
-           dest.fn_LicenseNumberString = self.licenseNumber.textField.text!
-           dest.fn_genderString = self.gender.textField.text!
-           dest.fn_dobString = self.dob.textField.text!
-           dest.fn_policyNumString = self.policyNumber.textField.text!
-           dest.fn_insuranceCompanyString = self.insuranceNum.textField.text!
-           dest.fn_insuranceExpiryString = self.insuranceExp.textField.text!
-           dest.fn_ownerNameString = self.ownersName.textField.text!
-           dest.fn_mobileNumString = self.mobileNum.textField.text!
-           dest.fn_EmailAddressString = self.emailAddress.textField.text!
+            dest.fn_sourceString = self.source.textField.text!
+            dest.fn_colorString = self.color.textField.text!
+            dest.fn_licenseSourceString = self.licenseSource.textField.text!
+            dest.fn_LicenseNumberString = self.licenseNumber.textField.text!
+            dest.fn_genderString = self.gender.textField.text!
+            dest.fn_dobString = self.dob.textField.text!
+            dest.fn_policyNumString = self.policyNumber.textField.text!
+            dest.fn_insuranceCompanyString = self.insuranceNum.textField.text!
+            dest.fn_insuranceExpiryString = self.insuranceExp.textField.text!
+            dest.fn_ownerNameString = self.ownersName.textField.text!
+            dest.fn_mobileNumString = self.mobileNum.textField.text!
+            dest.fn_EmailAddressString = self.emailAddress.textField.text!
+            dest.fn_NationalityString = self.nationality.textField.text!
         }
         
     }

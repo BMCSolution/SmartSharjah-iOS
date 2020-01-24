@@ -41,8 +41,29 @@ class AccidentTypeVC: UIViewController {
         }
 
         
-        
-        self.callAccidentTypesAPI()
+        /*
+        // Do any additional setup after loading the view.
+        manager.session.configuration.timeoutIntervalForResource = 10
+        manager.session.configuration.timeoutIntervalForRequest = 10
+        if User().isLoggedin()
+        {
+            DispatchQueue.main.async {
+                if Reachability.isConnectedToNetwork()
+                {
+                    if(Utility.checkSesion())
+                    {
+                        self.callAccidentTypesAPI()
+                    }
+                    else
+                    {
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.callAccidentTypesAPI()
+                        }
+                    }
+                }
+            }
+        }*/
         
         
 
@@ -62,8 +83,7 @@ class AccidentTypeVC: UIViewController {
     
     func callAccidentTypesAPI()
     {
-        
-        let manager = Alamofire.SessionManager.default
+        /*let manager = Alamofire.SessionManager.default
         manager.session.configuration.timeoutIntervalForResource = 10
         manager.session.configuration.timeoutIntervalForRequest = 10
         
@@ -92,8 +112,24 @@ class AccidentTypeVC: UIViewController {
                                 SmartSharjahShareClass.hideActivityIndicator(view: self.view)
                                 //SetDefaultWrappers().showAlert(info:"Unexpected Error while getting List. \(error.localizedDescription)", viewController: self)
                             }
+        }*/
+        
+        APILayer().getDataFromAPI(name: "GetConsultationCategory", method:.get, path: "api/ConsultationController/GetListConsultationCategory", params: [:], headers: [:]) { (successGetConsultationCategory, GetConsultationCategory) in
+            
+            if (successGetConsultationCategory)
+            {
+                //let arr = APILayer().resolveData(input: GetConsultationCategory!, language: "EN")
+                //let css = arr.joined(separator: ",")
+                //self.saveLookupsData(key: "consultationCategoryLookups", value: css)
+            }
+            else
+            {
+                print("*Error")
+            }
         }
+        
     }
+    
 }
 
 
