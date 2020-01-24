@@ -557,7 +557,9 @@
                         <outlet property="navBar" destination="8DQ-eb-0g3" id="YAC-MF-dqh"/>
                         <outlet property="privacyPolicyView" destination="cXk-Xu-0De" id="UkM-Dd-enb"/>
                         <outlet property="privacyPolicy_Btn" destination="ZXN-8S-iVo" id="Qyl-dr-6C6"/>
+                        <outlet property="privacyPolicy_Lbl" destination="vmj-S7-bNI" id="LaU-Wa-ZNE"/>
                         <outlet property="tcView" destination="eJG-SW-VGe" id="sBv-Kc-H1h"/>
+                        <outlet property="tc_Lbl" destination="ASL-7u-wQo" id="eZ0-T4-ivd"/>
                         <outlet property="terms_Btn" destination="7Zi-pq-cho" id="PJN-V5-IGw"/>
                         <outlet property="version_Lbl" destination="beD-rL-qUM" id="6tE-Bb-7N9"/>
                         <segue destination="JZw-9H-tpc" kind="show" identifier="OpenDetails" id="V4e-eF-TaQ"/>

@@ -63,7 +63,8 @@ class ShowAllVC: UIViewController {
                       "Utilities & Bills",
                       "Donations"]
     
-    var govtTitles_Ar = ["العمل مع الحكومة",
+    var govtTitles_Ar = [
+        "العمل مع الحكومة",
     "المركبات والمواصلات",
     "الإسكان والعقارات",
     "وسائل الإعلام",
@@ -73,7 +74,8 @@ class ShowAllVC: UIViewController {
     "معالم الشارقة",
     "التجارة",
     "الدفعات والفواتير",
-    "التبرعات"]
+    "التبرعات"
+    ]
 
     var otherArray = [UIImage(named: "Other1")]
     var otherTitles = ["Medicine Reminder"]
@@ -183,7 +185,28 @@ extension ShowAllVC: UICollectionViewDelegate, UICollectionViewDataSource{
         }
         else if (collectionView.tag == 1)
         {
-            if Utility.isArabicSelected()
+            if indexPath.row == 3 || indexPath.row == 10
+                            {
+                               SetDefaultWrappers().showAlert(info:"Coming soon...".localized(), viewController: self)
+                                return
+                           }
+            //                else if UserDefaults.standard.object(forKey: "username") == nil  && self.govtTitles[indexPath.row] == "Social Services"
+            //                {
+            //                  SetDefaultWrappers().showAlert(info: loginToUseFeatureMsg.localized(), viewController: self)
+            //                }
+                           else
+                            {
+                                self.itemImgN = govtArray[indexPath.row]
+                                 if Utility.isArabicSelected() {
+                                     self.itemTitleN = self.govtTitles_Ar[indexPath.row]
+                                 } else {
+                                     self.itemTitleN = self.govtTitles[indexPath.row]
+                                 }
+                                 History().addServiceToHistory(title:
+                                        self.govtTitles[indexPath.row], title_Ar: self.govtTitles_Ar[indexPath.row], Image: govtArray[indexPath.row]!, CollectionTag: collectionView.tag, itemTag: indexPath.row)
+                            }
+            
+            /*if Utility.isArabicSelected()
             {
                 if govtTitles_Ar[indexPath.row] == "وسائل الإعلام" || govtTitles_Ar[indexPath.row] == "التبرعات"
                  {
@@ -224,10 +247,11 @@ extension ShowAllVC: UICollectionViewDelegate, UICollectionViewDataSource{
                      } else {
                          self.itemTitleN = self.govtTitles[indexPath.row]
                      }
-                     History().addServiceToHistory(title:  self.govtTitles[indexPath.row], title_Ar: self.govtTitles_Ar[indexPath.row], Image: govtArray[indexPath.row]!, CollectionTag: collectionView.tag, itemTag: indexPath.row)
+                     History().addServiceToHistory(title:
+                            self.govtTitles[indexPath.row], title_Ar: self.govtTitles_Ar[indexPath.row], Image: govtArray[indexPath.row]!, CollectionTag: collectionView.tag, itemTag: indexPath.row)
                 }
                 
-            }
+            }*/
             
            
 //            self.tagN = 1

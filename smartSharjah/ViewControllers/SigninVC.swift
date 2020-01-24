@@ -48,7 +48,7 @@ class SigninVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.loadLocalization();
+        self.loadLocalization();
         if Utility.isArabicSelected()
         {
             self.passwordTF.textContentType = .password

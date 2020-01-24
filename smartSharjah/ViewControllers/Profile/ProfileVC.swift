@@ -36,6 +36,8 @@ class ProfileVC: UIViewController {
     var user_id = "1"
     var username = ""
     var searchMode: Bool!
+    var localizationData : [NSDictionary] = []
+    
     var titleArr:[String] = [
         //"User Name",
         "Full Name",
@@ -516,10 +518,88 @@ class ProfileVC: UIViewController {
         //self.getProfileInfo(updatePic: false)
           self.fillData()
     }
+    
+    func loadLocalization()
+    {
+
+         SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
+        APILayer().getLocalizationNew(name: "ListLocalization", method: .get, path: "api/LocalizationController/ListLocalizationByScreenName", params: ["ScreenName":"UserProfile"], headers: [:]) { (success, response) in
+            
+            if (success)
+            {
+                self.localizationData = (response as? [NSDictionary])!
+                SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+                print("success: \(success)")
+                if response!.count > 0
+                {
+                    self.loadingLocalizationData();
+                }
+            }
+            else
+            {
+                SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+                if(response != nil)
+                {
+                    print("Response: \(response)")
+                    SetDefaultWrappers().showAlert(info:"Request Failed!", viewController: self)
+                }
+            }
+        }
+    }
+    
+    func loadingLocalizationData()
+    {
+        if(self.getItemFromKey(labelName: "ProfileTitle") != -1)
+        {
+            self.navBar.title.text = self.localizationData[self.getItemFromKey(labelName: "ProfileTitle")][Utility.isArabicSelected() ? "value_AR" : "value_EN"] as? String
+        }
+        
+        if(self.getItemFromKey(labelName: "FullName") != -1)
+        {
+            self.titleArr[0] = self.localizationData[self.getItemFromKey(labelName: "FullName")]["value_EN"] as! String
+            self.titles_Ar[0] = self.localizationData[self.getItemFromKey(labelName: "FullName")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "EmiratesId") != -1)
+        {
+            self.titleArr[1] = self.localizationData[self.getItemFromKey(labelName: "EmiratesId")]["value_EN"] as! String
+            self.titles_Ar[1] = self.localizationData[self.getItemFromKey(labelName: "EmiratesId")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "Email") != -1)
+        {
+            self.titleArr[2] = self.localizationData[self.getItemFromKey(labelName: "Email")]["value_EN"] as! String
+            self.titles_Ar[2] = self.localizationData[self.getItemFromKey(labelName: "Email")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "Address") != -1)
+        {
+            self.titleArr[3] = self.localizationData[self.getItemFromKey(labelName: "Address")]["value_EN"] as! String
+            self.titles_Ar[3] = self.localizationData[self.getItemFromKey(labelName: "Address")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "Phone") != -1)
+        {
+            self.titleArr[4] = self.localizationData[self.getItemFromKey(labelName: "Phone")]["value_EN"] as! String
+            self.titles_Ar[4] = self.localizationData[self.getItemFromKey(labelName: "Phone")]["value_AR"] as! String
+        }
+        self.tableView.reloadData()
+    }
+    
+    func getItemFromKey(labelName: String ) -> Int
+    {
+        var iterator = 0;
+        for obj in self.localizationData {
+            if(obj["localizationKey"] as? String == labelName)
+            {
+                return iterator;
+            }
+            iterator += 1
+        }
+        return -1;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.titles_Ar.reverse()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.searchPressed), name: NSNotification.Name(rawValue: "searchPressed"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.profileUpdated), name: NSNotification.Name(rawValue: "profileUpdated"), object: nil)
@@ -547,7 +627,7 @@ class ProfileVC: UIViewController {
         
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
-        
+        self.loadLocalization();
         //        self.profilePic.image = UIImage(named: "defalut_user")
         //        self.profilePic?.layer.cornerRadius = 90
         //        self.nameTV.text = name

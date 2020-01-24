@@ -111,7 +111,8 @@ class ViewController: UIViewController,XMLParserDelegate {
                       "Utilities & Bills",
                       "Donations"]
     
-    var govtTitles_Ar = ["العمل مع الحكومة",
+    var govtTitles_Ar = [
+        "العمل مع الحكومة",
     "المركبات والمواصلات",
     "الإسكان والعقارات",
     "وسائل الإعلام",
@@ -121,7 +122,8 @@ class ViewController: UIViewController,XMLParserDelegate {
     "معالم الشارقة",
     "التجارة",
     "الدفعات والفواتير",
-    "التبرعات"]
+    "التبرعات"
+    ]
 
     
     
@@ -179,7 +181,7 @@ class ViewController: UIViewController,XMLParserDelegate {
     
     var newsDictionary: NSMutableDictionary = [:]
     
-    
+    var localizationData : [NSDictionary] = []
     
     func parseNewsTesting(lang: String)
     {
@@ -264,7 +266,7 @@ class ViewController: UIViewController,XMLParserDelegate {
         self.paymentArray = history.getImages()
         self.paymentTitles = history.getTitles()
         self.paymentTitles_Ar = history.getTitles_Ar()
-        self.paymentCollectionViewOutlet.reloadData()
+        
         self.configureViews()
         
     }
@@ -282,6 +284,7 @@ class ViewController: UIViewController,XMLParserDelegate {
                             
                             self.paymentCollectionViewOutlet.layoutIfNeeded()
                             self.paymentCollectionViewOutlet.semanticContentAttribute = UISemanticContentAttribute.forceRightToLeft
+                            self.paymentCollectionViewOutlet.reloadData()
                             
                             self.govtServicesCollectionOutlet.layoutIfNeeded()
                             self.govtServicesCollectionOutlet.semanticContentAttribute = UISemanticContentAttribute.forceRightToLeft
@@ -297,6 +300,7 @@ class ViewController: UIViewController,XMLParserDelegate {
                             
                             self.paymentCollectionViewOutlet.layoutIfNeeded()
                             self.paymentCollectionViewOutlet.semanticContentAttribute = UISemanticContentAttribute.forceLeftToRight
+                            self.paymentCollectionViewOutlet.reloadData()
                             
                             self.govtServicesCollectionOutlet.layoutIfNeeded()
                             self.govtServicesCollectionOutlet.semanticContentAttribute = UISemanticContentAttribute.forceLeftToRight
@@ -373,6 +377,8 @@ class ViewController: UIViewController,XMLParserDelegate {
                 dest.itemImg = self.itemImg
                 dest.itemTitle = self.itemTitle
                 dest.tag = self.tag
+                dest.govtTitles = self.govtTitles
+                dest.govtTitles_Ar = self.govtTitles_Ar
             }
         }
         
@@ -427,7 +433,8 @@ class ViewController: UIViewController,XMLParserDelegate {
             }
             self.tag = 0
              self.performSegue(withIdentifier: "showAll", sender: self)
-        } else if (sender.tag == 1)
+        }
+        else if (sender.tag == 1)
         {
             if Utility.isArabicSelected() {
                 self.type = "الخدمات الحكومية"
@@ -436,7 +443,8 @@ class ViewController: UIViewController,XMLParserDelegate {
             }
             self.tag = 1
              self.performSegue(withIdentifier: "showAll", sender: self)
-        } else if (sender.tag == 2)
+        }
+        else if (sender.tag == 2)
         {
             if Utility.isArabicSelected() {
                 self.type = "خدمات أخرى"
@@ -540,7 +548,116 @@ class ViewController: UIViewController,XMLParserDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.gotoLogin), name: NSNotification.Name(rawValue: "GoToLogin"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.switchTab(_:)), name: NSNotification.Name(rawValue: "switchTab"), object: nil)
-     
+        
+        self.loadLocalization();
+    }
+    
+    func loadLocalization()
+    {
+
+         SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
+        APILayer().getLocalizationNew(name: "ListLocalization", method: .get, path: "api/LocalizationController/ListLocalizationByScreenName", params: ["ScreenName":"MainScreen"], headers: [:]) { (success, response) in
+            
+            if (success)
+            {
+                self.localizationData = (response as? [NSDictionary])!
+                SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+                print("success: \(success)")
+                if response!.count > 0
+                {
+                    self.loadingLocalizationData();
+                }
+            }
+            else
+            {
+                SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+                if(response != nil)
+                {
+                    print("Response: \(response)")
+                    SetDefaultWrappers().showAlert(info:"Request Failed!", viewController: self)
+                }
+            }
+        }
+    }
+    
+    func loadingLocalizationData()
+    {
+        if(self.getItemFromKey(labelName: "ApplicationName") != -1)
+        {
+            self.navBar.title.text = self.localizationData[self.getItemFromKey(labelName: "ApplicationName")][Utility.isArabicSelected() ? "value_AR" : "value_EN"] as? String
+        }
+        
+        if(self.getItemFromKey(labelName: "WorkingWithGovernment") != -1)
+        {
+            self.govtTitles[0] = self.localizationData[self.getItemFromKey(labelName: "WorkingWithGovernment")]["value_EN"] as! String
+            self.govtTitles_Ar[0] = self.localizationData[self.getItemFromKey(labelName: "WorkingWithGovernment")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "VehiclesAndTransport") != -1)
+        {
+            self.govtTitles[1] = self.localizationData[self.getItemFromKey(labelName: "VehiclesAndTransport")]["value_EN"] as! String
+            self.govtTitles_Ar[1] = self.localizationData[self.getItemFromKey(labelName: "VehiclesAndTransport")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "HousingAndProperty") != -1)
+        {
+            self.govtTitles[2] = self.localizationData[self.getItemFromKey(labelName: "HousingAndProperty")]["value_EN"] as! String
+            self.govtTitles_Ar[2] = self.localizationData[self.getItemFromKey(labelName: "HousingAndProperty")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "Media") != -1)
+        {
+            self.govtTitles[3] = self.localizationData[self.getItemFromKey(labelName: "Media")]["value_EN"] as! String
+            self.govtTitles_Ar[3] = self.localizationData[self.getItemFromKey(labelName: "Media")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "ComplaintsAndSuggestions") != -1)
+        {
+            self.govtTitles[4] = self.localizationData[self.getItemFromKey(labelName: "ComplaintsAndSuggestions")]["value_EN"] as! String
+            self.govtTitles_Ar[4] = self.localizationData[self.getItemFromKey(labelName: "ComplaintsAndSuggestions")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "SafetyAndEnvironment") != -1)
+        {
+            self.govtTitles[5] = self.localizationData[self.getItemFromKey(labelName: "SafetyAndEnvironment")]["value_EN"] as! String
+            self.govtTitles_Ar[5] = self.localizationData[self.getItemFromKey(labelName: "SafetyAndEnvironment")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "SocialServices") != -1)
+        {
+            self.govtTitles[6] = self.localizationData[self.getItemFromKey(labelName: "SocialServices")]["value_EN"] as! String
+            self.govtTitles_Ar[6] = self.localizationData[self.getItemFromKey(labelName: "SocialServices")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "SharjahLandmarks") != -1)
+        {
+            self.govtTitles[7] = self.localizationData[self.getItemFromKey(labelName: "SharjahLandmarks")]["value_EN"] as! String
+            self.govtTitles_Ar[7] = self.localizationData[self.getItemFromKey(labelName: "SharjahLandmarks")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "Commerce") != -1)
+        {
+            self.govtTitles[8] = self.localizationData[self.getItemFromKey(labelName: "SocialServices")]["value_EN"] as! String
+            self.govtTitles_Ar[8] = self.localizationData[self.getItemFromKey(labelName: "SocialServices")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "UtilitiesAndBills") != -1)
+        {
+            self.govtTitles[9] = self.localizationData[self.getItemFromKey(labelName: "UtilitiesAndBills")]["value_EN"] as! String
+            self.govtTitles_Ar[9] = self.localizationData[self.getItemFromKey(labelName: "UtilitiesAndBills")]["value_AR"] as! String
+        }
+        if(self.getItemFromKey(labelName: "Donations") != -1)
+        {
+            self.govtTitles[10] = self.localizationData[self.getItemFromKey(labelName: "Donations")]["value_EN"] as! String
+            self.govtTitles_Ar[10] = self.localizationData[self.getItemFromKey(labelName: "Donations")]["value_AR"] as! String
+        }
+        
+        self.configureViews()
+        
+    }
+    
+    func getItemFromKey(labelName: String ) -> Int
+    {
+        var iterator = 0;
+        for obj in self.localizationData {
+            if(obj["localizationKey"] as? String == labelName)
+            {
+                return iterator;
+            }
+            iterator += 1
+        }
+        return -1;
     }
     
     func showNewsLoader()

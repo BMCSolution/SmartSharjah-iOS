@@ -182,7 +182,7 @@ class SignupVC: UIViewController {
                     self.nameTF.attributedPlaceholder = placeHolder
 
         }
-        //self.loadLocalization();
+        self.loadLocalization();
         
     }
     

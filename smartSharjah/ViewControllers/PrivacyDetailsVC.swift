@@ -13,7 +13,8 @@ class PrivacyDetailsVC: UIViewController {
     @IBOutlet weak var navBar: NavBar!
     @IBOutlet weak var details_TxtView: UITextView!
     
-    var navTitle_Ar = ""
+    
+    var navTitle_Localization = ""
     var navTitle = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class PrivacyDetailsVC: UIViewController {
         
         if (self.navBar != nil)
         {
-            if Utility.isArabicSelected()
+            /*if Utility.isArabicSelected()
             {
                 if self.navTitle == "Privacy Policy"
                 {
@@ -36,7 +37,8 @@ class PrivacyDetailsVC: UIViewController {
             }
             else{
                 navBar.title.text = navTitle
-            }
+            }*/
+            navBar.title.text = navTitle_Localization
             
             self.navBar.menuSettings(navController: self.navigationController, menuShown: false)
         }
