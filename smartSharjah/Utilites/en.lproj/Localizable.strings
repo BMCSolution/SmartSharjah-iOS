@@ -96,3 +96,7 @@
 "Password must be at least 8 characters in length and must cointain a minimum of 1 lower case letter [a-z] 1 upper case letter [A-Z] 1 numeric character [0-9] and 1 minimum special character." =  "Password must be at least 8 characters in length and must cointain a minimum of 1 lower case letter [a-z] 1 upper case letter [A-Z] 1 numeric character [0-9] and 1 minimum special character.";
 
 "cannot be empty" = "cannot be empty" ;
+
+"PAY" = "PAY";
+
+"Accident I'd : " =  "Accident I'd : ";

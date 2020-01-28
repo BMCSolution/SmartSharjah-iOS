@@ -22,6 +22,8 @@ class TradeNameViewController: UIViewController {
     fileprivate var tradeNameAr : [String] = []
     
     let tradeNameList: [String] = []
+    var isAlreadyBusy = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,34 +49,38 @@ class TradeNameViewController: UIViewController {
 
     @IBAction func btnTradeNamePress(_ sender: Any) {
         self.view.endEditing(true)
-        if (self.txtTradeName.text == "") {
-            var t = "Trade Name cannot be empty"
-            if Utility.isArabicSelected()
-            {
-                t = "الاسم التجاري لا يمكن أن يكون فارغًا"
-            }
-            SetDefaultWrappers().showAlert(info: t, viewController: self)
-        } else {
-            if Reachability.isConnectedToNetwork()
-            {
-                if(Utility.checkSesion())
+        if(!isAlreadyBusy)
+        {
+            if (self.txtTradeName.text == "") {
+                var t = "Trade Name cannot be empty"
+                if Utility.isArabicSelected()
                 {
-                    callTradeDetailsAPI(srchTrade: self.txtTradeName.text!)
+                    t = "الاسم التجاري لا يمكن أن يكون فارغًا"
+                }
+                SetDefaultWrappers().showAlert(info: t, viewController: self)
+            } else {
+                if Reachability.isConnectedToNetwork()
+                {
+                    if(Utility.checkSesion())
+                    {
+                        callTradeDetailsAPI(srchTrade: self.txtTradeName.text!)
+                    }
+                    else
+                    {
+                        isAlreadyBusy = true
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.callTradeDetailsAPI(srchTrade: self.txtTradeName.text!)
+                        }
+                    }
                 }
                 else
                 {
-                    Utility.getFreshToken {
-                        (success, response) in
-                        self.callTradeDetailsAPI(srchTrade: self.txtTradeName.text!)
-                    }
+                    Utility.showInternetErrorAlert()
                 }
+                
+                //SetDefaultWrappers().showAlert(info:"No trade name matches the name provided", viewController: self)
             }
-            else
-            {
-                Utility.showInternetErrorAlert()
-            }
-            
-            //SetDefaultWrappers().showAlert(info:"No trade name matches the name provided", viewController: self)
         }
     }
     
@@ -140,7 +146,7 @@ class TradeNameViewController: UIViewController {
         Alamofire.request(request as! URLRequestConvertible)
         //Alamofire.request(escapedString, method: .post).validate()
             .responseJSON { response in
-                
+                self.isAlreadyBusy = false
                 if (response.error != nil)
                 {
                     print ("\(response.error)")
@@ -152,6 +158,7 @@ class TradeNameViewController: UIViewController {
                     if let code = response.response?.statusCode as? Int{
                     if code == 401
                     {
+                        self.isAlreadyBusy = true
                         Utility.getFreshToken {
                         (success, response) in
                             self.callTradeDetailsAPI(srchTrade: self.txtTradeName.text!)

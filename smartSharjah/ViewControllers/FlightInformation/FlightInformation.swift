@@ -40,6 +40,8 @@ class FlightInformation: UIViewController {
     
     var allFlightData:[NSDictionary] = []
     
+    var isAlreadyBusy = false
+    
     override func viewDidLoad() {
         
         
@@ -69,6 +71,7 @@ class FlightInformation: UIViewController {
         
         if Reachability.isConnectedToNetwork()
         {
+            isAlreadyBusy = true
             if(Utility.checkSesion())
             {
                 self.callFligtInfoAPI()
@@ -101,15 +104,52 @@ class FlightInformation: UIViewController {
     @IBAction func searchFlightDetailsBtnAction(_ sender: Any) {
         let fromText = self.fromDate.titleLabel?.text
         let toText = self.toDate.titleLabel?.text
-        
-        if (fromText == "" || toText == "" || fromText == "Select Date" || toText == "Select Date")
+        if(!isAlreadyBusy)
         {
-            SetDefaultWrappers().showAlert(info:"From & To dates must be selected", viewController: self)
+            if (fromText == "" || toText == "" || fromText == "Select Date" || toText == "Select Date")
+            {
+                SetDefaultWrappers().showAlert(info:"From & To dates must be selected", viewController: self)
+            }
+            else
+            {
+                if Reachability.isConnectedToNetwork()
+                {
+                    isAlreadyBusy = true
+                    if(Utility.checkSesion())
+                    {
+                        self.callFligtInfoAPI()
+                    }
+                    else
+                    {
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.callFligtInfoAPI()
+                        }
+                    }
+                }
+                else
+                {
+                    Utility.showInternetErrorAlert()
+                }
+               
+            }
         }
-        else
+    }
+    
+    @IBAction func valueChanged(_ sender: UISegmentedControl) {
+        if(!isAlreadyBusy)
         {
+            if (sender.selectedSegmentIndex == 0)
+            {
+                    self.flightType = "ARRIVAL"
+            }
+            else
+            {
+                    self.flightType = "DEPARTURE"
+            }
             if Reachability.isConnectedToNetwork()
             {
+                isAlreadyBusy = true
                 if(Utility.checkSesion())
                 {
                     self.callFligtInfoAPI()
@@ -126,39 +166,7 @@ class FlightInformation: UIViewController {
             {
                 Utility.showInternetErrorAlert()
             }
-           
         }
-        
-    }
-    
-    @IBAction func valueChanged(_ sender: UISegmentedControl) {
-        if (sender.selectedSegmentIndex == 0)
-        {
-                self.flightType = "ARRIVAL"
-        }
-        else
-        {
-                self.flightType = "DEPARTURE"
-        }
-        if Reachability.isConnectedToNetwork()
-        {
-            if(Utility.checkSesion())
-            {
-                self.callFligtInfoAPI()
-            }
-            else
-            {
-                Utility.getFreshToken {
-                    (success, response) in
-                    self.callFligtInfoAPI()
-                }
-            }
-        }
-        else
-        {
-            Utility.showInternetErrorAlert()
-        }
-        
     }
     
     func convertToDictionary(text: String) -> [String: Any]? {
@@ -224,7 +232,7 @@ class FlightInformation: UIViewController {
                 
                 print("Test...")
                 SmartSharjahShareClass.hideActivityIndicator(view: self.view)
-                
+                    self.isAlreadyBusy = false
 //                print("Flight Rsponse: \(response)")
                 if (response.error != nil)
                 {
@@ -236,6 +244,7 @@ class FlightInformation: UIViewController {
                     if let code = response.response?.statusCode as? Int{
                         if code == 401
                         {
+                            self.isAlreadyBusy = true
                             Utility.getFreshToken {
                             (success, response) in
                                 self.callFligtInfoAPI()

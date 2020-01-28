@@ -70,6 +70,10 @@ class InfoVC: UIViewController {
         ," رقم الجوال "
         ," عنوان البريد الإلكتروني "
     ]
+    
+    
+    var isAlreadyBusy = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -86,25 +90,28 @@ class InfoVC: UIViewController {
     }
     
     @IBAction func submitReport(_ sender: UIButton) {
-        
-        //self.submitData()
-        if Reachability.isConnectedToNetwork()
+        if(!isAlreadyBusy)
         {
-            if(Utility.checkSesion())
+            //self.submitData()
+            if Reachability.isConnectedToNetwork()
             {
-                apicallHttps()
+                if(Utility.checkSesion())
+                {
+                    apicallHttps()
+                }
+                else
+                {
+                    isAlreadyBusy = true
+                    Utility.getFreshToken {
+                        (success, response) in
+                        self.apicallHttps()
+                    }
+                }
             }
             else
             {
-                Utility.getFreshToken {
-                    (success, response) in
-                    self.apicallHttps()
-                }
+                Utility.showInternetErrorAlert()
             }
-        }
-        else
-        {
-            Utility.showInternetErrorAlert()
         }
     }
     
@@ -312,7 +319,7 @@ class InfoVC: UIViewController {
         
         Alamofire.request(request as! URLRequestConvertible)
             .responseJSON { (response) in
-            
+                self.isAlreadyBusy = false
             if (response.error != nil)
             {
                 print ("responseJson: \(response.error)")
@@ -324,6 +331,7 @@ class InfoVC: UIViewController {
                 if let code = response.response?.statusCode as? Int{
                     if code == 401
                     {
+                        self.isAlreadyBusy = true
                         Utility.getFreshToken {
                             (success, response) in
                             self.apicallHttps()
@@ -341,20 +349,25 @@ class InfoVC: UIViewController {
                                 if(status == "success")
                                 {
                                     if let paymentUrl = respJson.value(forKey: "paymentUrl") as? String{
-                                        let otherAlert = UIAlertController(title: self.navBar.title.text, message: "Your application has been successfully submitted".localized(), preferredStyle: UIAlertController.Style.alert)
-                                                        let dismiss = UIAlertAction(title: "OK".localized(), style: .default) { (action:UIAlertAction) in
-                                                            if let url = URL(string: paymentUrl), UIApplication.shared.canOpenURL(url) {
-                                                               if #available(iOS 10.0, *) {
-                                                                  UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                                                               } else {
-                                                                  UIApplication.shared.openURL(url)
-                                                               }
-                                                            }
-                                                                self.navigationController?.dismiss(animated: true, completion: nil)
-                                                                }
                                         
-                                                        otherAlert.addAction(dismiss)
-                                                        self.present(otherAlert, animated: true, completion: nil)
+                                        if let accidentNo = respJson.value(forKey: "accidentNo") as? String{
+                                            
+                                            let otherAlert = UIAlertController(title: self.navBar.title.text, message: "Accident I'd : ".localized() + accidentNo, preferredStyle: UIAlertController.Style.alert)
+                                            let dismiss = UIAlertAction(title: "PAY".localized(), style: .default) { (action:UIAlertAction) in
+                                                if let url = URL(string: paymentUrl), UIApplication.shared.canOpenURL(url) {
+                                                            if #available(iOS 10.0, *) {
+                                                            UIApplication.shared.open(url, options: [:], completionHandler: nil)}
+                                                            else {
+                                                                UIApplication.shared.openURL(url)
+                                                                }
+                                                }
+                                                self.navigationController?.dismiss(animated: true, completion: nil)
+                                            }
+                                            otherAlert.addAction(dismiss)
+                                            self.present(otherAlert, animated: true, completion: nil)
+                                            
+                                        }
+                                        
                                     }
                                 }
                                 else

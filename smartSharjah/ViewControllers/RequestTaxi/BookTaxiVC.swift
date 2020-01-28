@@ -50,6 +50,8 @@ class BookTaxiVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
     var dropOfflong = "0"
     var taxiType="--"
     
+    var isAlreadyBusy = false
+    
     
     override func viewDidAppear(_ animated: Bool) {
         Utility.setView()
@@ -219,29 +221,31 @@ class BookTaxiVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
 //              return
 //
         
-    
-        if validated()
+        if(!isAlreadyBusy)
         {
-            if Reachability.isConnectedToNetwork()
+            if validated()
             {
-                if(Utility.checkSesion())
+                if Reachability.isConnectedToNetwork()
                 {
-                    apicallHttps()
+                    isAlreadyBusy = true
+                    if(Utility.checkSesion())
+                    {
+                        apicallHttps()
+                    }
+                    else
+                    {
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.apicallHttps()
+                        }
+                    }
                 }
                 else
                 {
-                    Utility.getFreshToken {
-                        (success, response) in
-                        self.apicallHttps()
-                    }
+                    Utility.showInternetErrorAlert()
                 }
             }
-            else
-            {
-                Utility.showInternetErrorAlert()
-            }
         }
-        
     }
     
     
@@ -593,7 +597,7 @@ class BookTaxiVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
         
         //Alamofire.request(URL(string: "https://stg-smtshjapp.shj.ae/api/BookATaxi/HireATaxi")!, method: .post, parameters: params)
             .responseJSON { (response) in
-            
+                self.isAlreadyBusy = false
             if (response.error != nil)
             {
                 print ("\(response.error)")
@@ -605,6 +609,7 @@ class BookTaxiVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
                 if let code = response.response?.statusCode as? Int{
                     if code == 401
                     {
+                        self.isAlreadyBusy = true
                         Utility.getFreshToken {
                             (success, response) in
                             self.apicallHttps()

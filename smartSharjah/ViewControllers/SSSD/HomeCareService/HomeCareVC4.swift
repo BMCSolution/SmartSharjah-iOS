@@ -73,6 +73,8 @@ class HomeCareVC4: UIViewController {
     var category2:String!
     var branch2:String!
     
+    var isAlreadyBusy = false
+    
     func fillData()
     {
         let user = User().getUser()
@@ -170,152 +172,157 @@ class HomeCareVC4: UIViewController {
     
     @IBAction func nextPressed(_ sender: UIButton) {
         
+        if(!isAlreadyBusy)
+        {
         //if (self.navBar.title.text! == "Home Care" || self.navBar.title.text! == "Nursing" ) {
             
-            if ( self.fullName2TF.textField.text != "" )
-            {
-                self.fullName2 = self.fullName2TF.textField.text
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(fullName2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.emiratesID2TF.textField.text != "" )
-            {
-                self.emiratesID2 = self.emiratesID2TF.textField.text
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(emiratesID2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.gender2TF.textField.text != "" )
-            {
-                self.gender2 = "\(self.gender2TF.picker.selectedRow(inComponent: 0)+1)"
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(gender2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.nationality2TF.textField.text != "" )
-            {
-                self.nationality2 = self.nationality2TF.textField.text
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(nationality2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.dob2TF.textField.text != "" )
-            {
-                self.dob2 = self.dob2TF.textField.text
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(dob2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.category2TF.textField.text != "" )
-            {
-                self.category2 = self.category2TF.textField.text
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(category2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.branch2TF.textField.text != "" )
-            {
-                self.branch2 = self.branch2TF.textField.text
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(branch2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.idFront.img != nil )
-            {
-                self.emiratesIDFront = self.idFront.img!
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(idFront.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.idBack.img != nil )
-            {
-                self.emiratesIDBack = self.idBack.img!
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(idBack.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.passportPic.img != nil )
-            {
-                self.passportImg = self.passportPic.img!
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(passportPic.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-            
-            if ( self.medicalPic.img != nil )
-            {
-                self.medicalReport2 = self.medicalPic.img!
-            }
-            else
-            {
-                SetDefaultWrappers().showAlert(info: "\(medicalPic.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-                return
-            }
-        //}
-        //else  if (self.navBar.title.text! == "Volunteer at SSSD") {
-            
-        //}
-        
-        //else  if (self.navBar.title.text! == "Volunteer at SSSD") {
-            
-        //}
-        
-        if (self.validated())
-        {
-            /*APILayer().postDataToAPI(name: "HomeCare", method: .post, path: "/", params: [:], headers: [:]) { (success, responseDict) in
-            
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccess"), object: nil)
-                self.navigationController?.dismiss(animated: true, completion: nil)
-            
-             }*/
-            if Reachability.isConnectedToNetwork()
-            {
-                if(Utility.checkSesion())
+                if ( self.fullName2TF.textField.text != "" )
                 {
-                    apicallHttps()
+                    self.fullName2 = self.fullName2TF.textField.text
                 }
                 else
                 {
-                    Utility.getFreshToken {
-                        (success, response) in
-                        self.apicallHttps()
+                    SetDefaultWrappers().showAlert(info: "\(fullName2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.emiratesID2TF.textField.text != "" )
+                {
+                    self.emiratesID2 = self.emiratesID2TF.textField.text
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(emiratesID2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.gender2TF.textField.text != "" )
+                {
+                    self.gender2 = "\(self.gender2TF.picker.selectedRow(inComponent: 0)+1)"
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(gender2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.nationality2TF.textField.text != "" )
+                {
+                    self.nationality2 = self.nationality2TF.textField.text
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(nationality2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.dob2TF.textField.text != "" )
+                {
+                    self.dob2 = self.dob2TF.textField.text
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(dob2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.category2TF.textField.text != "" )
+                {
+                    self.category2 = self.category2TF.textField.text
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(category2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.branch2TF.textField.text != "" )
+                {
+                    self.branch2 = self.branch2TF.textField.text
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(branch2TF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.idFront.img != nil )
+                {
+                    self.emiratesIDFront = self.idFront.img!
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(idFront.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.idBack.img != nil )
+                {
+                    self.emiratesIDBack = self.idBack.img!
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(idBack.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.passportPic.img != nil )
+                {
+                    self.passportImg = self.passportPic.img!
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(passportPic.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            
+                if ( self.medicalPic.img != nil )
+                {
+                    self.medicalReport2 = self.medicalPic.img!
+                }
+                else
+                {
+                    SetDefaultWrappers().showAlert(info: "\(medicalPic.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                    return
+                }
+            //}
+            //else  if (self.navBar.title.text! == "Volunteer at SSSD") {
+                
+            //}
+            
+            //else  if (self.navBar.title.text! == "Volunteer at SSSD") {
+                
+            //}
+        
+            if (self.validated())
+            {
+                /*APILayer().postDataToAPI(name: "HomeCare", method: .post, path: "/", params: [:], headers: [:]) { (success, responseDict) in
+                
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccess"), object: nil)
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                
+                 }*/
+                if Reachability.isConnectedToNetwork()
+                {
+                    isAlreadyBusy = true
+                    if(Utility.checkSesion())
+                    {
+                        apicallHttps()
+                    }
+                    else
+                    {
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.apicallHttps()
+                        }
                     }
                 }
+                else
+                {
+                    Utility.showInternetErrorAlert()
+                }
             }
-            else
-            {
-                Utility.showInternetErrorAlert()
-            }
+            
         }
         
         //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccess"), object: nil)
@@ -500,7 +507,7 @@ class HomeCareVC4: UIViewController {
         
         Alamofire.request(request as! URLRequestConvertible)
             .responseJSON { (response) in
-            
+                self.isAlreadyBusy = false
             if (response.error != nil)
             {
                 print ("responseJson: \(response.error)")
@@ -512,6 +519,7 @@ class HomeCareVC4: UIViewController {
                 if let code = response.response?.statusCode as? Int{
                     if code == 401
                     {
+                        self.isAlreadyBusy = true
                         Utility.getFreshToken {
                             (success, response) in
                             self.apicallHttps()

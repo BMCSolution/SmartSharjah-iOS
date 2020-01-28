@@ -60,6 +60,8 @@ class AdoptionServiceVC4: UIViewController {
     var qualification2: String!
     var adoptionReason: String!
     
+    var isAlreadyBusy = false
+    
     override func viewDidAppear(_ animated: Bool) {
              Utility.setView()
           }
@@ -126,117 +128,122 @@ class AdoptionServiceVC4: UIViewController {
     @IBAction func nextPressed(_ sender: UIButton) {
         //self.performSegue(withIdentifier: "next", sender: self)
         
-        if ( self.childAdoptionTF.textField.text != "" )
+        if(!isAlreadyBusy)
         {
-            self.childAdoption = self.childAdoptionTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(childAdoptionTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-
-        if ( self.desiredGenderTF.textField.text != "" )
-        {
-            self.desiredGender = "\(self.desiredGenderTF.picker.selectedRow(inComponent: 0)+1)"
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(desiredGenderTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-
-
-
-        if ( self.desiredAgeTF.textField.text != "" )
-        {
-            self.desiredAge = self.desiredAgeTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(desiredAgeTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-
-
-
-
-
-        if ( self.adoptedBeforeTF.textField.text != "" )
-        {
-            self.adoptedBefore = self.adoptedBeforeTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(adoptedBeforeTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-
-
-        if ( self.lactactionTF.textField.text != "" )
-        {
-            self.lactaction = self.lactactionTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(lactactionTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-
-
-
-        if ( self.qualificationTF.textField.text != "" )
-        {
-            self.qualification = self.qualificationTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(qualificationTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-
-
-        if ( self.adoptionReasonTF.textField.text != "" )
-        {
-            self.adoptionReason = self.adoptionReasonTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(adoptionReasonTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-
-
-
-        
-        
-        if (self.validated())
-        {
-            /*APILayer().postDataToAPI(name: "AdoptionService", method: .post, path: "/", params: [:], headers: [:]) { (success, responseDict) in
-            
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccess"), object: nil)
-                self.navigationController?.dismiss(animated: true, completion: nil)
-            
-            }*/
-            if Reachability.isConnectedToNetwork()
+            if ( self.childAdoptionTF.textField.text != "" )
             {
-                if(Utility.checkSesion())
-                {
-                    apicallHttps()
-                }
-                else
-                {
-                    Utility.getFreshToken {
-                        (success, response) in
-                        self.apicallHttps()
-                    }
-                }
+                self.childAdoption = self.childAdoptionTF.textField.text
             }
             else
             {
-                Utility.showInternetErrorAlert()
+                SetDefaultWrappers().showAlert(info: "\(childAdoptionTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+
+            if ( self.desiredGenderTF.textField.text != "" )
+            {
+                self.desiredGender = "\(self.desiredGenderTF.picker.selectedRow(inComponent: 0)+1)"
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(desiredGenderTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+
+
+
+            if ( self.desiredAgeTF.textField.text != "" )
+            {
+                self.desiredAge = self.desiredAgeTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(desiredAgeTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+
+
+
+
+
+            if ( self.adoptedBeforeTF.textField.text != "" )
+            {
+                self.adoptedBefore = self.adoptedBeforeTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(adoptedBeforeTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+
+
+            if ( self.lactactionTF.textField.text != "" )
+            {
+                self.lactaction = self.lactactionTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(lactactionTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+
+
+
+            if ( self.qualificationTF.textField.text != "" )
+            {
+                self.qualification = self.qualificationTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(qualificationTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+
+
+            if ( self.adoptionReasonTF.textField.text != "" )
+            {
+                self.adoptionReason = self.adoptionReasonTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(adoptionReasonTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+
+
+
+            
+            
+            if (self.validated())
+            {
+                /*APILayer().postDataToAPI(name: "AdoptionService", method: .post, path: "/", params: [:], headers: [:]) { (success, responseDict) in
+                
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccess"), object: nil)
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                
+                }*/
+                if Reachability.isConnectedToNetwork()
+                {
+                    isAlreadyBusy = true
+                    if(Utility.checkSesion())
+                    {
+                        apicallHttps()
+                    }
+                    else
+                    {
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.apicallHttps()
+                        }
+                    }
+                }
+                else
+                {
+                    Utility.showInternetErrorAlert()
+                }
             }
         }
+        
         
 //        SetDefaultWrappers().showAlert(info:"Application has been Submitted", viewController: self)
 //        self.navigationController?.dismiss(animated: true, completion: nil)
@@ -308,7 +315,7 @@ class AdoptionServiceVC4: UIViewController {
             
             Alamofire.request(request as! URLRequestConvertible)
                 .responseJSON { (response) in
-                
+                    self.isAlreadyBusy = false
                 if (response.error != nil)
                 {
                     print ("responseJson: \(response.error)")
@@ -320,6 +327,7 @@ class AdoptionServiceVC4: UIViewController {
                     if let code = response.response?.statusCode as? Int{
                         if code == 401
                         {
+                            self.isAlreadyBusy = false
                             Utility.getFreshToken {
                                 (success, response) in
                                 self.apicallHttps()

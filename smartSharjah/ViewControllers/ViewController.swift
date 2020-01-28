@@ -192,6 +192,7 @@ class ViewController: UIViewController,XMLParserDelegate {
           DispatchQueue.main.async {
             print("___*****---*****___ Total items: \(self?.rssItems?.count ?? 0) ")
             self!.newsCollectionViewOutlet.reloadData()
+            self!.scrollCollection(collection: self!.newsCollectionViewOutlet)
           }
         }
     }
@@ -318,7 +319,7 @@ class ViewController: UIViewController,XMLParserDelegate {
                         }
                         
                         self.scrollCollection(collection: self.govtServicesCollectionOutlet)
-                        self.scrollCollection(collection: self.newsCollectionViewOutlet)
+                        //self.scrollCollection(collection: self.newsCollectionViewOutlet)
                         self.scrollOtherCollection()
                         if self.paymentArray.count > 0
                         {

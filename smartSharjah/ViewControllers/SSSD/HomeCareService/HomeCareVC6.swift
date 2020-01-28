@@ -65,7 +65,7 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
     var speciality2:String!
     var license: UIImage?
     
-    
+    var isAlreadyBusy = false
     
     func getAllTextFields(fromView view: UIView)-> [TextField] {
         return view.subviews.flatMap { (view) -> [TextField]? in
@@ -145,83 +145,88 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
     
     @IBAction func submitPressed(_ sender: UIButton) {
         
-        if ( self.qualificationTF.textField.text != "" )
+        if(!isAlreadyBusy)
         {
-            self.qualification2 = self.qualificationTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(qualificationTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-        
-        if ( self.graduationYearTF.textField.text != "" )
-        {
-            self.graduationYear2 = self.graduationYearTF.textField.text?.components(separatedBy: "/")[0]
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(graduationYearTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-        
-        if ( self.specialityTF.textField.text != "" )
-        {
-            self.speciality2 = self.specialityTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(specialityTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-        
-        if ( self.cvTF.docUrls != nil)
-        {
-            //self.license = self.licenseTF.img!
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(cvTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-        
-        if ( self.licenseTF.img != nil )
-        {
-            self.license = self.licenseTF.img!
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(licenseTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-        
-            if (self.validated())
+            if ( self.qualificationTF.textField.text != "" )
             {
-                //SetDefaultWrappers().showAlert(info:"Your application has been successfully submitted".localized(), viewController: self)
-        
-                //DispatchQueue.main.asyncAfter(deadline: .now() + 2) {self.navigationController?.dismiss(animated: true, completion: nil)
+                self.qualification2 = self.qualificationTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(qualificationTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
             
-                if Reachability.isConnectedToNetwork()
+            if ( self.graduationYearTF.textField.text != "" )
+            {
+                self.graduationYear2 = self.graduationYearTF.textField.text?.components(separatedBy: "/")[0]
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(graduationYearTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+            
+            if ( self.specialityTF.textField.text != "" )
+            {
+                self.speciality2 = self.specialityTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(specialityTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+            
+            if ( self.cvTF.docUrls != nil)
+            {
+                //self.license = self.licenseTF.img!
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(cvTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+            
+            if ( self.licenseTF.img != nil )
+            {
+                self.license = self.licenseTF.img!
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(licenseTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+            
+                if (self.validated())
                 {
-                    if(Utility.checkSesion())
+                    //SetDefaultWrappers().showAlert(info:"Your application has been successfully submitted".localized(), viewController: self)
+            
+                    //DispatchQueue.main.asyncAfter(deadline: .now() + 2) {self.navigationController?.dismiss(animated: true, completion: nil)
+                
+                    if Reachability.isConnectedToNetwork()
                     {
-                        apicallHttps()
+                        isAlreadyBusy = true
+                        if(Utility.checkSesion())
+                        {
+                            apicallHttps()
+                        }
+                        else
+                        {
+                            Utility.getFreshToken {
+                                (success, response) in
+                                self.apicallHttps()
+                            }
+                        }
                     }
                     else
                     {
-                        Utility.getFreshToken {
-                            (success, response) in
-                            self.apicallHttps()
-                        }
+                        Utility.showInternetErrorAlert()
                     }
+                
                 }
-                else
-                {
-                    Utility.showInternetErrorAlert()
-                }
-            
-            }
         }
+        
+    }
     
     func apicallHttps(){
         SmartSharjahShareClass.showActivityIndicator(view: self.view, targetVC: self)
@@ -483,7 +488,7 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
         
         Alamofire.request(request as! URLRequestConvertible)
             .responseJSON { (response) in
-            
+                self.isAlreadyBusy = false
             if (response.error != nil)
             {
                 print ("responseJson: \(response.error)")
@@ -495,6 +500,7 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
                 if let code = response.response?.statusCode as? Int{
                     if code == 401
                     {
+                        self.isAlreadyBusy = true
                         Utility.getFreshToken {
                             (success, response) in
                             self.apicallHttps()

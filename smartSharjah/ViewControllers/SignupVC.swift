@@ -335,10 +335,10 @@ class SignupVC: UIViewController {
             {
                 SetDefaultWrappers().showAlert(info:"Please enter a valid emirates id".localized(), viewController: self)
             }
-            else if (self.licenseTF.text! == "")
+            /*else if (self.licenseTF.text! == "")
             {
                 SetDefaultWrappers().showAlert(info:"Please enter a valid licence no".localized(), viewController: self)
-            }
+            }*/
             else if (self.addressTF.text! == "")
             {
                 SetDefaultWrappers().showAlert(info:"Please enter a valid address".localized(), viewController: self)

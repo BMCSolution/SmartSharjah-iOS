@@ -73,6 +73,8 @@ class HomeCareVC5: UIViewController {
     var unifiedno:String!
     var otherskills:String!
     
+    var isAlreadyBusy = false
+    
     
     override func viewDidAppear(_ animated: Bool) {
           Utility.setView()
@@ -150,65 +152,69 @@ class HomeCareVC5: UIViewController {
      */
     @IBAction func nextPressed(_ sender: UIButton) {
         
-        
-        if ( self.mothernameTF.textField.text != "" )
+        if(!isAlreadyBusy)
         {
-            self.mothername = self.mothernameTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(mothernameTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-        
-        if ( self.unifiednoTF.textField.text != "" )
-        {
-            self.unifiedno = self.unifiednoTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(unifiednoTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-        
-        if ( self.otherskillsTF.textField.text != "" )
-        {
-            self.otherskills = self.otherskillsTF.textField.text
-        }
-        else
-        {
-            SetDefaultWrappers().showAlert(info: "\(otherskillsTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
-            return
-        }
-        
-        
-         if (self.validated())
-         {
-            /*APILayer().postDataToAPI(name: "HomeCare", method: .post, path: "/", params: [:], headers: [:]) { (success, responseDict) in
-            
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccess"), object: nil)
-                self.navigationController?.dismiss(animated: true, completion: nil)
-            
-            }*/
-            if Reachability.isConnectedToNetwork()
+            if ( self.mothernameTF.textField.text != "" )
             {
-                if(Utility.checkSesion())
-                {
-                    apicallHttps()
-                }
-                else
-                {
-                    Utility.getFreshToken {
-                        (success, response) in
-                        self.apicallHttps()
-                    }
-                }
+                self.mothername = self.mothernameTF.textField.text
             }
             else
             {
-                Utility.showInternetErrorAlert()
+                SetDefaultWrappers().showAlert(info: "\(mothernameTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+            
+            if ( self.unifiednoTF.textField.text != "" )
+            {
+                self.unifiedno = self.unifiednoTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(unifiednoTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+            
+            if ( self.otherskillsTF.textField.text != "" )
+            {
+                self.otherskills = self.otherskillsTF.textField.text
+            }
+            else
+            {
+                SetDefaultWrappers().showAlert(info: "\(otherskillsTF.hintLbl.text!) \("cannot be empty".localized())", viewController: self)
+                return
+            }
+            
+            
+             if (self.validated())
+             {
+                /*APILayer().postDataToAPI(name: "HomeCare", method: .post, path: "/", params: [:], headers: [:]) { (success, responseDict) in
+                
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccess"), object: nil)
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                
+                }*/
+                if Reachability.isConnectedToNetwork()
+                {
+                    isAlreadyBusy = true
+                    if(Utility.checkSesion())
+                    {
+                        apicallHttps()
+                    }
+                    else
+                    {
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.apicallHttps()
+                        }
+                    }
+                }
+                else
+                {
+                    Utility.showInternetErrorAlert()
+                }
             }
         }
+        
         
     }
     
@@ -366,7 +372,7 @@ class HomeCareVC5: UIViewController {
         
         Alamofire.request(request as! URLRequestConvertible)
             .responseJSON { (response) in
-            
+                self.isAlreadyBusy = false
             if (response.error != nil)
             {
                 print ("responseJson: \(response.error)")
@@ -378,6 +384,7 @@ class HomeCareVC5: UIViewController {
                 if let code = response.response?.statusCode as? Int{
                     if code == 401
                     {
+                        self.isAlreadyBusy = true
                         Utility.getFreshToken {
                             (success, response) in
                             self.apicallHttps()

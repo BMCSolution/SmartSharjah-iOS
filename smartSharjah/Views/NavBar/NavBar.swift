@@ -203,15 +203,15 @@ class NavBar: UIView {
         UserDefaults.standard.set("langChanged", forKey: "langChanged")
         UserDefaults.standard.synchronize()
 //
-       if let topVC = UIApplication.topViewController()
-       {
+        if let topVC = UIApplication.topViewController()
+        {
             topVC.dismiss(animated: true, completion: nil)
         }
         
         self.restartApplication()
     }
     
-    func restartApplication () {
+    func restartApplication() {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
         guard
@@ -219,7 +219,7 @@ class NavBar: UIView {
             let rootViewController = window.rootViewController
             else {
                 return
-        }
+            }
         
         vc.view.frame = rootViewController.view.frame
         vc.view.layoutIfNeeded()

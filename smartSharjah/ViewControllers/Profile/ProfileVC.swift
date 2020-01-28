@@ -69,6 +69,7 @@ class ProfileVC: UIViewController {
     var valueArr:[String] = ["", "", "", "", "","",""]
     var x:String?
     var imageUrl = ""
+    var isAlreadyBusy = false
     
     @IBAction func editPressed(_ sender: UIButton) {
         
@@ -136,40 +137,41 @@ class ProfileVC: UIViewController {
     
     @IBAction func saveProfilePressed(_ sender: UIButton) {
         
-        
-        if let val = self.imagePath {
-            imageUrl = val
-        }
-        print("User Arr: \(self.valueArr)")
-        
-//Utility.checkSesion()
-        if validateFields()
+        if(!isAlreadyBusy)
         {
-            if Reachability.isConnectedToNetwork()
+            if let val = self.imagePath {
+                imageUrl = val
+            }
+            print("User Arr: \(self.valueArr)")
+            
+    //Utility.checkSesion()
+            if validateFields()
             {
-                if(Utility.checkSesion())
+                if Reachability.isConnectedToNetwork()
                 {
-                    updateProfile()
+                    isAlreadyBusy = true
+                    if(Utility.checkSesion())
+                    {
+                        updateProfile()
+                    }
+                    else
+                    {
+                        Utility.getFreshToken {
+                            (success, response) in
+                            self.updateProfile()
+                        }
+                    }
                 }
                 else
                 {
-                    Utility.getFreshToken {
-                        (success, response) in
-                        self.updateProfile()
-                    }
+                    Utility.showInternetErrorAlert()
                 }
             }
             else
             {
-                Utility.showInternetErrorAlert()
+                print("Validation Failed: \(self.valueArr)")
             }
         }
-        else
-        {
-            print("Validation Failed: \(self.valueArr)")
-        }
-        
-        
     }
     
     func updateProfile()
@@ -192,6 +194,7 @@ class ProfileVC: UIViewController {
                                     "mobileDatetime": Utility.getMobileDateTime(),
                                     "serviceTYPE": "updateuserprofile"], headers: headers) { (success, response) in
                         SmartSharjahShareClass.hideActivityIndicator(view: self.view)
+                                        self.isAlreadyBusy = false
                         if (success){
                             //var m = "Profile successfully updated!"
                             //if Utility.isArabicSelected()
@@ -223,6 +226,7 @@ class ProfileVC: UIViewController {
                                 {
                                     if(code == 401)
                                     {
+                                        self.isAlreadyBusy = true
                                         Utility.getFreshToken {
                                             (success, response) in
                                             self.updateProfile()
