@@ -372,7 +372,7 @@ class HomeCareVC1: UIViewController {
     @IBAction func nextPressed(_ sender: UIButton) {
         
 //        self.performSegue(withIdentifier: "next", sender: self)
-        
+        //self.maritalStatusTF.picker.selectedRow(inComponent: 0)
         if ( self.fullNameTF.textField.text != "" )
         {
             self.fullName = self.fullNameTF.textField.text

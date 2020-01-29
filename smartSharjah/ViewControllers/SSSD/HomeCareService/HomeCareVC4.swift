@@ -138,6 +138,9 @@ class HomeCareVC4: UIViewController {
             
             gender2TF.options = "ذكر,انثى"
             nationality2TF.options = nationalityList_Arabic
+
+            category2TF.options = "كبير سن,معاق,مريض نفسي"
+            branch2TF.options = "المقر الرئيسي,كبار السن,دار الرعاية الاجتماعية للأطفال,إدارة حماية حقوق الطفل,واحات الرشد,إدارة الرعايه المنزلية,مركز حماية المرأة,دار الامان,فرع الذيد,فرع المدام,فرع البطائح,فرع الحمرية,فرع كلباء,فرع خورفكان,فرع دبا الحصن,فرع مليحة"
             
         }
         else
@@ -154,6 +157,9 @@ class HomeCareVC4: UIViewController {
             idBack.hint = "Copy of Emirati ID (back page) *"
             passportPic.hint = "Copy of Passport *"
             medicalPic.hint = "Copy of Medical Report *"
+            
+            category2TF.options = "Old,Disabled,A psychopath"
+            branch2TF.options = "Head Quaters,Elderly,Children Social Care,Children Rights protection,Wahat El-Roshd,Homecare,Women Protection,Dar El Aman,Al-Dhaid,Al-Madam,Al-Bataeh,Al-Hamriyah,Kalba,Khorfakan,Diba El-Hosn,Maliha"
         }
         
         if (self.navBar != nil)
@@ -228,7 +234,8 @@ class HomeCareVC4: UIViewController {
             
                 if ( self.category2TF.textField.text != "" )
                 {
-                    self.category2 = self.category2TF.textField.text
+                    //self.category2 = self.category2TF.textField.text
+                    self.category2 = "\(self.category2TF.picker.selectedRow(inComponent: 0) + 1)"
                 }
                 else
                 {
@@ -238,7 +245,8 @@ class HomeCareVC4: UIViewController {
             
                 if ( self.branch2TF.textField.text != "" )
                 {
-                    self.branch2 = self.branch2TF.textField.text
+                    //self.branch2 = self.branch2TF.textField.text
+                    self.branch2 = "\(self.branch2TF.picker.selectedRow(inComponent: 0) + 1)"
                 }
                 else
                 {
@@ -494,7 +502,11 @@ class HomeCareVC4: UIViewController {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let userDefaults = UserDefaults.standard
-        let accesstoken = userDefaults.object(forKey: "access_token") as! String
+        var accesstoken = ""
+        if(userDefaults.object(forKey: "access_token") != nil)
+        {
+            accesstoken = userDefaults.object(forKey: "access_token") as! String
+        }
         let authData = accesstoken
         request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
         let data = try! JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)

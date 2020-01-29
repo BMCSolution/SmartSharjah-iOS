@@ -17,9 +17,17 @@ class MenuVC: UIViewController {
     
     var imagePath: String?
     
-    let menuItems = ["Home","Dashboard", "Payments","Profile","Logs","Settings"]
-    var menuItems_Ar = ["الرئيسية","لوحة البيانات","المدفوعات","الملف الشخصي","سجل الخدمات","الإعدادات"]
-    let menuIcons = ["NavHome","ic_tab_dash_new","ic_tab_payment_new","ic_tab_profile_new","NavHistory","ic_menu_settings"]
+    let menuItems = ["Home","Dashboard", "Payments","Profile","Settings","Logs"]
+    var menuItems_Ar = [
+        "الرئيسية"
+        ,"لوحة البيانات"
+        ,"المدفوعات"
+        ,"الملف الشخصي"
+        ,"الإعدادات"
+    ,"سجل الخدمات"
+    ]
+    let menuIcons = ["NavHome","ic_tab_dash_new","ic_tab_payment_new","ic_tab_profile_new",
+                     "ic_menu_settings","NavHistory"]
     
     
     var imgBaseURL = "http://sharjah24.ae"

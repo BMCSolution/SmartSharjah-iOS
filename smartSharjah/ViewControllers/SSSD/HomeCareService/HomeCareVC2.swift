@@ -83,6 +83,10 @@ class HomeCareVC2: UIViewController {
             monthlyIncomeTF.keyboardType = UIKeyboardType.numberPad
             
             employmentStatusTF.options = "العاملين ,عاطلين عن العمل"
+            
+            qualificationTF.options =
+                "أمي,يقرأ ويكتب,ابتدائي,اعدادي,ثانوي,ثانوية صناعية,دبلوم سنتين,دبلوم ٣ سنوات,بكالوريوس,ليسانس,ماجستير,دكتوراة"
+            
         } else {
             qualificationTF.hint = "Qualification *"
             dateOfIssueTF.hint = "Date of Issue *"
@@ -90,6 +94,8 @@ class HomeCareVC2: UIViewController {
             employmentStatusTF.hint = "Employment Status *"
             monthlyIncomeTF.hint = "Monthly income in AED *"
             monthlyIncomeTF.keyboardType = UIKeyboardType.numberPad
+            
+            qualificationTF.options = "Iliterate,Litterate,Elemantary,Primary,Secondary,Technical Secondary,Diploma (2 years),Diploma (3 years),Bachelors,License,Masters,Doctorate"
         }
         
         if (self.navBar != nil)
@@ -150,7 +156,8 @@ class HomeCareVC2: UIViewController {
         
         if ( self.qualificationTF.textField.text != "" )
         {
-            self.qualification = self.qualificationTF.textField.text
+            //self.qualification = self.qualificationTF.textField.text
+            self.qualification = "\(self.qualificationTF.picker.selectedRow(inComponent: 0) + 1)"
         }
         else
         {

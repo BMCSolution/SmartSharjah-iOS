@@ -99,7 +99,7 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         if Utility.isArabicSelected() {
             qualificationTF.hint = "المؤهلات العلمية"
             graduationYearTF.hint = "Graduation Year"
@@ -107,6 +107,9 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
             specialityTF.hint = "Speciality"
             cvTF.hint = "CV"
             licenseTF.hint = "License"
+            
+            qualificationTF.options =
+            "أمي,يقرأ ويكتب,ابتدائي,اعدادي,ثانوي,ثانوية صناعية,دبلوم سنتين,دبلوم ٣ سنوات,بكالوريوس,ليسانس,ماجستير,دكتوراة"
         } else {
             qualificationTF.hint = "qualification *"
             graduationYearTF.hint = "Graduation Year *"
@@ -114,6 +117,8 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
             specialityTF.hint = "Speciality *"
             cvTF.hint = "CV *"
             licenseTF.hint = "License *"
+            
+            qualificationTF.options = "Iliterate,Litterate,Elemantary,Primary,Secondary,Technical Secondary,Diploma (2 years),Diploma (3 years),Bachelors,License,Masters,Doctorate"
         }
         
         if (self.navbar != nil)
@@ -149,7 +154,8 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
         {
             if ( self.qualificationTF.textField.text != "" )
             {
-                self.qualification2 = self.qualificationTF.textField.text
+                //self.qualification2 = self.qualificationTF.textField.text
+                self.qualification2 = "\(self.qualificationTF.picker.selectedRow(inComponent: 0) + 1)"
             }
             else
             {
@@ -475,7 +481,11 @@ class HomeCareVC6: UIViewController, UIDocumentPickerDelegate {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let userDefaults = UserDefaults.standard
-        let accesstoken = userDefaults.object(forKey: "access_token") as! String
+        var accesstoken = ""
+        if(userDefaults.object(forKey: "access_token") != nil)
+        {
+            accesstoken = userDefaults.object(forKey: "access_token") as! String
+        }
         let authData = accesstoken
         request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
         let data = try! JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)

@@ -306,7 +306,11 @@ class APILayer {
             {
                         let userDefaults = UserDefaults.standard
                     
-                           let accesstoken = userDefaults.object(forKey: "access_token") as! String
+                            var accesstoken = ""
+                            if(userDefaults.object(forKey: "access_token") != nil)
+                            {
+                                accesstoken = userDefaults.object(forKey: "access_token") as! String
+                            }
                            let authData = accesstoken
                  request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
             }
@@ -652,7 +656,11 @@ class APILayer {
                                   {
                                               let userDefaults = UserDefaults.standard
                                           
-                                                 let accesstoken = userDefaults.object(forKey: "access_token") as! String
+                                                 var accesstoken = ""
+                                                 if(userDefaults.object(forKey: "access_token") != nil)
+                                                 {
+                                                     accesstoken = userDefaults.object(forKey: "access_token") as! String
+                                                 }
                                                  let authData = accesstoken
                                        request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
                                   }
@@ -726,7 +734,11 @@ class APILayer {
                                   {
                                               let userDefaults = UserDefaults.standard
                                           
-                                                 let accesstoken = userDefaults.object(forKey: "access_token") as! String
+                                                 var accesstoken = ""
+                                                 if(userDefaults.object(forKey: "access_token") != nil)
+                                                 {
+                                                     accesstoken = userDefaults.object(forKey: "access_token") as! String
+                                                 }
                                                  let authData = accesstoken
                                        request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
                                   }
@@ -1140,7 +1152,11 @@ class APILayer {
                        {
                                    let userDefaults = UserDefaults.standard
                                
-                                      let accesstoken = userDefaults.object(forKey: "access_token") as! String
+                                      var accesstoken = ""
+                                      if(userDefaults.object(forKey: "access_token") != nil)
+                                      {
+                                          accesstoken = userDefaults.object(forKey: "access_token") as! String
+                                      }
                                       let authData = accesstoken
                             request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
                        }
@@ -1308,7 +1324,11 @@ class APILayer {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             let userDefaults = UserDefaults.standard
                
-                      let accesstoken = userDefaults.object(forKey: "access_token") as! String
+                      var accesstoken = ""
+                      if(userDefaults.object(forKey: "access_token") != nil)
+                      {
+                          accesstoken = userDefaults.object(forKey: "access_token") as! String
+                      }
                       let authData = accesstoken
             request.setValue(authData as! String, forHTTPHeaderField: "Authorization" )
             let data = try! JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)
